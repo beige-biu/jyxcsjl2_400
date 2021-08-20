@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="T_USER_EMPLOYEE">
+          <Key>
+            <PropertyRef Name="EMPLOYEE_ID" />
+          </Key>
+          <Property Name="EMPLOYEE_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="EMPLOYEE_NAME" Type="varchar2" MaxLength="100" />
+          <Property Name="EMPLOYEE_DEC" Type="varchar2" MaxLength="100" />
+          <Property Name="EMPLOYEE_TEAM" Type="varchar2" MaxLength="2" />
+          <Property Name="EMPLOYEE_SHIFTS" Type="varchar2" MaxLength="4" />
+          <Property Name="EMPLOYEE_WORKSTATION" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIED_DATE" Type="date" />
+          <Property Name="MODIFIED_PERSON" Type="varchar2" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="T_USER_FUNCTION">
+          <Key>
+            <PropertyRef Name="FUNCTION_ID" />
+          </Key>
+          <Property Name="FUNCTION_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="FUNCTION_DEC" Type="varchar2" MaxLength="100" />
+          <Property Name="FUNCTION_NAME" Type="varchar2" MaxLength="100" />
+          <Property Name="ROLE_ID" Type="number" Precision="38" Scale="0" />
+          <Property Name="FUNCTION_ADD" Type="number" Precision="38" Scale="0" />
+          <Property Name="FUNCTION_DEL" Type="number" Precision="38" Scale="0" />
+          <Property Name="FUNCTION_SAVE" Type="number" Precision="38" Scale="0" />
+          <Property Name="FUNCTION_QUERY" Type="number" Precision="38" Scale="0" />
+          <Property Name="MODIFIED_DATE" Type="date" />
+          <Property Name="MODIFIED_PERSON" Type="varchar2" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="T_USER_ROLE">
+          <Key>
+            <PropertyRef Name="ROLE_ID" />
+          </Key>
+          <Property Name="ROLE_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ROLE_DEC" Type="varchar2" MaxLength="100" />
+          <Property Name="MODIFIED_DATE" Type="date" />
+          <Property Name="MODIFIED_PERSON" Type="varchar2" MaxLength="50" />
+          <Property Name="ROLE_NAME" Type="varchar2" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="T_USER_USER">
+          <Key>
+            <PropertyRef Name="USER_ID" />
+          </Key>
+          <Property Name="USER_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="USER_NAME" Type="varchar2" MaxLength="50" />
+          <Property Name="EMPLOYEE_ID" Type="varchar2" MaxLength="50" />
+          <Property Name="ROLE_ID" Type="number" Precision="38" Scale="0" />
+          <Property Name="USER_PASSWORD" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIED_DATE" Type="varchar2" MaxLength="50" />
+          <Property Name="MODIFIED_PERSON" Type="date" />
+          <Property Name="USER_DEC" Type="varchar2" MaxLength="100" />
+          <Property Name="USER_LOGIN_DATE" Type="date" />
+          <Property Name="USER_QUIT_DATE" Type="date" />
+        </EntityType>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="T_USER_EMPLOYEE" EntityType="Self.T_USER_EMPLOYEE" Schema="JYL2DB" store:Type="Tables" />
+          <EntitySet Name="T_USER_FUNCTION" EntityType="Self.T_USER_FUNCTION" Schema="JYL2DB" store:Type="Tables" />
+          <EntitySet Name="T_USER_ROLE" EntityType="Self.T_USER_ROLE" Schema="JYL2DB" store:Type="Tables" />
+          <EntitySet Name="T_USER_USER" EntityType="Self.T_USER_USER" Schema="JYL2DB" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="T_USER_EMPLOYEE">
+          <Key>
+            <PropertyRef Name="EMPLOYEE_ID" />
+          </Key>
+          <Property Name="EMPLOYEE_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="EMPLOYEE_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EMPLOYEE_DEC" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EMPLOYEE_TEAM" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="EMPLOYEE_SHIFTS" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="EMPLOYEE_WORKSTATION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MODIFIED_DATE" Type="DateTime" />
+          <Property Name="MODIFIED_PERSON" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="T_USER_FUNCTION">
+          <Key>
+            <PropertyRef Name="FUNCTION_ID" />
+          </Key>
+          <Property Name="FUNCTION_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="FUNCTION_DEC" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FUNCTION_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ROLE_ID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="FUNCTION_ADD" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="FUNCTION_DEL" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="FUNCTION_SAVE" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="FUNCTION_QUERY" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="MODIFIED_DATE" Type="DateTime" />
+          <Property Name="MODIFIED_PERSON" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="T_USER_ROLE">
+          <Key>
+            <PropertyRef Name="ROLE_ID" />
+          </Key>
+          <Property Name="ROLE_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ROLE_DEC" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MODIFIED_DATE" Type="DateTime" />
+          <Property Name="MODIFIED_PERSON" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ROLE_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="T_USER_USER">
+          <Key>
+            <PropertyRef Name="USER_ID" />
+          </Key>
+          <Property Name="USER_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="USER_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EMPLOYEE_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ROLE_ID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="USER_PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MODIFIED_DATE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MODIFIED_PERSON" Type="DateTime" />
+          <Property Name="USER_DEC" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="USER_LOGIN_DATE" Type="DateTime" />
+          <Property Name="USER_QUIT_DATE" Type="DateTime" />
+        </EntityType>
+        <EntityContainer Name="user" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="T_USER_EMPLOYEE" EntityType="Self.T_USER_EMPLOYEE" />
+          <EntitySet Name="T_USER_FUNCTION" EntityType="Self.T_USER_FUNCTION" />
+          <EntitySet Name="T_USER_ROLE" EntityType="Self.T_USER_ROLE" />
+          <EntitySet Name="T_USER_USER" EntityType="Self.T_USER_USER" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="user">
+          <EntitySetMapping Name="T_USER_EMPLOYEE">
+            <EntityTypeMapping TypeName="Model.T_USER_EMPLOYEE">
+              <MappingFragment StoreEntitySet="T_USER_EMPLOYEE">
+                <ScalarProperty Name="EMPLOYEE_ID" ColumnName="EMPLOYEE_ID" />
+                <ScalarProperty Name="EMPLOYEE_NAME" ColumnName="EMPLOYEE_NAME" />
+                <ScalarProperty Name="EMPLOYEE_DEC" ColumnName="EMPLOYEE_DEC" />
+                <ScalarProperty Name="EMPLOYEE_TEAM" ColumnName="EMPLOYEE_TEAM" />
+                <ScalarProperty Name="EMPLOYEE_SHIFTS" ColumnName="EMPLOYEE_SHIFTS" />
+                <ScalarProperty Name="EMPLOYEE_WORKSTATION" ColumnName="EMPLOYEE_WORKSTATION" />
+                <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
+                <ScalarProperty Name="MODIFIED_PERSON" ColumnName="MODIFIED_PERSON" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_USER_FUNCTION">
+            <EntityTypeMapping TypeName="Model.T_USER_FUNCTION">
+              <MappingFragment StoreEntitySet="T_USER_FUNCTION">
+                <ScalarProperty Name="FUNCTION_ID" ColumnName="FUNCTION_ID" />
+                <ScalarProperty Name="FUNCTION_DEC" ColumnName="FUNCTION_DEC" />
+                <ScalarProperty Name="FUNCTION_NAME" ColumnName="FUNCTION_NAME" />
+                <ScalarProperty Name="ROLE_ID" ColumnName="ROLE_ID" />
+                <ScalarProperty Name="FUNCTION_ADD" ColumnName="FUNCTION_ADD" />
+                <ScalarProperty Name="FUNCTION_DEL" ColumnName="FUNCTION_DEL" />
+                <ScalarProperty Name="FUNCTION_SAVE" ColumnName="FUNCTION_SAVE" />
+                <ScalarProperty Name="FUNCTION_QUERY" ColumnName="FUNCTION_QUERY" />
+                <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
+                <ScalarProperty Name="MODIFIED_PERSON" ColumnName="MODIFIED_PERSON" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_USER_ROLE">
+            <EntityTypeMapping TypeName="Model.T_USER_ROLE">
+              <MappingFragment StoreEntitySet="T_USER_ROLE">
+                <ScalarProperty Name="ROLE_ID" ColumnName="ROLE_ID" />
+                <ScalarProperty Name="ROLE_DEC" ColumnName="ROLE_DEC" />
+                <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
+                <ScalarProperty Name="MODIFIED_PERSON" ColumnName="MODIFIED_PERSON" />
+                <ScalarProperty Name="ROLE_NAME" ColumnName="ROLE_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_USER_USER">
+            <EntityTypeMapping TypeName="Model.T_USER_USER">
+              <MappingFragment StoreEntitySet="T_USER_USER">
+                <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+                <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
+                <ScalarProperty Name="EMPLOYEE_ID" ColumnName="EMPLOYEE_ID" />
+                <ScalarProperty Name="ROLE_ID" ColumnName="ROLE_ID" />
+                <ScalarProperty Name="USER_PASSWORD" ColumnName="USER_PASSWORD" />
+                <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
+                <ScalarProperty Name="MODIFIED_PERSON" ColumnName="MODIFIED_PERSON" />
+                <ScalarProperty Name="USER_DEC" ColumnName="USER_DEC" />
+                <ScalarProperty Name="USER_LOGIN_DATE" ColumnName="USER_LOGIN_DATE" />
+                <ScalarProperty Name="USER_QUIT_DATE" ColumnName="USER_QUIT_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

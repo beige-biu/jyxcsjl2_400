@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.489
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jyxcsjl2", "jyxcsjl2\jyxcsjl2.csproj", "{7F403DA5-A86D-4D34-8C27-2C237D336AA5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jyxcsjl2_verup", "jyxcsjl2_verup\jyxcsjl2_verup\jyxcsjl2_verup.csproj", "{F4240267-B97E-42E7-A596-15149E30DE76}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SJL2_Setup", "SJL2_Setup\SJL2_Setup.vdproj", "{40034514-C7BB-494C-AA6F-B2A48BF4629E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7F403DA5-A86D-4D34-8C27-2C237D336AA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F403DA5-A86D-4D34-8C27-2C237D336AA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F403DA5-A86D-4D34-8C27-2C237D336AA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F403DA5-A86D-4D34-8C27-2C237D336AA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4240267-B97E-42E7-A596-15149E30DE76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4240267-B97E-42E7-A596-15149E30DE76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4240267-B97E-42E7-A596-15149E30DE76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4240267-B97E-42E7-A596-15149E30DE76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40034514-C7BB-494C-AA6F-B2A48BF4629E}.Debug|Any CPU.ActiveCfg = Debug
+		{40034514-C7BB-494C-AA6F-B2A48BF4629E}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E27D8DCF-E2AA-49A3-800B-D46735402B55}
+	EndGlobalSection
+EndGlobal

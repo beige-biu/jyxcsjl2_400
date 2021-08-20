@@ -1,0 +1,2536 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PROM.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="T_BASE_MATERIAL">
+          <Key>
+            <PropertyRef Name="ERP_CODE" />
+          </Key>
+          <Property Name="RECORD_ID" Type="number" Precision="38" Scale="0" />
+          <Property Name="ERP_CODE" Type="varchar2" MaxLength="16" Nullable="false" />
+          <Property Name="ERP_NAME" Type="varchar2" MaxLength="50" />
+          <Property Name="FAC_CODE" Type="varchar2" MaxLength="20" />
+          <Property Name="FAC_NAME" Type="varchar2" MaxLength="50" />
+          <Property Name="ISBF" Type="varchar2" MaxLength="2" />
+          <Property Name="ISST" Type="varchar2" MaxLength="2" />
+          <Property Name="ISUSE" Type="varchar2" MaxLength="1" />
+          <Property Name="ERP_TYPE" Type="varchar2" MaxLength="50" />
+          <Property Name="MATTERIAL_BIG_TYPE" Type="varchar2" MaxLength="20" />
+          <Property Name="MATERIAL_SMALL_TYPE" Type="varchar2" MaxLength="20" />
+          <Property Name="MATERIAL_DESCR" Type="varchar2" MaxLength="100" />
+          <Property Name="MATERIAL_UNIT" Type="varchar2" MaxLength="20" />
+          <Property Name="MODIFIED_MAN" Type="varchar2" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="T_ENERGY_CONSUME">
+          <Key>
+            <PropertyRef Name="RECORD_DATE" />
+          </Key>
+          <Property Name="RECORD_DATE" Type="date" Nullable="false" />
+          <Property Name="P3AI_405651F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P3AI_405661F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P3AI_405671F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCNYAI_406006F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCNYAI_406016F" Type="number" Precision="13" Scale="2" />
+          <Property Name="PLCNYAI_406026F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCNYAI_406036F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCNYAI_406046F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCNYAI_406056F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCNYAI_408206F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCNYAI_408346F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P1AI_408411F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P2AI_408721F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P3AI_405781F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P3AI_405791F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCNYAI_408306F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCNYAI_408436F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCNYAI_408336F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCNYAI_408466F" Type="float" Precision="126" Scale="0" />
+        </EntityType>
+        <EntityType Name="T_INSERT_CHANGE_SHIFT">
+          <Key>
+            <PropertyRef Name="RECORD_DATE" />
+          </Key>
+          <Property Name="RECORD_DATE" Type="date" Nullable="false" />
+          <Property Name="OPERATION_AREA" Type="varchar2" MaxLength="20" />
+          <Property Name="SHIFT" Type="varchar2" MaxLength="12" />
+          <Property Name="SHIFT_CONTENT" Type="varchar2" MaxLength="500" />
+          <Property Name="RECORD_PERSON" Type="varchar2" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="T_INSERT_DEVICE_FAULT">
+          <Key>
+            <PropertyRef Name="RECORD_DATE" />
+          </Key>
+          <Property Name="FAULT_STARTTIME" Type="date" />
+          <Property Name="FAULT_NAME" Type="varchar2" MaxLength="50" />
+          <Property Name="FAULT_MADEMAN" Type="varchar2" MaxLength="10" />
+          <Property Name="ACCEPTANCE_MAN" Type="varchar2" MaxLength="20" />
+          <Property Name="ACCEPTANCE_TIME" Type="date" />
+          <Property Name="FAULT_ALLTIME" Type="number" Precision="8" Scale="0" />
+          <Property Name="FAULT_ENDTIME" Type="date" />
+          <Property Name="RECORDER" Type="varchar2" MaxLength="10" />
+          <Property Name="REMARK" Type="varchar2" MaxLength="200" />
+          <Property Name="WP_NO" Type="varchar2" MaxLength="20" />
+          <Property Name="RECORD_DATE" Type="date" Nullable="false" />
+          <Property Name="FLAG" Type="varchar2" MaxLength="2" />
+        </EntityType>
+        <EntityType Name="T_MATERIAL_RADIO_REMARK">
+          <Key>
+            <PropertyRef Name="PBD_NO" />
+          </Key>
+          <Property Name="RECORD_DATE" Type="date" />
+          <Property Name="PBD_NO" Type="varchar2" MaxLength="20" Nullable="false" />
+          <Property Name="RECORD_PERSON" Type="varchar2" MaxLength="20" />
+          <Property Name="MATERIAL1" Type="varchar2" MaxLength="20" />
+          <Property Name="PERCENT1" Type="varchar2" MaxLength="20" />
+          <Property Name="MATERIAL2" Type="varchar2" MaxLength="20" />
+          <Property Name="PERCENT2" Type="varchar2" MaxLength="20" />
+          <Property Name="MATERIAL3" Type="varchar2" MaxLength="20" />
+          <Property Name="PERCENT3" Type="varchar2" MaxLength="20" />
+          <Property Name="MATERIAL4" Type="varchar2" MaxLength="20" />
+          <Property Name="PERCENT4" Type="varchar2" MaxLength="20" />
+          <Property Name="MATERIAL5" Type="varchar2" MaxLength="20" />
+          <Property Name="PERCENT5" Type="varchar2" MaxLength="20" />
+          <Property Name="MATERIAL6" Type="varchar2" MaxLength="20" />
+          <Property Name="PERCENT6" Type="varchar2" MaxLength="20" />
+          <Property Name="MATERIAL7" Type="varchar2" MaxLength="20" />
+          <Property Name="PERCENT7" Type="varchar2" MaxLength="20" />
+          <Property Name="MATERIAL8" Type="varchar2" MaxLength="20" />
+          <Property Name="PERCENT8" Type="varchar2" MaxLength="20" />
+          <Property Name="MATERIAL9" Type="varchar2" MaxLength="20" />
+          <Property Name="PERCENT9" Type="varchar2" MaxLength="20" />
+          <Property Name="REMARK" Type="varchar2" MaxLength="400" />
+        </EntityType>
+        <EntityType Name="T_MATERIAL_TEAM_YIELDGGL">
+          <Key>
+            <PropertyRef Name="RECORD_ID" />
+          </Key>
+          <Property Name="RECORD_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="RECORD_DATE" Type="date" />
+          <Property Name="WP_NO" Type="varchar2" MaxLength="4" />
+          <Property Name="WP_NAME" Type="varchar2" MaxLength="20" />
+          <Property Name="TEAM_BEGIN_TIME" Type="date" />
+          <Property Name="TEAM_END_TIME" Type="date" />
+          <Property Name="YIELD_SUM" Type="float" Precision="126" Scale="0" />
+          <Property Name="RECORD_NAME" Type="varchar2" MaxLength="20" />
+          <Property Name="SHIFT" Type="varchar2" MaxLength="10" />
+          <Property Name="TEAM" Type="varchar2" MaxLength="10" />
+          <Property Name="FLAG" Type="char" MaxLength="2" />
+        </EntityType>
+        <EntityType Name="T_PRODUCE_BELLOWS_PRESSURE">
+          <Key>
+            <PropertyRef Name="DATE_ID" />
+            <PropertyRef Name="ROW_DESCRIBE" />
+          </Key>
+          <Property Name="DATE_ID" Type="date" Nullable="false" />
+          <Property Name="BELLOWS_PRESSURE1" Type="float" Precision="126" Scale="0" />
+          <Property Name="BELLOWS_PRESSURE2" Type="float" Precision="126" Scale="0" />
+          <Property Name="BELLOWS_PRESSURE3" Type="float" Precision="126" Scale="0" />
+          <Property Name="BELLOWS_PRESSURE4" Type="float" Precision="126" Scale="0" />
+          <Property Name="BELLOWS_PRESSURE5" Type="float" Precision="126" Scale="0" />
+          <Property Name="BELLOWS_PRESSURE6" Type="float" Precision="126" Scale="0" />
+          <Property Name="BELLOWS_PRESSURE7" Type="float" Precision="126" Scale="0" />
+          <Property Name="BELLOWS_PRESSURE8" Type="float" Precision="126" Scale="0" />
+          <Property Name="BELLOWS_PRESSURE9" Type="float" Precision="126" Scale="0" />
+          <Property Name="BELLOWS_PRESSURE10" Type="float" Precision="126" Scale="0" />
+          <Property Name="BELLOWS_PRESSURE11" Type="float" Precision="126" Scale="0" />
+          <Property Name="BELLOWS_PRESSURE12" Type="float" Precision="126" Scale="0" />
+          <Property Name="BELLOWS_PRESSURE13" Type="float" Precision="126" Scale="0" />
+          <Property Name="BELLOWS_PRESSURE14" Type="float" Precision="126" Scale="0" />
+          <Property Name="BELLOWS_PRESSURE15" Type="float" Precision="126" Scale="0" />
+          <Property Name="BELLOWS_PRESSURE16" Type="float" Precision="126" Scale="0" />
+          <Property Name="BELLOWS_PRESSURE17" Type="float" Precision="126" Scale="0" />
+          <Property Name="BELLOWS_PRESSURE18" Type="float" Precision="126" Scale="0" />
+          <Property Name="BELLOWS_PRESSURE19" Type="float" Precision="126" Scale="0" />
+          <Property Name="BELLOWS_PRESSURE20" Type="float" Precision="126" Scale="0" />
+          <Property Name="BELLOWS_PRESSURE21" Type="float" Precision="126" Scale="0" />
+          <Property Name="TEAM" Type="varchar2" MaxLength="10" />
+          <Property Name="SHIFTS" Type="varchar2" MaxLength="10" />
+          <Property Name="ROW_DESCRIBE" Type="varchar2" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_PRODUCE_BELLOWS_TEMPERATURE">
+          <Key>
+            <PropertyRef Name="DATE_ID" />
+            <PropertyRef Name="ROW_DESCRIBE" />
+          </Key>
+          <Property Name="DATE_ID" Type="date" Nullable="false" />
+          <Property Name="BELLOWS_TEMPERATURE1" Type="float" Precision="126" Scale="0" />
+          <Property Name="BELLOWS_TEMPERATURE2" Type="float" Precision="126" Scale="0" />
+          <Property Name="BELLOWS_TEMPERATURE3" Type="float" Precision="126" Scale="0" />
+          <Property Name="BELLOWS_TEMPERATURE4" Type="float" Precision="126" Scale="0" />
+          <Property Name="BELLOWS_TEMPERATURE5" Type="float" Precision="126" Scale="0" />
+          <Property Name="BELLOWS_TEMPERATURE6" Type="float" Precision="126" Scale="0" />
+          <Property Name="BELLOWS_TEMPERATURE7" Type="float" Precision="126" Scale="0" />
+          <Property Name="BELLOWS_TEMPERATURE8" Type="float" Precision="126" Scale="0" />
+          <Property Name="BELLOWS_TEMPERATURE9" Type="float" Precision="126" Scale="0" />
+          <Property Name="BELLOWS_TEMPERATURE10" Type="float" Precision="126" Scale="0" />
+          <Property Name="BELLOWS_TEMPERATURE11" Type="float" Precision="126" Scale="0" />
+          <Property Name="BELLOWS_TEMPERATURE12" Type="float" Precision="126" Scale="0" />
+          <Property Name="BELLOWS_TEMPERATURE13" Type="float" Precision="126" Scale="0" />
+          <Property Name="BELLOWS_TEMPERATURE14" Type="float" Precision="126" Scale="0" />
+          <Property Name="BELLOWS_TEMPERATURE15" Type="float" Precision="126" Scale="0" />
+          <Property Name="BELLOWS_TEMPERATURE16" Type="float" Precision="126" Scale="0" />
+          <Property Name="BELLOWS_TEMPERATURE17" Type="float" Precision="126" Scale="0" />
+          <Property Name="BELLOWS_TEMPERATURE18" Type="float" Precision="126" Scale="0" />
+          <Property Name="BELLOWS_TEMPERATURE19" Type="float" Precision="126" Scale="0" />
+          <Property Name="BELLOWS_TEMPERATURE20" Type="float" Precision="126" Scale="0" />
+          <Property Name="BELLOWS_TEMPERATURE21" Type="float" Precision="126" Scale="0" />
+          <Property Name="TEAM" Type="varchar2" MaxLength="10" />
+          <Property Name="SHIFTS" Type="varchar2" MaxLength="10" />
+          <Property Name="ROW_DESCRIBE" Type="varchar2" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_PRODUCE_FEEDING_INSTRUCTIONS">
+          <Key>
+            <PropertyRef Name="INSTRUCTIONS_NO" />
+          </Key>
+          <Property Name="INSTRUCTIONS_NO" Type="varchar2" MaxLength="20" Nullable="false" />
+          <Property Name="OPERATION_AREA" Type="varchar2" MaxLength="20" />
+          <Property Name="FEEDING_DATE" Type="date" />
+          <Property Name="FEEDING_KIND" Type="varchar2" MaxLength="20" />
+          <Property Name="SENDING_PERSON" Type="varchar2" MaxLength="20" />
+          <Property Name="SENDING_DATE" Type="date" />
+          <Property Name="REMARK" Type="varchar2" MaxLength="100" />
+          <Property Name="WHETHER_CONFIRMED" Type="varchar2" MaxLength="10" />
+          <Property Name="CONFIRMED_PERSON" Type="varchar2" MaxLength="12" />
+          <Property Name="CONFIRMED_DATE" Type="date" />
+          <Property Name="FEEDING_CHOOSE" Type="varchar2" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="T_PRODUCE_GAOLULC">
+          <Key>
+            <PropertyRef Name="RECORD_DATE" />
+          </Key>
+          <Property Name="RECORD_DATE" Type="date" Nullable="false" />
+          <Property Name="GL1_LC_SJ1" Type="number" Precision="38" Scale="0" />
+          <Property Name="GL1_LC_SJ2" Type="number" Precision="38" Scale="0" />
+          <Property Name="GL1_LC_SJ3" Type="number" Precision="38" Scale="0" />
+          <Property Name="GL1_LC_SJ4" Type="number" Precision="38" Scale="0" />
+          <Property Name="GL1_LC_SJ5" Type="number" Precision="38" Scale="0" />
+          <Property Name="GL1_LC_SJ6" Type="number" Precision="38" Scale="0" />
+          <Property Name="GL1_LC_SJ7" Type="number" Precision="38" Scale="0" />
+          <Property Name="GL1_LC_SJ8" Type="number" Precision="38" Scale="0" />
+          <Property Name="GL1_LC_SJ9" Type="number" Precision="38" Scale="0" />
+          <Property Name="GL1_LC_SJ10" Type="number" Precision="38" Scale="0" />
+          <Property Name="GL2_LC_SJ1" Type="number" Precision="38" Scale="0" />
+          <Property Name="GL2_LC_SJ2" Type="number" Precision="38" Scale="0" />
+          <Property Name="GL2_LC_SJ3" Type="number" Precision="38" Scale="0" />
+          <Property Name="GL2_LC_SJ4" Type="number" Precision="38" Scale="0" />
+          <Property Name="GL2_LC_SJ5" Type="number" Precision="38" Scale="0" />
+          <Property Name="GL2_LC_SJ6" Type="number" Precision="38" Scale="0" />
+          <Property Name="GL2_LC_SJ7" Type="number" Precision="38" Scale="0" />
+          <Property Name="GL2_LC_SJ8" Type="number" Precision="38" Scale="0" />
+          <Property Name="GL2_LC_SJ9" Type="number" Precision="38" Scale="0" />
+          <Property Name="GL2_LC_SJ10" Type="number" Precision="38" Scale="0" />
+          <Property Name="T6_LC_SJ1" Type="number" Precision="38" Scale="0" />
+          <Property Name="T6_LC_SJ2" Type="number" Precision="38" Scale="0" />
+          <Property Name="T6_LC_SJ3" Type="number" Precision="38" Scale="0" />
+          <Property Name="T6_LC_SJ4" Type="number" Precision="38" Scale="0" />
+          <Property Name="T6_LC_SJ5" Type="number" Precision="38" Scale="0" />
+          <Property Name="GL1_AVG" Type="number" Precision="38" Scale="0" />
+          <Property Name="GL2_AVG" Type="number" Precision="38" Scale="0" />
+          <Property Name="T6_AVG" Type="number" Precision="38" Scale="0" />
+          <Property Name="T7_AVG" Type="number" Precision="38" Scale="0" />
+          <Property Name="T7_LC_SJ1" Type="number" Precision="38" Scale="0" />
+          <Property Name="T7_LC_SJ2" Type="number" Precision="38" Scale="0" />
+          <Property Name="T7_LC_SJ3" Type="number" Precision="38" Scale="0" />
+          <Property Name="T7_LC_SJ4" Type="number" Precision="38" Scale="0" />
+          <Property Name="T7_LC_SJ5" Type="number" Precision="38" Scale="0" />
+          <Property Name="T7_LC_SJ6" Type="number" Precision="38" Scale="0" />
+          <Property Name="T7_LC_SJ7" Type="number" Precision="38" Scale="0" />
+          <Property Name="T7_LC_SJ8" Type="number" Precision="38" Scale="0" />
+          <Property Name="T7_LC_SJ9" Type="number" Precision="38" Scale="0" />
+          <Property Name="T7_LC_SJ10" Type="number" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="T_PRODUCE_HOPPER_POSITION">
+          <Key>
+            <PropertyRef Name="RECORD_DATE" />
+          </Key>
+          <Property Name="RECORD_DATE" Type="date" Nullable="false" />
+          <Property Name="P1AI_400001F" Type="number" Precision="8" Scale="3" />
+          <Property Name="P1AI_400011F" Type="number" Precision="8" Scale="3" />
+          <Property Name="P1AI_400021F" Type="number" Precision="8" Scale="3" />
+          <Property Name="P1AI_400031F" Type="number" Precision="8" Scale="3" />
+          <Property Name="P1AI_400041F" Type="number" Precision="8" Scale="3" />
+          <Property Name="P1AI_400051F" Type="number" Precision="8" Scale="3" />
+          <Property Name="P1AI_400061F" Type="number" Precision="8" Scale="3" />
+          <Property Name="P1AI_400071F" Type="number" Precision="8" Scale="3" />
+          <Property Name="P1AI_400081F" Type="number" Precision="8" Scale="3" />
+          <Property Name="P1AI_400091F" Type="number" Precision="8" Scale="3" />
+          <Property Name="P1AI_400101F" Type="number" Precision="8" Scale="3" />
+          <Property Name="P1AI_400111F" Type="number" Precision="8" Scale="3" />
+          <Property Name="P1AI_400121F" Type="number" Precision="8" Scale="3" />
+          <Property Name="P1AI_400131F" Type="number" Precision="8" Scale="3" />
+          <Property Name="P1AI_400141F" Type="number" Precision="8" Scale="3" />
+          <Property Name="P1AI_400291F" Type="number" Precision="8" Scale="3" />
+          <Property Name="P1AI_400601F" Type="number" Precision="8" Scale="3" />
+          <Property Name="P1AI_400611F" Type="number" Precision="8" Scale="3" />
+          <Property Name="P1AI_400621F" Type="number" Precision="8" Scale="3" />
+          <Property Name="P1AI_400631F" Type="number" Precision="8" Scale="3" />
+          <Property Name="P3AI_401141F" Type="number" Precision="8" Scale="3" />
+          <Property Name="P3AI_401151F" Type="number" Precision="8" Scale="3" />
+          <Property Name="P3AI_401891F" Type="number" Precision="8" Scale="3" />
+          <Property Name="P3AI_401901F" Type="number" Precision="8" Scale="3" />
+          <Property Name="TAEM" Type="varchar2" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="T_PRODUCE_MAIN_EXHAUST_DH">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="RECORD_DATE" Type="date" />
+          <Property Name="P4AI_400261F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400271F" Type="float" Precision="126" Scale="0" />
+          <Property Name="YIELD_SUM" Type="float" Precision="126" Scale="0" />
+          <Property Name="ZHUCHOULL_DH" Type="number" Precision="12" Scale="2" />
+          <Property Name="TEAM" Type="char" MaxLength="10" />
+          <Property Name="SHIFT" Type="varchar2" MaxLength="4" />
+          <Property Name="FAN_SUM" Type="float" Precision="126" Scale="0" />
+        </EntityType>
+        <EntityType Name="T_PRODUCE_MAIN_EXHAUST_FAN">
+          <Key>
+            <PropertyRef Name="RECORD_DATE" />
+          </Key>
+          <Property Name="RECORD_DATE" Type="date" Nullable="false" />
+          <Property Name="P4AI_400011F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400021F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400031F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400041F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400051F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400061F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400071F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400081F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400091F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400101F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400111F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400121F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400131F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400141F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400151F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400161F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400171F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400181F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400191F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400201F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400211F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400221F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400231F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400241F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400251F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400261F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400271F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400281F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400291F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400301F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400311F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400321F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400331F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400341F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400351F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400361F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400371F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400381F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400391F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400401F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400411F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400421F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400431F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400441F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400451F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400461F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400471F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400481F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400491F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400501F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400511F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400521F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400531F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400541F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400551F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400561F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400571F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400581F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400591F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400601F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400611F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400621F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400631F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400641F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400651F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400661F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400671F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400681F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400691F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400701F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400711F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400721F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400731F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400741F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400751F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400761F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400771F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400781F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400791F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400801F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400811F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400821F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400831F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400841F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400851F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400861F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400871F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400881F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400891F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400901F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400911F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400921F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400931F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400941F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400951F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400961F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_400971F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_401611F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P4AI_401621F" Type="float" Precision="126" Scale="0" />
+        </EntityType>
+        <EntityType Name="T_PRODUCE_MIX_DEVICE">
+          <Key>
+            <PropertyRef Name="RECORD_DATE" />
+          </Key>
+          <Property Name="RECORD_DATE" Type="date" Nullable="false" />
+          <Property Name="P2AI_400301F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P2AI_400321F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P2AI_400331F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P2AI_400341F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P2AI_400371F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P2AI_400591F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P2AI_400611F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P2AI_400621F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P2AI_401111F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P2AI_401121F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P2AI_401131F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P2AI_401221F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P2AI_401541F" Type="float" Precision="126" Scale="0" />
+        </EntityType>
+        <EntityType Name="T_PRODUCE_OPERATIONAL_LOG">
+          <Key>
+            <PropertyRef Name="RECORD_DATE" />
+          </Key>
+          <Property Name="RECORD_DATE" Type="date" Nullable="false" />
+          <Property Name="P3AI_401071F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P3AI_401081F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P3AI_401091F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P3AI_401101F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P3AI_401111F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P3AI_401121F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P3AI_401131F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P3AI_401141F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P3AI_401151F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P3AI_401161F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P3AI_401171F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P3AI_401301F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P3AI_401361F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P3AI_401761F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P3AI_401771F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P3AI_402331F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P3AI_402341F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCNYAI_406002F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCNYAI_406012F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCNYAI_406022F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCNYAI_406032F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCNYAI_406042F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCNYAI_406052F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCNYAI_406004F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCNYAI_406014F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCNYAI_406024F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCNYAI_406034F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCNYAI_406044F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCNYAI_406054F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P3AI_401331F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P3AI_401341F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P3AI_401351F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P3AI_401951F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P3AI_401961F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P3AI_405317F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P3AI_401011F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P3AI_401021F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P3AI_401031F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P3AI_401041F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P3AI_401051F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P3AI_401061F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P3AI_400961F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P3AI_400971F" Type="float" Precision="126" Scale="0" />
+        </EntityType>
+        <EntityType Name="T_PRODUCE_OPERATIONAL_TEMP_LOG">
+          <Key>
+            <PropertyRef Name="RECORD_DATE" />
+          </Key>
+          <Property Name="RECORD_DATE" Type="date" Nullable="false" />
+          <Property Name="P3AI_400011F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P3AI_400021F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P3AI_400051F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P3AI_400061F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCNYAI_406000F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCNYAI_406010F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCNYAI_406020F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCNYAI_406030F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCNYAI_406040F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCNYAI_406050F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P3AI_400521F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P3AI_400531F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P3AI_401291F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P3AI_401791F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P3AI_402921F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P3AI_402931F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P3AI_402941F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P3AI_402951F" Type="float" Precision="126" Scale="0" />
+          <Property Name="P3AI_402961F" Type="float" Precision="126" Scale="0" />
+        </EntityType>
+        <EntityType Name="T_PRODUCE_SINTER_SCRB">
+          <Key>
+            <PropertyRef Name="RECORD_ID" />
+          </Key>
+          <Property Name="RECORD_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="RECORD_DATE" Type="date" />
+          <Property Name="TEAM" Type="varchar2" MaxLength="4" />
+          <Property Name="CL_DAY" Type="number" Precision="38" Scale="0" />
+          <Property Name="CL_SUM" Type="number" Precision="18" Scale="2" />
+          <Property Name="XS_DAY" Type="number" Precision="18" Scale="2" />
+          <Property Name="XS_SUM" Type="number" Precision="18" Scale="2" />
+          <Property Name="TSCL_DAY" Type="number" Precision="38" Scale="0" />
+          <Property Name="TSCL_SUM" Type="number" Precision="38" Scale="0" />
+          <Property Name="ZQCL_DAY" Type="number" Precision="18" Scale="2" />
+          <Property Name="ZQCL_SUM" Type="number" Precision="18" Scale="2" />
+          <Property Name="FKL_DAY" Type="number" Precision="18" Scale="2" />
+          <Property Name="FKL_SUM" Type="number" Precision="18" Scale="2" />
+          <Property Name="CKL_DAY" Type="number" Precision="18" Scale="2" />
+          <Property Name="CKL_SUM" Type="number" Precision="18" Scale="2" />
+          <Property Name="RLTS_DAY" Type="number" Precision="18" Scale="2" />
+          <Property Name="RLTS_SUM" Type="number" Precision="18" Scale="2" />
+          <Property Name="FEO_WDL_DAY" Type="number" Precision="18" Scale="2" />
+          <Property Name="FEO_WDL_SUM" Type="number" Precision="18" Scale="2" />
+          <Property Name="R_WDL_DAY" Type="number" Precision="18" Scale="2" />
+          <Property Name="R_WDL_SUM" Type="number" Precision="18" Scale="2" />
+          <Property Name="YJPL_DAY" Type="number" Precision="18" Scale="2" />
+          <Property Name="YJPL_SUM" Type="number" Precision="18" Scale="2" />
+          <Property Name="YZPL_DAY" Type="number" Precision="18" Scale="2" />
+          <Property Name="YZPL_SUM" Type="number" Precision="18" Scale="2" />
+          <Property Name="SHIFT" Type="varchar2" MaxLength="2" />
+          <Property Name="FEO_YJP_DAY" Type="number" Precision="18" Scale="2" />
+          <Property Name="FEO_YJP_SUM" Type="number" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="T_PRODUCE_SINTER_SCRB_CENTER">
+          <Key>
+            <PropertyRef Name="RECORD_DATE" />
+          </Key>
+          <Property Name="RECORD_DATE" Type="date" Nullable="false" />
+          <Property Name="FEO_CENTER" Type="number" Precision="18" Scale="2" />
+          <Property Name="R_CENTER" Type="number" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="T_PRODUCE_SINTER_SCRB1">
+          <Key>
+            <PropertyRef Name="RECORD_ID" />
+          </Key>
+          <Property Name="RECORD_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="RECORD_DATE" Type="date" />
+          <Property Name="TEAM" Type="varchar2" MaxLength="4" />
+          <Property Name="LCHD" Type="number" Precision="18" Scale="3" />
+          <Property Name="JS" Type="number" Precision="18" Scale="3" />
+          <Property Name="DYDFY" Type="number" Precision="18" Scale="3" />
+          <Property Name="FQWD" Type="number" Precision="18" Scale="3" />
+          <Property Name="KQWD" Type="number" Precision="18" Scale="3" />
+          <Property Name="DHWD" Type="number" Precision="18" Scale="3" />
+          <Property Name="LTFY" Type="number" Precision="18" Scale="3" />
+          <Property Name="MQYL" Type="number" Precision="18" Scale="3" />
+          <Property Name="KQYL" Type="number" Precision="18" Scale="3" />
+          <Property Name="YHSF" Type="number" Precision="18" Scale="3" />
+          <Property Name="EHSF" Type="number" Precision="18" Scale="3" />
+          <Property Name="EHLW" Type="number" Precision="18" Scale="3" />
+          <Property Name="ERLD" Type="number" Precision="18" Scale="3" />
+          <Property Name="RL_3M" Type="number" Precision="18" Scale="3" />
+          <Property Name="RL_H2O" Type="number" Precision="18" Scale="3" />
+          <Property Name="GTRH" Type="number" Precision="18" Scale="3" />
+          <Property Name="GLMQXH" Type="number" Precision="18" Scale="3" />
+          <Property Name="TRQXH" Type="number" Precision="18" Scale="3" />
+          <Property Name="DH" Type="number" Precision="18" Scale="3" />
+          <Property Name="HL_SO2" Type="number" Precision="18" Scale="3" />
+          <Property Name="HL_NO" Type="number" Precision="18" Scale="3" />
+          <Property Name="HL_FC" Type="number" Precision="18" Scale="3" />
+          <Property Name="DH_CO" Type="number" Precision="18" Scale="3" />
+          <Property Name="YQYL_1_AVG" Type="number" Precision="18" Scale="3" />
+          <Property Name="YQYL_2_AVG" Type="number" Precision="18" Scale="3" />
+          <Property Name="SHIFT" Type="varchar2" MaxLength="2" />
+          <Property Name="ZYDWD_AVG" Type="number" Precision="18" Scale="3" />
+          <Property Name="YYDWD_AVG" Type="number" Precision="18" Scale="3" />
+        </EntityType>
+        <EntityType Name="T_PRODUCE_SINTER_SCRB2">
+          <Key>
+            <PropertyRef Name="RECORD_ID" />
+          </Key>
+          <Property Name="RECORD_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="RECORD_DATE" Type="date" />
+          <Property Name="TEAM" Type="varchar2" MaxLength="4" />
+          <Property Name="PISHU" Type="number" Precision="38" Scale="0" />
+          <Property Name="TFE" Type="number" Precision="13" Scale="2" />
+          <Property Name="FEO" Type="number" Precision="13" Scale="2" />
+          <Property Name="SIO2" Type="number" Precision="13" Scale="2" />
+          <Property Name="CAO" Type="number" Precision="13" Scale="2" />
+          <Property Name="MGO" Type="number" Precision="13" Scale="2" />
+          <Property Name="AL2O3" Type="number" Precision="13" Scale="2" />
+          <Property Name="R" Type="number" Precision="13" Scale="2" />
+          <Property Name="TI6Z3" Type="number" Precision="13" Scale="2" />
+          <Property Name="KMZS0Z5" Type="number" Precision="13" Scale="2" />
+          <Property Name="JIANXIU" Type="number" Precision="13" Scale="2" />
+          <Property Name="JIXIE" Type="number" Precision="13" Scale="2" />
+          <Property Name="DIANQI" Type="number" Precision="13" Scale="2" />
+          <Property Name="CAOZUO" Type="number" Precision="13" Scale="2" />
+          <Property Name="YLC" Type="number" Precision="13" Scale="2" />
+          <Property Name="GAOLU" Type="number" Precision="13" Scale="2" />
+          <Property Name="DONGLI" Type="number" Precision="13" Scale="2" />
+          <Property Name="QTWY" Type="number" Precision="13" Scale="2" />
+          <Property Name="ZYSJ_DAY" Type="number" Precision="13" Scale="2" />
+          <Property Name="ZYSJ_SUM" Type="number" Precision="13" Scale="2" />
+          <Property Name="ZYL_DAY" Type="number" Precision="13" Scale="2" />
+          <Property Name="ZYL_SUM" Type="number" Precision="13" Scale="2" />
+          <Property Name="SHIFT" Type="varchar2" MaxLength="2" />
+        </EntityType>
+        <EntityType Name="T_PRODUCE_TUOLIU_AZ">
+          <Key>
+            <PropertyRef Name="RECORD_DATE" />
+          </Key>
+          <Property Name="RECORD_DATE" Type="date" Nullable="false" />
+          <Property Name="AZ_ASBCKGDYL" Type="float" Precision="126" Scale="0" />
+          <Property Name="AZ_ASBCKGDLL" Type="float" Precision="126" Scale="0" />
+          <Property Name="AZ_ASZFQCKYL" Type="float" Precision="126" Scale="0" />
+          <Property Name="AZ_ASZFQCKWD" Type="float" Precision="126" Scale="0" />
+          <Property Name="AZ_ASZFQYW" Type="float" Precision="126" Scale="0" />
+          <Property Name="AZ_XSFCKLL" Type="float" Precision="126" Scale="0" />
+          <Property Name="AZ_AKHHQCKYL" Type="float" Precision="126" Scale="0" />
+          <Property Name="AZ_AKHHQCKWD" Type="float" Precision="126" Scale="0" />
+          <Property Name="AZ_ZQWD" Type="float" Precision="126" Scale="0" />
+          <Property Name="AZ_ZQYL" Type="float" Precision="126" Scale="0" />
+          <Property Name="AZ_ZQLL" Type="float" Precision="126" Scale="0" />
+          <Property Name="CW_YQ_QQYL1" Type="float" Precision="126" Scale="0" />
+          <Property Name="CW_YQ_QQYL2" Type="float" Precision="126" Scale="0" />
+          <Property Name="CW_YQ_HRJKYL1" Type="float" Precision="126" Scale="0" />
+          <Property Name="CW_YQ_HRJKYL2" Type="float" Precision="126" Scale="0" />
+          <Property Name="CW_YQ_HRCKYL" Type="float" Precision="126" Scale="0" />
+          <Property Name="CW_YQ_ZYFJCKYL" Type="float" Precision="126" Scale="0" />
+          <Property Name="CW_YQ_QQTJF_KD1" Type="float" Precision="126" Scale="0" />
+          <Property Name="CW_YQ_QQTJF_KD2" Type="float" Precision="126" Scale="0" />
+          <Property Name="CW_YQ_LFF_KD1" Type="float" Precision="126" Scale="0" />
+          <Property Name="CW_YQ_XFTCKYQYL" Type="float" Precision="126" Scale="0" />
+          <Property Name="CW_YQ_XTYC" Type="float" Precision="126" Scale="0" />
+        </EntityType>
+        <EntityType Name="T_PRODUCE_TUOLIU_CEMS">
+          <Key>
+            <PropertyRef Name="RECORD_DATE" />
+          </Key>
+          <Property Name="RECORD_DATE" Type="date" Nullable="false" />
+          <Property Name="RK_DYHW_NOX" Type="float" Precision="126" Scale="0" />
+          <Property Name="CK_DYHW_NOX" Type="float" Precision="126" Scale="0" />
+          <Property Name="RK_SO2" Type="float" Precision="126" Scale="0" />
+          <Property Name="CK_SO2" Type="float" Precision="126" Scale="0" />
+          <Property Name="RK_FC" Type="float" Precision="126" Scale="0" />
+          <Property Name="CK_FC" Type="float" Precision="126" Scale="0" />
+          <Property Name="RK_YQHL" Type="float" Precision="126" Scale="0" />
+          <Property Name="CK_YQHL" Type="float" Precision="126" Scale="0" />
+          <Property Name="RK_SD" Type="float" Precision="126" Scale="0" />
+          <Property Name="CK_SD" Type="float" Precision="126" Scale="0" />
+          <Property Name="RK_LL" Type="float" Precision="126" Scale="0" />
+          <Property Name="CK_LL" Type="float" Precision="126" Scale="0" />
+          <Property Name="RK_YQWD" Type="float" Precision="126" Scale="0" />
+          <Property Name="CK_YQWD" Type="float" Precision="126" Scale="0" />
+          <Property Name="RK_YL" Type="float" Precision="126" Scale="0" />
+          <Property Name="CK_YL" Type="float" Precision="126" Scale="0" />
+          <Property Name="NOX_CY" Type="float" Precision="126" Scale="0" />
+          <Property Name="SO2_CY" Type="float" Precision="126" Scale="0" />
+          <Property Name="DUST_CY" Type="float" Precision="126" Scale="0" />
+          <Property Name="QHR_VALUE" Type="float" Precision="126" Scale="0" />
+          <Property Name="NOX_C" Type="float" Precision="126" Scale="0" />
+          <Property Name="SO2_C" Type="float" Precision="126" Scale="0" />
+          <Property Name="DUST_C" Type="float" Precision="126" Scale="0" />
+          <Property Name="CMS_DUST1" Type="float" Precision="126" Scale="0" />
+          <Property Name="CMS_DUST2" Type="float" Precision="126" Scale="0" />
+          <Property Name="CMS_DUST3" Type="float" Precision="126" Scale="0" />
+        </EntityType>
+        <EntityType Name="T_PRODUCE_TUOLIU_NYJZ">
+          <Key>
+            <PropertyRef Name="RECORD_DATE" />
+          </Key>
+          <Property Name="RECORD_DATE" Type="date" Nullable="false" />
+          <Property Name="NYJZ_ASSSLL" Type="float" Precision="126" Scale="0" />
+          <Property Name="NYJZ_ASLJLL" Type="float" Precision="126" Scale="0" />
+          <Property Name="NYJZ_RHSSSLL" Type="float" Precision="126" Scale="0" />
+          <Property Name="NYJZ_RHSLJLL" Type="float" Precision="126" Scale="0" />
+          <Property Name="NYJZ_ZQSSLL" Type="float" Precision="126" Scale="0" />
+          <Property Name="NYJZ_FQCKSSLL" Type="float" Precision="126" Scale="0" />
+          <Property Name="NYJZ_FQCKLJLL" Type="float" Precision="126" Scale="0" />
+          <Property Name="NYJZ_DQZGSSLL" Type="float" Precision="126" Scale="0" />
+          <Property Name="NYJZ_YSKQSSLL" Type="float" Precision="126" Scale="0" />
+          <Property Name="NYJZ_XHSSSLL" Type="float" Precision="126" Scale="0" />
+          <Property Name="NYJZ_XHSLJLL" Type="float" Precision="126" Scale="0" />
+          <Property Name="NYJZ_TRQSSLL" Type="float" Precision="126" Scale="0" />
+          <Property Name="NYJZ_TRQLJLL" Type="float" Precision="126" Scale="0" />
+          <Property Name="NYJZ_GLMQSSLL" Type="float" Precision="126" Scale="0" />
+          <Property Name="NYJZ_GLMQLJLL" Type="float" Precision="126" Scale="0" />
+        </EntityType>
+        <EntityType Name="T_PRODUCE_TUOLIU_ZYFJ">
+          <Key>
+            <PropertyRef Name="RECORD_DATE" />
+          </Key>
+          <Property Name="RECORD_DATE" Type="date" Nullable="false" />
+          <Property Name="CW_ZYFJ_DJDZ3_WD" Type="float" Precision="126" Scale="0" />
+          <Property Name="CW_ZYFJ_DJZC1_WD" Type="float" Precision="126" Scale="0" />
+          <Property Name="CW_ZYFJ_WD" Type="float" Precision="126" Scale="0" />
+          <Property Name="CW_ZYFJ_FJZD" Type="float" Precision="126" Scale="0" />
+          <Property Name="CW_ZYFJ_DJZD" Type="float" Precision="126" Scale="0" />
+          <Property Name="CW_ZYFJ_DJDL" Type="float" Precision="126" Scale="0" />
+          <Property Name="CW_ZYFJ_TJF_KD" Type="float" Precision="126" Scale="0" />
+          <Property Name="CW_ZYFJ_TJF_SKD" Type="float" Precision="126" Scale="0" />
+          <Property Name="CW_XTWD_HRQJKYQWD_A" Type="float" Precision="126" Scale="0" />
+          <Property Name="CW_XTWD_HRQCKYQWD_A" Type="float" Precision="126" Scale="0" />
+          <Property Name="CW_XTWD_ZYFJCKWD1_A" Type="float" Precision="126" Scale="0" />
+          <Property Name="CW_XTWD_ZYFJCKWD2_A" Type="float" Precision="126" Scale="0" />
+          <Property Name="CW_XTWD_HRQJKYQWD_B" Type="float" Precision="126" Scale="0" />
+          <Property Name="CW_XTWD_HRQCKYQWD_B" Type="float" Precision="126" Scale="0" />
+          <Property Name="CW_XTWD_ZYFJCKWD1_B" Type="float" Precision="126" Scale="0" />
+          <Property Name="CW_XTWD_ZYFJCKWD2_B" Type="float" Precision="126" Scale="0" />
+        </EntityType>
+        <EntityType Name="T_PRODUCE_YANDAOXUNHUAN">
+          <Key>
+            <PropertyRef Name="RECORD_DATE" />
+          </Key>
+          <Property Name="RECORD_DATE" Type="date" Nullable="false" />
+          <Property Name="PLCYDXHAI_400567F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400569F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400571F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400573F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400575F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400577F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400619F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400621F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400623F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400625F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400627F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400629F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400541F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400543F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400545F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400547F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400549F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400551F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400861F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400609F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400529F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400531F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400509F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400511F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400563F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400555F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400611F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400533F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400613F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400605F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400535F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400537F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400525F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400527F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400565F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400615F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400557F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400617F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400539F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400559F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400579F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400581F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400583F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400585F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400587F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400589F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400591F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400593F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400595F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400597F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400599F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400601F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400603F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400417F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400419F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400421F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400423F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400425F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400427F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400429F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400433F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400435F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400437F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400439F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400441F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400443F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400497F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400499F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400501F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400503F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400505F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400507F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400513F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400515F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400517F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400519F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400521F" Type="float" Precision="126" Scale="0" />
+          <Property Name="PLCYDXHAI_400523F" Type="float" Precision="126" Scale="0" />
+        </EntityType>
+        <EntityType Name="T_QUALITY_MIX_PHY_INSET">
+          <Key>
+            <PropertyRef Name="RECORD_DATE" />
+          </Key>
+          <Property Name="WP_NO" Type="varchar2" MaxLength="30" />
+          <Property Name="SHIFT" Type="varchar2" MaxLength="10" />
+          <Property Name="FEED_NAME" Type="varchar2" MaxLength="50" />
+          <Property Name="FEED_TEM" Type="number" Precision="10" Scale="1" />
+          <Property Name="WATER" Type="number" Precision="10" Scale="1" />
+          <Property Name="GRAIN_COMP_3" Type="number" Precision="10" Scale="2" />
+          <Property Name="GRAIN_COMP_31" Type="number" Precision="10" Scale="2" />
+          <Property Name="GRAIN_COMP_1" Type="number" Precision="10" Scale="2" />
+          <Property Name="GRAIN_COMP_63" Type="number" Precision="10" Scale="2" />
+          <Property Name="GRAIN_3" Type="number" Precision="10" Scale="2" />
+          <Property Name="RECORD_PERSON" Type="varchar2" MaxLength="20" />
+          <Property Name="RECORD_DATE" Type="date" Nullable="false" />
+          <Property Name="GRAIN_5" Type="number" Precision="10" Scale="2" />
+          <Property Name="GRAIN_05" Type="number" Precision="10" Scale="2" />
+        </EntityType>
+        <Function Name="F_QUAITY_ANALYSE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ORALTL2_ST">
+          <Parameter Name="MATERIAL_NAME" Type="varchar2" Mode="In" />
+          <Parameter Name="BEGIN_TIME" Type="varchar2" Mode="In" />
+          <Parameter Name="END_TIME" Type="varchar2" Mode="In" />
+          <Parameter Name="SAMPLE_NO" Type="varchar2" Mode="In" />
+        </Function>
+        <Function Name="F_QUALITY_QUARY" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ORALTL2_ST">
+          <Parameter Name="MATERIAL_NAME" Type="varchar2" Mode="In" />
+          <Parameter Name="BEGIN_TIME" Type="varchar2" Mode="In" />
+          <Parameter Name="END_TIME" Type="varchar2" Mode="In" />
+          <Parameter Name="SAMPLE_NO" Type="varchar2" Mode="In" />
+          <Parameter Name="LU_NO" Type="varchar2" Mode="In" />
+        </Function>
+        <EntityContainer Name="PROMStoreContainer">
+          <EntitySet Name="T_BASE_MATERIAL" EntityType="Self.T_BASE_MATERIAL" Schema="ORALTL2_ST" store:Type="Tables" />
+          <EntitySet Name="T_ENERGY_CONSUME" EntityType="Self.T_ENERGY_CONSUME" Schema="ORALTL2_ST" store:Type="Tables" />
+          <EntitySet Name="T_INSERT_CHANGE_SHIFT" EntityType="Self.T_INSERT_CHANGE_SHIFT" Schema="ORALTL2_ST" store:Type="Tables" />
+          <EntitySet Name="T_INSERT_DEVICE_FAULT" EntityType="Self.T_INSERT_DEVICE_FAULT" Schema="ORALTL2_ST" store:Type="Tables" />
+          <EntitySet Name="T_MATERIAL_RADIO_REMARK" EntityType="Self.T_MATERIAL_RADIO_REMARK" Schema="ORALTL2_ST" store:Type="Tables" />
+          <EntitySet Name="T_MATERIAL_TEAM_YIELDGGL" EntityType="Self.T_MATERIAL_TEAM_YIELDGGL" Schema="ORALTL2_ST" store:Type="Tables" />
+          <EntitySet Name="T_PRODUCE_BELLOWS_PRESSURE" EntityType="Self.T_PRODUCE_BELLOWS_PRESSURE" Schema="ORALTL2_ST" store:Type="Tables" />
+          <EntitySet Name="T_PRODUCE_BELLOWS_TEMPERATURE" EntityType="Self.T_PRODUCE_BELLOWS_TEMPERATURE" Schema="ORALTL2_ST" store:Type="Tables" />
+          <EntitySet Name="T_PRODUCE_FEEDING_INSTRUCTIONS" EntityType="Self.T_PRODUCE_FEEDING_INSTRUCTIONS" Schema="ORALTL2_ST" store:Type="Tables" />
+          <EntitySet Name="T_PRODUCE_GAOLULC" EntityType="Self.T_PRODUCE_GAOLULC" Schema="ORALTL2_ST" store:Type="Tables" />
+          <EntitySet Name="T_PRODUCE_HOPPER_POSITION" EntityType="Self.T_PRODUCE_HOPPER_POSITION" Schema="ORALTL2_ST" store:Type="Tables" />
+          <EntitySet Name="T_PRODUCE_MAIN_EXHAUST_DH" EntityType="Self.T_PRODUCE_MAIN_EXHAUST_DH" Schema="ORALTL2_ST" store:Type="Tables" />
+          <EntitySet Name="T_PRODUCE_MAIN_EXHAUST_FAN" EntityType="Self.T_PRODUCE_MAIN_EXHAUST_FAN" Schema="ORALTL2_ST" store:Type="Tables" />
+          <EntitySet Name="T_PRODUCE_MIX_DEVICE" EntityType="Self.T_PRODUCE_MIX_DEVICE" Schema="ORALTL2_ST" store:Type="Tables" />
+          <EntitySet Name="T_PRODUCE_OPERATIONAL_LOG" EntityType="Self.T_PRODUCE_OPERATIONAL_LOG" Schema="ORALTL2_ST" store:Type="Tables" />
+          <EntitySet Name="T_PRODUCE_OPERATIONAL_TEMP_LOG" EntityType="Self.T_PRODUCE_OPERATIONAL_TEMP_LOG" Schema="ORALTL2_ST" store:Type="Tables" />
+          <EntitySet Name="T_PRODUCE_SINTER_SCRB" EntityType="Self.T_PRODUCE_SINTER_SCRB" Schema="ORALTL2_ST" store:Type="Tables" />
+          <EntitySet Name="T_PRODUCE_SINTER_SCRB_CENTER" EntityType="Self.T_PRODUCE_SINTER_SCRB_CENTER" Schema="ORALTL2_ST" store:Type="Tables" />
+          <EntitySet Name="T_PRODUCE_SINTER_SCRB1" EntityType="Self.T_PRODUCE_SINTER_SCRB1" Schema="ORALTL2_ST" store:Type="Tables" />
+          <EntitySet Name="T_PRODUCE_SINTER_SCRB2" EntityType="Self.T_PRODUCE_SINTER_SCRB2" Schema="ORALTL2_ST" store:Type="Tables" />
+          <EntitySet Name="T_PRODUCE_TUOLIU_AZ" EntityType="Self.T_PRODUCE_TUOLIU_AZ" Schema="ORALTL2_ST" store:Type="Tables" />
+          <EntitySet Name="T_PRODUCE_TUOLIU_CEMS" EntityType="Self.T_PRODUCE_TUOLIU_CEMS" Schema="ORALTL2_ST" store:Type="Tables" />
+          <EntitySet Name="T_PRODUCE_TUOLIU_NYJZ" EntityType="Self.T_PRODUCE_TUOLIU_NYJZ" Schema="ORALTL2_ST" store:Type="Tables" />
+          <EntitySet Name="T_PRODUCE_TUOLIU_ZYFJ" EntityType="Self.T_PRODUCE_TUOLIU_ZYFJ" Schema="ORALTL2_ST" store:Type="Tables" />
+          <EntitySet Name="T_PRODUCE_YANDAOXUNHUAN" EntityType="Self.T_PRODUCE_YANDAOXUNHUAN" Schema="ORALTL2_ST" store:Type="Tables" />
+          <EntitySet Name="T_QUALITY_MIX_PHY_INSET" EntityType="Self.T_QUALITY_MIX_PHY_INSET" Schema="ORALTL2_ST" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PROM" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="T_PROM" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="T_PRODUCE_FEEDING_INSTRUCTIONS" EntityType="PROM.T_PRODUCE_FEEDING_INSTRUCTIONS" />
+          <EntitySet Name="T_QUALITY_MIX_PHY_INSET" EntityType="PROM.T_QUALITY_MIX_PHY_INSET" />
+          <EntitySet Name="T_INSERT_CHANGE_SHIFT" EntityType="PROM.T_INSERT_CHANGE_SHIFT" />
+          <EntitySet Name="T_INSERT_DEVICE_FAULT" EntityType="PROM.T_INSERT_DEVICE_FAULT" />
+          <EntitySet Name="T_PRODUCE_BELLOWS_PRESSURE" EntityType="PROM.T_PRODUCE_BELLOWS_PRESSURE" />
+          <EntitySet Name="T_PRODUCE_BELLOWS_TEMPERATURE" EntityType="PROM.T_PRODUCE_BELLOWS_TEMPERATURE" />
+          <FunctionImport Name="F_QUAITY_ANALYSE">
+            <Parameter Name="MATERIAL_NAME" Mode="In" Type="String" />
+            <Parameter Name="BEGIN_TIME" Mode="In" Type="String" />
+            <Parameter Name="END_TIME" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="F_QUAITY_ANALYSE1" ReturnType="Collection(GeographyCollection)">
+            <Parameter Name="MATERIAL_NAME" Mode="In" Type="String" />
+            <Parameter Name="BEGIN_TIME" Mode="In" Type="String" />
+            <Parameter Name="END_TIME" Mode="In" Type="String" />
+            <Parameter Name="SAMPLE_NO" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="T_PRODUCE_MIX_DEVICE" EntityType="PROM.T_PRODUCE_MIX_DEVICE" />
+          <EntitySet Name="T_BASE_MATERIAL" EntityType="PROM.T_BASE_MATERIAL" />
+          <EntitySet Name="T_PRODUCE_HOPPER_POSITION" EntityType="PROM.T_PRODUCE_HOPPER_POSITION" />
+          <EntitySet Name="T_PRODUCE_MAIN_EXHAUST_FAN" EntityType="PROM.T_PRODUCE_MAIN_EXHAUST_FAN" />
+          <EntitySet Name="T_PRODUCE_OPERATIONAL_TEMP_LOG" EntityType="PROM.T_PRODUCE_OPERATIONAL_TEMP_LOG" />
+          <EntitySet Name="T_PRODUCE_TUOLIU_AZ" EntityType="PROM.T_PRODUCE_TUOLIU_AZ" />
+          <EntitySet Name="T_PRODUCE_TUOLIU_CEMS" EntityType="PROM.T_PRODUCE_TUOLIU_CEMS" />
+          <EntitySet Name="T_PRODUCE_TUOLIU_NYJZ" EntityType="PROM.T_PRODUCE_TUOLIU_NYJZ" />
+          <EntitySet Name="T_PRODUCE_TUOLIU_ZYFJ" EntityType="PROM.T_PRODUCE_TUOLIU_ZYFJ" />
+          <EntitySet Name="T_ENERGY_CONSUME" EntityType="PROM.T_ENERGY_CONSUME" />
+          <EntitySet Name="T_PRODUCE_SINTER_SCRB_CENTER" EntityType="PROM.T_PRODUCE_SINTER_SCRB_CENTER" />
+          <EntitySet Name="T_PRODUCE_OPERATIONAL_LOG" EntityType="PROM.T_PRODUCE_OPERATIONAL_LOG" />
+          <EntitySet Name="T_MATERIAL_TEAM_YIELDGGL" EntityType="PROM.T_MATERIAL_TEAM_YIELDGGL" />
+          <EntitySet Name="T_PRODUCE_MAIN_EXHAUST_DH" EntityType="PROM.T_PRODUCE_MAIN_EXHAUST_DH" />
+          <EntitySet Name="T_PRODUCE_GAOLULC" EntityType="PROM.T_PRODUCE_GAOLULC" />
+          <FunctionImport Name="F_QUALITY_QUARY">
+            <Parameter Name="MATERIAL_NAME" Mode="In" Type="String" />
+            <Parameter Name="BEGIN_TIME" Mode="In" Type="String" />
+            <Parameter Name="END_TIME" Mode="In" Type="String" />
+            <Parameter Name="SAMPLE_NO" Mode="In" Type="String" />
+            <Parameter Name="LU_NO" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="T_PRODUCE_YANDAOXUNHUAN" EntityType="PROM.T_PRODUCE_YANDAOXUNHUAN" />
+          <EntitySet Name="T_PRODUCE_SINTER_SCRB" EntityType="PROM.T_PRODUCE_SINTER_SCRB" />
+          <EntitySet Name="T_PRODUCE_SINTER_SCRB1" EntityType="PROM.T_PRODUCE_SINTER_SCRB1" />
+          <EntitySet Name="T_PRODUCE_SINTER_SCRB2" EntityType="PROM.T_PRODUCE_SINTER_SCRB2" />
+          <EntitySet Name="T_MATERIAL_RADIO_REMARK" EntityType="PROM.T_MATERIAL_RADIO_REMARK" />
+        </EntityContainer>
+        <EntityType Name="T_PRODUCE_FEEDING_INSTRUCTIONS">
+          <Key>
+            <PropertyRef Name="INSTRUCTIONS_NO" />
+          </Key>
+          <Property Name="INSTRUCTIONS_NO" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="OPERATION_AREA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="FEEDING_DATE" Type="DateTime" />
+          <Property Name="FEEDING_KIND" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SENDING_PERSON" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SENDING_DATE" Type="DateTime" />
+          <Property Name="REMARK" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="WHETHER_CONFIRMED" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CONFIRMED_PERSON" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="CONFIRMED_DATE" Type="DateTime" />
+          <Property Name="FEEDING_CHOOSE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="T_QUALITY_MIX_PHY_INSET">
+          <Key>
+            <PropertyRef Name="RECORD_DATE" />
+          </Key>
+          <Property Name="WP_NO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="SHIFT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="FEED_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FEED_TEM" Type="Decimal" Precision="10" Scale="1" />
+          <Property Name="WATER" Type="Decimal" Precision="10" Scale="1" />
+          <Property Name="GRAIN_COMP_3" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="GRAIN_COMP_31" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="GRAIN_COMP_1" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="GRAIN_COMP_63" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="GRAIN_3" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="RECORD_PERSON" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="RECORD_DATE" Type="DateTime" Nullable="false" />
+          <Property Name="GRAIN_5" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="GRAIN_05" Type="Decimal" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="T_INSERT_CHANGE_SHIFT">
+          <Key>
+            <PropertyRef Name="RECORD_DATE" />
+          </Key>
+          <Property Name="RECORD_DATE" Type="DateTime" Nullable="false" />
+          <Property Name="OPERATION_AREA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SHIFT" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="SHIFT_CONTENT" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="RECORD_PERSON" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="T_INSERT_DEVICE_FAULT">
+          <Key>
+            <PropertyRef Name="RECORD_DATE" />
+          </Key>
+          <Property Name="FAULT_STARTTIME" Type="DateTime" />
+          <Property Name="FAULT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FAULT_MADEMAN" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ACCEPTANCE_MAN" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ACCEPTANCE_TIME" Type="DateTime" />
+          <Property Name="FAULT_ALLTIME" Type="Int32" />
+          <Property Name="FAULT_ENDTIME" Type="DateTime" />
+          <Property Name="RECORDER" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="REMARK" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="WP_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="RECORD_DATE" Type="DateTime" Nullable="false" />
+          <Property Name="FLAG" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="T_PRODUCE_BELLOWS_PRESSURE">
+          <Key>
+            <PropertyRef Name="DATE_ID" />
+            <PropertyRef Name="ROW_DESCRIBE" />
+          </Key>
+          <Property Name="DATE_ID" Type="DateTime" Nullable="false" />
+          <Property Name="BELLOWS_PRESSURE1" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="BELLOWS_PRESSURE2" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="BELLOWS_PRESSURE3" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="BELLOWS_PRESSURE4" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="BELLOWS_PRESSURE5" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="BELLOWS_PRESSURE6" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="BELLOWS_PRESSURE7" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="BELLOWS_PRESSURE8" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="BELLOWS_PRESSURE9" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="BELLOWS_PRESSURE10" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="BELLOWS_PRESSURE11" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="BELLOWS_PRESSURE12" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="BELLOWS_PRESSURE13" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="BELLOWS_PRESSURE14" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="BELLOWS_PRESSURE15" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="BELLOWS_PRESSURE16" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="BELLOWS_PRESSURE17" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="BELLOWS_PRESSURE18" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="BELLOWS_PRESSURE19" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="BELLOWS_PRESSURE20" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="BELLOWS_PRESSURE21" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="TEAM" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="SHIFTS" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ROW_DESCRIBE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="T_PRODUCE_BELLOWS_TEMPERATURE">
+          <Key>
+            <PropertyRef Name="DATE_ID" />
+            <PropertyRef Name="ROW_DESCRIBE" />
+          </Key>
+          <Property Name="DATE_ID" Type="DateTime" Nullable="false" />
+          <Property Name="BELLOWS_TEMPERATURE1" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="BELLOWS_TEMPERATURE2" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="BELLOWS_TEMPERATURE3" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="BELLOWS_TEMPERATURE4" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="BELLOWS_TEMPERATURE5" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="BELLOWS_TEMPERATURE6" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="BELLOWS_TEMPERATURE7" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="BELLOWS_TEMPERATURE8" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="BELLOWS_TEMPERATURE9" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="BELLOWS_TEMPERATURE10" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="BELLOWS_TEMPERATURE11" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="BELLOWS_TEMPERATURE12" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="BELLOWS_TEMPERATURE13" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="BELLOWS_TEMPERATURE14" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="BELLOWS_TEMPERATURE15" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="BELLOWS_TEMPERATURE16" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="BELLOWS_TEMPERATURE17" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="BELLOWS_TEMPERATURE18" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="BELLOWS_TEMPERATURE19" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="BELLOWS_TEMPERATURE20" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="BELLOWS_TEMPERATURE21" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="TEAM" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="SHIFTS" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ROW_DESCRIBE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="T_PRODUCE_MIX_DEVICE">
+          <Key>
+            <PropertyRef Name="RECORD_DATE" />
+          </Key>
+          <Property Name="RECORD_DATE" Type="DateTime" Nullable="false" />
+          <Property Name="P2AI_401131F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P2AI_400341F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P2AI_400371F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P2AI_400301F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P2AI_400331F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P2AI_400321F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P2AI_401221F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P2AI_401541F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P2AI_400591F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P2AI_400621F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P2AI_401111F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P2AI_400611F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P2AI_401121F" Type="Decimal" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="T_BASE_MATERIAL">
+          <Key>
+            <PropertyRef Name="ERP_CODE" />
+          </Key>
+          <Property Name="RECORD_ID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="ERP_CODE" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="ERP_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FAC_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="FAC_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ISBF" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="ISST" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="ISUSE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="ERP_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MATTERIAL_BIG_TYPE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MATERIAL_SMALL_TYPE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MATERIAL_DESCR" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MATERIAL_UNIT" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MODIFIED_MAN" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="T_PRODUCE_HOPPER_POSITION">
+          <Key>
+            <PropertyRef Name="RECORD_DATE" />
+          </Key>
+          <Property Name="RECORD_DATE" Type="DateTime" Nullable="false" />
+          <Property Name="P1AI_400001F" Type="Decimal" Precision="8" Scale="3" />
+          <Property Name="P1AI_400011F" Type="Decimal" Precision="8" Scale="3" />
+          <Property Name="P1AI_400021F" Type="Decimal" Precision="8" Scale="3" />
+          <Property Name="P1AI_400031F" Type="Decimal" Precision="8" Scale="3" />
+          <Property Name="P1AI_400041F" Type="Decimal" Precision="8" Scale="3" />
+          <Property Name="P1AI_400051F" Type="Decimal" Precision="8" Scale="3" />
+          <Property Name="P1AI_400061F" Type="Decimal" Precision="8" Scale="3" />
+          <Property Name="P1AI_400071F" Type="Decimal" Precision="8" Scale="3" />
+          <Property Name="P1AI_400081F" Type="Decimal" Precision="8" Scale="3" />
+          <Property Name="P1AI_400091F" Type="Decimal" Precision="8" Scale="3" />
+          <Property Name="P1AI_400101F" Type="Decimal" Precision="8" Scale="3" />
+          <Property Name="P1AI_400111F" Type="Decimal" Precision="8" Scale="3" />
+          <Property Name="P1AI_400121F" Type="Decimal" Precision="8" Scale="3" />
+          <Property Name="P1AI_400131F" Type="Decimal" Precision="8" Scale="3" />
+          <Property Name="P1AI_400141F" Type="Decimal" Precision="8" Scale="3" />
+          <Property Name="P1AI_400291F" Type="Decimal" Precision="8" Scale="3" />
+          <Property Name="P1AI_400601F" Type="Decimal" Precision="8" Scale="3" />
+          <Property Name="P1AI_400611F" Type="Decimal" Precision="8" Scale="3" />
+          <Property Name="P1AI_400621F" Type="Decimal" Precision="8" Scale="3" />
+          <Property Name="P1AI_400631F" Type="Decimal" Precision="8" Scale="3" />
+          <Property Name="P3AI_401141F" Type="Decimal" Precision="8" Scale="3" />
+          <Property Name="P3AI_401151F" Type="Decimal" Precision="8" Scale="3" />
+          <Property Name="P3AI_401891F" Type="Decimal" Precision="8" Scale="3" />
+          <Property Name="P3AI_401901F" Type="Decimal" Precision="8" Scale="3" />
+          <Property Name="TAEM" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="T_PRODUCE_MAIN_EXHAUST_FAN">
+          <Key>
+            <PropertyRef Name="RECORD_DATE" />
+          </Key>
+          <Property Name="RECORD_DATE" Type="DateTime" Nullable="false" />
+          <Property Name="P4AI_400011F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400021F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400031F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400041F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400051F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400061F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400071F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400081F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400091F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400101F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400111F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400121F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400131F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400141F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400151F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400161F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400171F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400181F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400191F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400201F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400211F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400221F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400231F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400241F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400251F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400261F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400271F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400281F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400291F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400301F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400311F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400321F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400331F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400341F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400351F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400361F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400371F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400381F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400391F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400401F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400411F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400421F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400431F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400441F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400451F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400461F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400471F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400481F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400491F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400501F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400511F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400521F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400531F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400541F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400551F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400561F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400571F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400581F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400591F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400601F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400611F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400621F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400631F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400641F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400651F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400661F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400671F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400681F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400691F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400701F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400711F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400721F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400731F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400741F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400751F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400761F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400771F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400781F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400791F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400801F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400811F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400821F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400831F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400841F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400851F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400861F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400871F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400881F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400891F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400901F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400911F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400921F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400931F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400941F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400951F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400961F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400971F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_401611F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_401621F" Type="Decimal" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="T_PRODUCE_OPERATIONAL_TEMP_LOG">
+          <Key>
+            <PropertyRef Name="RECORD_DATE" />
+          </Key>
+          <Property Name="RECORD_DATE" Type="DateTime" Nullable="false" />
+          <Property Name="P3AI_400011F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P3AI_400021F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P3AI_400051F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P3AI_400061F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCNYAI_406000F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCNYAI_406010F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCNYAI_406020F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCNYAI_406030F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCNYAI_406040F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCNYAI_406050F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P3AI_400521F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P3AI_400531F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P3AI_401291F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P3AI_401791F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P3AI_402921F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P3AI_402931F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P3AI_402941F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P3AI_402951F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P3AI_402961F" Type="Decimal" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="T_PRODUCE_TUOLIU_AZ">
+          <Key>
+            <PropertyRef Name="RECORD_DATE" />
+          </Key>
+          <Property Name="RECORD_DATE" Type="DateTime" Nullable="false" />
+          <Property Name="AZ_ASBCKGDYL" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="AZ_ASBCKGDLL" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="AZ_ASZFQCKYL" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="AZ_ASZFQCKWD" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="AZ_ASZFQYW" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="AZ_XSFCKLL" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="AZ_AKHHQCKYL" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="AZ_AKHHQCKWD" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="AZ_ZQWD" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="AZ_ZQYL" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="AZ_ZQLL" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CW_YQ_QQYL1" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CW_YQ_QQYL2" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CW_YQ_HRJKYL1" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CW_YQ_HRJKYL2" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CW_YQ_HRCKYL" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CW_YQ_ZYFJCKYL" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CW_YQ_QQTJF_KD1" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CW_YQ_QQTJF_KD2" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CW_YQ_LFF_KD1" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CW_YQ_XFTCKYQYL" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CW_YQ_XTYC" Type="Decimal" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="T_PRODUCE_TUOLIU_CEMS">
+          <Key>
+            <PropertyRef Name="RECORD_DATE" />
+          </Key>
+          <Property Name="RECORD_DATE" Type="DateTime" Nullable="false" />
+          <Property Name="RK_DYHW_NOX" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CK_DYHW_NOX" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="RK_SO2" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CK_SO2" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="RK_FC" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CK_FC" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="RK_YQHL" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CK_YQHL" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="RK_SD" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CK_SD" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="RK_LL" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CK_LL" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="RK_YQWD" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CK_YQWD" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="RK_YL" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CK_YL" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="NOX_CY" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="SO2_CY" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="DUST_CY" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="QHR_VALUE" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="NOX_C" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="SO2_C" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="DUST_C" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CMS_DUST1" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CMS_DUST2" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CMS_DUST3" Type="Decimal" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="T_PRODUCE_TUOLIU_NYJZ">
+          <Key>
+            <PropertyRef Name="RECORD_DATE" />
+          </Key>
+          <Property Name="RECORD_DATE" Type="DateTime" Nullable="false" />
+          <Property Name="NYJZ_ASSSLL" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="NYJZ_ASLJLL" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="NYJZ_RHSSSLL" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="NYJZ_RHSLJLL" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="NYJZ_ZQSSLL" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="NYJZ_FQCKSSLL" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="NYJZ_FQCKLJLL" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="NYJZ_DQZGSSLL" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="NYJZ_YSKQSSLL" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="NYJZ_XHSSSLL" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="NYJZ_XHSLJLL" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="NYJZ_TRQSSLL" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="NYJZ_TRQLJLL" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="NYJZ_GLMQSSLL" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="NYJZ_GLMQLJLL" Type="Decimal" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="T_PRODUCE_TUOLIU_ZYFJ">
+          <Key>
+            <PropertyRef Name="RECORD_DATE" />
+          </Key>
+          <Property Name="RECORD_DATE" Type="DateTime" Nullable="false" />
+          <Property Name="CW_ZYFJ_DJDZ3_WD" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CW_ZYFJ_DJZC1_WD" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CW_ZYFJ_WD" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CW_ZYFJ_FJZD" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CW_ZYFJ_DJZD" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CW_ZYFJ_DJDL" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CW_ZYFJ_TJF_KD" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CW_ZYFJ_TJF_SKD" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CW_XTWD_HRQJKYQWD_A" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CW_XTWD_HRQCKYQWD_A" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CW_XTWD_ZYFJCKWD1_A" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CW_XTWD_ZYFJCKWD2_A" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CW_XTWD_HRQJKYQWD_B" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CW_XTWD_HRQCKYQWD_B" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CW_XTWD_ZYFJCKWD1_B" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CW_XTWD_ZYFJCKWD2_B" Type="Decimal" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="T_ENERGY_CONSUME">
+          <Key>
+            <PropertyRef Name="RECORD_DATE" />
+          </Key>
+          <Property Name="RECORD_DATE" Type="DateTime" Nullable="false" />
+          <Property Name="P3AI_405651F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P3AI_405661F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P3AI_405671F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCNYAI_406006F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCNYAI_406016F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCNYAI_406026F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCNYAI_406036F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCNYAI_406046F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCNYAI_406056F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCNYAI_408206F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCNYAI_408346F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P1AI_408411F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P2AI_408721F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P3AI_405781F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P3AI_405791F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCNYAI_408306F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCNYAI_408436F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCNYAI_408336F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCNYAI_408466F" Type="Decimal" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="T_PRODUCE_SINTER_SCRB_CENTER">
+          <Key>
+            <PropertyRef Name="RECORD_DATE" />
+          </Key>
+          <Property Name="RECORD_DATE" Type="DateTime" Nullable="false" />
+          <Property Name="FEO_CENTER" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="R_CENTER" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="T_PRODUCE_OPERATIONAL_LOG">
+          <Key>
+            <PropertyRef Name="RECORD_DATE" />
+          </Key>
+          <Property Name="RECORD_DATE" Type="DateTime" Nullable="false" />
+          <Property Name="P3AI_401071F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P3AI_401081F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P3AI_401091F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P3AI_401101F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P3AI_401111F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P3AI_401121F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P3AI_401131F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P3AI_401141F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P3AI_401151F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P3AI_401161F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P3AI_401171F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P3AI_401301F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P3AI_401361F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P3AI_401761F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P3AI_401771F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P3AI_402331F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P3AI_402341F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCNYAI_406002F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCNYAI_406012F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCNYAI_406022F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCNYAI_406032F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCNYAI_406042F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCNYAI_406052F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCNYAI_406004F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCNYAI_406014F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCNYAI_406024F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCNYAI_406034F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCNYAI_406044F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCNYAI_406054F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P3AI_401331F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P3AI_401341F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P3AI_401351F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P3AI_401951F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P3AI_401961F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P3AI_405317F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P3AI_401011F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P3AI_401021F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P3AI_401031F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P3AI_401041F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P3AI_401051F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P3AI_401061F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P3AI_400961F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P3AI_400971F" Type="Decimal" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="T_MATERIAL_TEAM_YIELDGGL">
+          <Key>
+            <PropertyRef Name="RECORD_ID" />
+          </Key>
+          <Property Name="RECORD_ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="RECORD_DATE" Type="DateTime" />
+          <Property Name="WP_NO" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="WP_NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="TEAM_BEGIN_TIME" Type="DateTime" />
+          <Property Name="TEAM_END_TIME" Type="DateTime" />
+          <Property Name="YIELD_SUM" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="RECORD_NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SHIFT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="TEAM" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="FLAG" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="T_PRODUCE_MAIN_EXHAUST_DH">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="RECORD_DATE" Type="DateTime" />
+          <Property Name="P4AI_400261F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="P4AI_400271F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="YIELD_SUM" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="ZHUCHOULL_DH" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="TEAM" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="SHIFT" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="FAN_SUM" Type="Decimal" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="T_PRODUCE_GAOLULC">
+          <Key>
+            <PropertyRef Name="RECORD_DATE" />
+          </Key>
+          <Property Name="RECORD_DATE" Type="DateTime" Nullable="false" />
+          <Property Name="GL1_LC_SJ1" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="GL1_LC_SJ2" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="GL1_LC_SJ3" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="GL1_LC_SJ4" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="GL1_LC_SJ5" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="GL1_LC_SJ6" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="GL1_LC_SJ7" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="GL1_LC_SJ8" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="GL1_LC_SJ9" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="GL1_LC_SJ10" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="GL2_LC_SJ1" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="GL2_LC_SJ2" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="GL2_LC_SJ3" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="GL2_LC_SJ4" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="GL2_LC_SJ5" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="GL2_LC_SJ6" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="GL2_LC_SJ7" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="GL2_LC_SJ8" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="GL2_LC_SJ9" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="GL2_LC_SJ10" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="T6_LC_SJ1" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="T6_LC_SJ2" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="T6_LC_SJ3" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="T6_LC_SJ4" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="T6_LC_SJ5" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="GL1_AVG" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="GL2_AVG" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="T6_AVG" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="T7_AVG" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="T7_LC_SJ1" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="T7_LC_SJ2" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="T7_LC_SJ3" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="T7_LC_SJ4" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="T7_LC_SJ5" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="T7_LC_SJ6" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="T7_LC_SJ7" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="T7_LC_SJ8" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="T7_LC_SJ9" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="T7_LC_SJ10" Type="Decimal" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="T_PRODUCE_YANDAOXUNHUAN">
+          <Key>
+            <PropertyRef Name="RECORD_DATE" />
+          </Key>
+          <Property Name="RECORD_DATE" Type="DateTime" Nullable="false" />
+          <Property Name="PLCYDXHAI_400567F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400569F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400571F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400573F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400575F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400577F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400619F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400621F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400623F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400625F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400627F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400629F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400541F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400543F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400545F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400547F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400549F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400551F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400861F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400609F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400529F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400531F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400509F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400511F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400563F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400555F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400611F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400533F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400613F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400605F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400535F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400537F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400525F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400527F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400565F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400615F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400557F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400617F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400539F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400559F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400579F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400581F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400583F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400585F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400587F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400589F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400591F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400593F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400595F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400597F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400599F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400601F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400603F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400417F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400419F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400421F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400423F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400425F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400427F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400429F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400433F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400435F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400437F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400439F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400441F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400443F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400497F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400499F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400501F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400503F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400505F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400507F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400513F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400515F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400517F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400519F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400521F" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PLCYDXHAI_400523F" Type="Decimal" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="T_PRODUCE_SINTER_SCRB">
+          <Key>
+            <PropertyRef Name="RECORD_ID" />
+          </Key>
+          <Property Name="RECORD_ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="RECORD_DATE" Type="DateTime" />
+          <Property Name="TEAM" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="CL_DAY" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CL_SUM" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="XS_DAY" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="XS_SUM" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TSCL_DAY" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="TSCL_SUM" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="ZQCL_DAY" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ZQCL_SUM" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="FKL_DAY" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="FKL_SUM" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="CKL_DAY" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="CKL_SUM" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="RLTS_DAY" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="RLTS_SUM" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="FEO_WDL_DAY" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="FEO_WDL_SUM" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="R_WDL_DAY" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="R_WDL_SUM" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="YJPL_DAY" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="YJPL_SUM" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="YZPL_DAY" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="YZPL_SUM" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SHIFT" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="FEO_YJP_DAY" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="FEO_YJP_SUM" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="T_PRODUCE_SINTER_SCRB1">
+          <Key>
+            <PropertyRef Name="RECORD_ID" />
+          </Key>
+          <Property Name="RECORD_ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="RECORD_DATE" Type="DateTime" />
+          <Property Name="TEAM" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="LCHD" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="JS" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="DYDFY" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="FQWD" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="KQWD" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="DHWD" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="LTFY" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="MQYL" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="KQYL" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="YHSF" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="EHSF" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="EHLW" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="ERLD" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="RL_3M" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="RL_H2O" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="GTRH" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="GLMQXH" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="TRQXH" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="DH" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="HL_SO2" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="HL_NO" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="HL_FC" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="DH_CO" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="YQYL_1_AVG" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="YQYL_2_AVG" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="SHIFT" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="ZYDWD_AVG" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="YYDWD_AVG" Type="Decimal" Precision="18" Scale="3" />
+        </EntityType>
+        <EntityType Name="T_PRODUCE_SINTER_SCRB2">
+          <Key>
+            <PropertyRef Name="RECORD_ID" />
+          </Key>
+          <Property Name="RECORD_ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="RECORD_DATE" Type="DateTime" />
+          <Property Name="TEAM" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="PISHU" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="TFE" Type="Decimal" Precision="13" Scale="2" />
+          <Property Name="FEO" Type="Decimal" Precision="13" Scale="2" />
+          <Property Name="SIO2" Type="Decimal" Precision="13" Scale="2" />
+          <Property Name="CAO" Type="Decimal" Precision="13" Scale="2" />
+          <Property Name="MGO" Type="Decimal" Precision="13" Scale="2" />
+          <Property Name="AL2O3" Type="Decimal" Precision="13" Scale="2" />
+          <Property Name="R" Type="Decimal" Precision="13" Scale="2" />
+          <Property Name="TI6Z3" Type="Decimal" Precision="13" Scale="2" />
+          <Property Name="KMZS0Z5" Type="Decimal" Precision="13" Scale="2" />
+          <Property Name="JIANXIU" Type="Decimal" Precision="13" Scale="2" />
+          <Property Name="JIXIE" Type="Decimal" Precision="13" Scale="2" />
+          <Property Name="DIANQI" Type="Decimal" Precision="13" Scale="2" />
+          <Property Name="CAOZUO" Type="Decimal" Precision="13" Scale="2" />
+          <Property Name="YLC" Type="Decimal" Precision="13" Scale="2" />
+          <Property Name="GAOLU" Type="Decimal" Precision="13" Scale="2" />
+          <Property Name="DONGLI" Type="Decimal" Precision="13" Scale="2" />
+          <Property Name="QTWY" Type="Decimal" Precision="13" Scale="2" />
+          <Property Name="ZYSJ_DAY" Type="Decimal" Precision="13" Scale="2" />
+          <Property Name="ZYSJ_SUM" Type="Decimal" Precision="13" Scale="2" />
+          <Property Name="ZYL_DAY" Type="Decimal" Precision="13" Scale="2" />
+          <Property Name="ZYL_SUM" Type="Decimal" Precision="13" Scale="2" />
+          <Property Name="SHIFT" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="T_MATERIAL_RADIO_REMARK">
+          <Key>
+            <PropertyRef Name="PBD_NO" />
+          </Key>
+          <Property Name="RECORD_DATE" Type="DateTime" />
+          <Property Name="PBD_NO" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="RECORD_PERSON" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MATERIAL1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PERCENT1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MATERIAL2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PERCENT2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MATERIAL3" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PERCENT3" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MATERIAL4" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PERCENT4" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MATERIAL5" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PERCENT5" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MATERIAL6" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PERCENT6" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MATERIAL7" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PERCENT7" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MATERIAL8" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PERCENT8" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MATERIAL9" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PERCENT9" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="REMARK" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PROMStoreContainer" CdmEntityContainer="T_PROM">
+          <EntitySetMapping Name="T_PRODUCE_FEEDING_INSTRUCTIONS">
+            <EntityTypeMapping TypeName="PROM.T_PRODUCE_FEEDING_INSTRUCTIONS">
+              <MappingFragment StoreEntitySet="T_PRODUCE_FEEDING_INSTRUCTIONS">
+                <ScalarProperty Name="FEEDING_CHOOSE" ColumnName="FEEDING_CHOOSE" />
+                <ScalarProperty Name="CONFIRMED_DATE" ColumnName="CONFIRMED_DATE" />
+                <ScalarProperty Name="CONFIRMED_PERSON" ColumnName="CONFIRMED_PERSON" />
+                <ScalarProperty Name="WHETHER_CONFIRMED" ColumnName="WHETHER_CONFIRMED" />
+                <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+                <ScalarProperty Name="SENDING_DATE" ColumnName="SENDING_DATE" />
+                <ScalarProperty Name="SENDING_PERSON" ColumnName="SENDING_PERSON" />
+                <ScalarProperty Name="FEEDING_KIND" ColumnName="FEEDING_KIND" />
+                <ScalarProperty Name="FEEDING_DATE" ColumnName="FEEDING_DATE" />
+                <ScalarProperty Name="OPERATION_AREA" ColumnName="OPERATION_AREA" />
+                <ScalarProperty Name="INSTRUCTIONS_NO" ColumnName="INSTRUCTIONS_NO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_QUALITY_MIX_PHY_INSET">
+            <EntityTypeMapping TypeName="PROM.T_QUALITY_MIX_PHY_INSET">
+              <MappingFragment StoreEntitySet="T_QUALITY_MIX_PHY_INSET">
+                <ScalarProperty Name="GRAIN_05" ColumnName="GRAIN_05" />
+                <ScalarProperty Name="GRAIN_5" ColumnName="GRAIN_5" />
+                <ScalarProperty Name="RECORD_DATE" ColumnName="RECORD_DATE" />
+                <ScalarProperty Name="RECORD_PERSON" ColumnName="RECORD_PERSON" />
+                <ScalarProperty Name="GRAIN_3" ColumnName="GRAIN_3" />
+                <ScalarProperty Name="GRAIN_COMP_63" ColumnName="GRAIN_COMP_63" />
+                <ScalarProperty Name="GRAIN_COMP_1" ColumnName="GRAIN_COMP_1" />
+                <ScalarProperty Name="GRAIN_COMP_31" ColumnName="GRAIN_COMP_31" />
+                <ScalarProperty Name="GRAIN_COMP_3" ColumnName="GRAIN_COMP_3" />
+                <ScalarProperty Name="WATER" ColumnName="WATER" />
+                <ScalarProperty Name="FEED_TEM" ColumnName="FEED_TEM" />
+                <ScalarProperty Name="FEED_NAME" ColumnName="FEED_NAME" />
+                <ScalarProperty Name="SHIFT" ColumnName="SHIFT" />
+                <ScalarProperty Name="WP_NO" ColumnName="WP_NO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_INSERT_CHANGE_SHIFT">
+            <EntityTypeMapping TypeName="PROM.T_INSERT_CHANGE_SHIFT">
+              <MappingFragment StoreEntitySet="T_INSERT_CHANGE_SHIFT">
+                <ScalarProperty Name="RECORD_PERSON" ColumnName="RECORD_PERSON" />
+                <ScalarProperty Name="SHIFT_CONTENT" ColumnName="SHIFT_CONTENT" />
+                <ScalarProperty Name="SHIFT" ColumnName="SHIFT" />
+                <ScalarProperty Name="OPERATION_AREA" ColumnName="OPERATION_AREA" />
+                <ScalarProperty Name="RECORD_DATE" ColumnName="RECORD_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_INSERT_DEVICE_FAULT">
+            <EntityTypeMapping TypeName="PROM.T_INSERT_DEVICE_FAULT">
+              <MappingFragment StoreEntitySet="T_INSERT_DEVICE_FAULT">
+                <ScalarProperty Name="FLAG" ColumnName="FLAG" />
+                <ScalarProperty Name="RECORD_DATE" ColumnName="RECORD_DATE" />
+                <ScalarProperty Name="WP_NO" ColumnName="WP_NO" />
+                <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+                <ScalarProperty Name="RECORDER" ColumnName="RECORDER" />
+                <ScalarProperty Name="FAULT_ENDTIME" ColumnName="FAULT_ENDTIME" />
+                <ScalarProperty Name="FAULT_ALLTIME" ColumnName="FAULT_ALLTIME" />
+                <ScalarProperty Name="ACCEPTANCE_TIME" ColumnName="ACCEPTANCE_TIME" />
+                <ScalarProperty Name="ACCEPTANCE_MAN" ColumnName="ACCEPTANCE_MAN" />
+                <ScalarProperty Name="FAULT_MADEMAN" ColumnName="FAULT_MADEMAN" />
+                <ScalarProperty Name="FAULT_NAME" ColumnName="FAULT_NAME" />
+                <ScalarProperty Name="FAULT_STARTTIME" ColumnName="FAULT_STARTTIME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_PRODUCE_BELLOWS_PRESSURE">
+            <EntityTypeMapping TypeName="PROM.T_PRODUCE_BELLOWS_PRESSURE">
+              <MappingFragment StoreEntitySet="T_PRODUCE_BELLOWS_PRESSURE">
+                <ScalarProperty Name="ROW_DESCRIBE" ColumnName="ROW_DESCRIBE" />
+                <ScalarProperty Name="SHIFTS" ColumnName="SHIFTS" />
+                <ScalarProperty Name="TEAM" ColumnName="TEAM" />
+                <ScalarProperty Name="BELLOWS_PRESSURE21" ColumnName="BELLOWS_PRESSURE21" />
+                <ScalarProperty Name="BELLOWS_PRESSURE20" ColumnName="BELLOWS_PRESSURE20" />
+                <ScalarProperty Name="BELLOWS_PRESSURE19" ColumnName="BELLOWS_PRESSURE19" />
+                <ScalarProperty Name="BELLOWS_PRESSURE18" ColumnName="BELLOWS_PRESSURE18" />
+                <ScalarProperty Name="BELLOWS_PRESSURE17" ColumnName="BELLOWS_PRESSURE17" />
+                <ScalarProperty Name="BELLOWS_PRESSURE16" ColumnName="BELLOWS_PRESSURE16" />
+                <ScalarProperty Name="BELLOWS_PRESSURE15" ColumnName="BELLOWS_PRESSURE15" />
+                <ScalarProperty Name="BELLOWS_PRESSURE14" ColumnName="BELLOWS_PRESSURE14" />
+                <ScalarProperty Name="BELLOWS_PRESSURE13" ColumnName="BELLOWS_PRESSURE13" />
+                <ScalarProperty Name="BELLOWS_PRESSURE12" ColumnName="BELLOWS_PRESSURE12" />
+                <ScalarProperty Name="BELLOWS_PRESSURE11" ColumnName="BELLOWS_PRESSURE11" />
+                <ScalarProperty Name="BELLOWS_PRESSURE10" ColumnName="BELLOWS_PRESSURE10" />
+                <ScalarProperty Name="BELLOWS_PRESSURE9" ColumnName="BELLOWS_PRESSURE9" />
+                <ScalarProperty Name="BELLOWS_PRESSURE8" ColumnName="BELLOWS_PRESSURE8" />
+                <ScalarProperty Name="BELLOWS_PRESSURE7" ColumnName="BELLOWS_PRESSURE7" />
+                <ScalarProperty Name="BELLOWS_PRESSURE6" ColumnName="BELLOWS_PRESSURE6" />
+                <ScalarProperty Name="BELLOWS_PRESSURE5" ColumnName="BELLOWS_PRESSURE5" />
+                <ScalarProperty Name="BELLOWS_PRESSURE4" ColumnName="BELLOWS_PRESSURE4" />
+                <ScalarProperty Name="BELLOWS_PRESSURE3" ColumnName="BELLOWS_PRESSURE3" />
+                <ScalarProperty Name="BELLOWS_PRESSURE2" ColumnName="BELLOWS_PRESSURE2" />
+                <ScalarProperty Name="BELLOWS_PRESSURE1" ColumnName="BELLOWS_PRESSURE1" />
+                <ScalarProperty Name="DATE_ID" ColumnName="DATE_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_PRODUCE_BELLOWS_TEMPERATURE">
+            <EntityTypeMapping TypeName="PROM.T_PRODUCE_BELLOWS_TEMPERATURE">
+              <MappingFragment StoreEntitySet="T_PRODUCE_BELLOWS_TEMPERATURE">
+                <ScalarProperty Name="ROW_DESCRIBE" ColumnName="ROW_DESCRIBE" />
+                <ScalarProperty Name="SHIFTS" ColumnName="SHIFTS" />
+                <ScalarProperty Name="TEAM" ColumnName="TEAM" />
+                <ScalarProperty Name="BELLOWS_TEMPERATURE21" ColumnName="BELLOWS_TEMPERATURE21" />
+                <ScalarProperty Name="BELLOWS_TEMPERATURE20" ColumnName="BELLOWS_TEMPERATURE20" />
+                <ScalarProperty Name="BELLOWS_TEMPERATURE19" ColumnName="BELLOWS_TEMPERATURE19" />
+                <ScalarProperty Name="BELLOWS_TEMPERATURE18" ColumnName="BELLOWS_TEMPERATURE18" />
+                <ScalarProperty Name="BELLOWS_TEMPERATURE17" ColumnName="BELLOWS_TEMPERATURE17" />
+                <ScalarProperty Name="BELLOWS_TEMPERATURE16" ColumnName="BELLOWS_TEMPERATURE16" />
+                <ScalarProperty Name="BELLOWS_TEMPERATURE15" ColumnName="BELLOWS_TEMPERATURE15" />
+                <ScalarProperty Name="BELLOWS_TEMPERATURE14" ColumnName="BELLOWS_TEMPERATURE14" />
+                <ScalarProperty Name="BELLOWS_TEMPERATURE13" ColumnName="BELLOWS_TEMPERATURE13" />
+                <ScalarProperty Name="BELLOWS_TEMPERATURE12" ColumnName="BELLOWS_TEMPERATURE12" />
+                <ScalarProperty Name="BELLOWS_TEMPERATURE11" ColumnName="BELLOWS_TEMPERATURE11" />
+                <ScalarProperty Name="BELLOWS_TEMPERATURE10" ColumnName="BELLOWS_TEMPERATURE10" />
+                <ScalarProperty Name="BELLOWS_TEMPERATURE9" ColumnName="BELLOWS_TEMPERATURE9" />
+                <ScalarProperty Name="BELLOWS_TEMPERATURE8" ColumnName="BELLOWS_TEMPERATURE8" />
+                <ScalarProperty Name="BELLOWS_TEMPERATURE7" ColumnName="BELLOWS_TEMPERATURE7" />
+                <ScalarProperty Name="BELLOWS_TEMPERATURE6" ColumnName="BELLOWS_TEMPERATURE6" />
+                <ScalarProperty Name="BELLOWS_TEMPERATURE5" ColumnName="BELLOWS_TEMPERATURE5" />
+                <ScalarProperty Name="BELLOWS_TEMPERATURE4" ColumnName="BELLOWS_TEMPERATURE4" />
+                <ScalarProperty Name="BELLOWS_TEMPERATURE3" ColumnName="BELLOWS_TEMPERATURE3" />
+                <ScalarProperty Name="BELLOWS_TEMPERATURE2" ColumnName="BELLOWS_TEMPERATURE2" />
+                <ScalarProperty Name="BELLOWS_TEMPERATURE1" ColumnName="BELLOWS_TEMPERATURE1" />
+                <ScalarProperty Name="DATE_ID" ColumnName="DATE_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="F_QUAITY_ANALYSE1" FunctionName="PROM.Store.F_QUAITY_ANALYSE" />
+          <EntitySetMapping Name="T_PRODUCE_MIX_DEVICE">
+            <EntityTypeMapping TypeName="PROM.T_PRODUCE_MIX_DEVICE">
+              <MappingFragment StoreEntitySet="T_PRODUCE_MIX_DEVICE">
+                <ScalarProperty Name="P2AI_401121F" ColumnName="P2AI_401121F" />
+                <ScalarProperty Name="P2AI_400611F" ColumnName="P2AI_400611F" />
+                <ScalarProperty Name="P2AI_401111F" ColumnName="P2AI_401111F" />
+                <ScalarProperty Name="P2AI_400621F" ColumnName="P2AI_400621F" />
+                <ScalarProperty Name="P2AI_400591F" ColumnName="P2AI_400591F" />
+                <ScalarProperty Name="P2AI_401541F" ColumnName="P2AI_401541F" />
+                <ScalarProperty Name="P2AI_401221F" ColumnName="P2AI_401221F" />
+                <ScalarProperty Name="P2AI_400321F" ColumnName="P2AI_400321F" />
+                <ScalarProperty Name="P2AI_400331F" ColumnName="P2AI_400331F" />
+                <ScalarProperty Name="P2AI_400301F" ColumnName="P2AI_400301F" />
+                <ScalarProperty Name="P2AI_400371F" ColumnName="P2AI_400371F" />
+                <ScalarProperty Name="P2AI_400341F" ColumnName="P2AI_400341F" />
+                <ScalarProperty Name="P2AI_401131F" ColumnName="P2AI_401131F" />
+                <ScalarProperty Name="RECORD_DATE" ColumnName="RECORD_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_BASE_MATERIAL">
+            <EntityTypeMapping TypeName="PROM.T_BASE_MATERIAL">
+              <MappingFragment StoreEntitySet="T_BASE_MATERIAL">
+                <ScalarProperty Name="MODIFIED_MAN" ColumnName="MODIFIED_MAN" />
+                <ScalarProperty Name="MATERIAL_UNIT" ColumnName="MATERIAL_UNIT" />
+                <ScalarProperty Name="MATERIAL_DESCR" ColumnName="MATERIAL_DESCR" />
+                <ScalarProperty Name="MATERIAL_SMALL_TYPE" ColumnName="MATERIAL_SMALL_TYPE" />
+                <ScalarProperty Name="MATTERIAL_BIG_TYPE" ColumnName="MATTERIAL_BIG_TYPE" />
+                <ScalarProperty Name="ERP_TYPE" ColumnName="ERP_TYPE" />
+                <ScalarProperty Name="ISUSE" ColumnName="ISUSE" />
+                <ScalarProperty Name="ISST" ColumnName="ISST" />
+                <ScalarProperty Name="ISBF" ColumnName="ISBF" />
+                <ScalarProperty Name="FAC_NAME" ColumnName="FAC_NAME" />
+                <ScalarProperty Name="FAC_CODE" ColumnName="FAC_CODE" />
+                <ScalarProperty Name="ERP_NAME" ColumnName="ERP_NAME" />
+                <ScalarProperty Name="ERP_CODE" ColumnName="ERP_CODE" />
+                <ScalarProperty Name="RECORD_ID" ColumnName="RECORD_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_PRODUCE_HOPPER_POSITION">
+            <EntityTypeMapping TypeName="PROM.T_PRODUCE_HOPPER_POSITION">
+              <MappingFragment StoreEntitySet="T_PRODUCE_HOPPER_POSITION">
+                <ScalarProperty Name="TAEM" ColumnName="TAEM" />
+                <ScalarProperty Name="P3AI_401901F" ColumnName="P3AI_401901F" />
+                <ScalarProperty Name="P3AI_401891F" ColumnName="P3AI_401891F" />
+                <ScalarProperty Name="P3AI_401151F" ColumnName="P3AI_401151F" />
+                <ScalarProperty Name="P3AI_401141F" ColumnName="P3AI_401141F" />
+                <ScalarProperty Name="P1AI_400631F" ColumnName="P1AI_400631F" />
+                <ScalarProperty Name="P1AI_400621F" ColumnName="P1AI_400621F" />
+                <ScalarProperty Name="P1AI_400611F" ColumnName="P1AI_400611F" />
+                <ScalarProperty Name="P1AI_400601F" ColumnName="P1AI_400601F" />
+                <ScalarProperty Name="P1AI_400291F" ColumnName="P1AI_400291F" />
+                <ScalarProperty Name="P1AI_400141F" ColumnName="P1AI_400141F" />
+                <ScalarProperty Name="P1AI_400131F" ColumnName="P1AI_400131F" />
+                <ScalarProperty Name="P1AI_400121F" ColumnName="P1AI_400121F" />
+                <ScalarProperty Name="P1AI_400111F" ColumnName="P1AI_400111F" />
+                <ScalarProperty Name="P1AI_400101F" ColumnName="P1AI_400101F" />
+                <ScalarProperty Name="P1AI_400091F" ColumnName="P1AI_400091F" />
+                <ScalarProperty Name="P1AI_400081F" ColumnName="P1AI_400081F" />
+                <ScalarProperty Name="P1AI_400071F" ColumnName="P1AI_400071F" />
+                <ScalarProperty Name="P1AI_400061F" ColumnName="P1AI_400061F" />
+                <ScalarProperty Name="P1AI_400051F" ColumnName="P1AI_400051F" />
+                <ScalarProperty Name="P1AI_400041F" ColumnName="P1AI_400041F" />
+                <ScalarProperty Name="P1AI_400031F" ColumnName="P1AI_400031F" />
+                <ScalarProperty Name="P1AI_400021F" ColumnName="P1AI_400021F" />
+                <ScalarProperty Name="P1AI_400011F" ColumnName="P1AI_400011F" />
+                <ScalarProperty Name="P1AI_400001F" ColumnName="P1AI_400001F" />
+                <ScalarProperty Name="RECORD_DATE" ColumnName="RECORD_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_PRODUCE_MAIN_EXHAUST_FAN">
+            <EntityTypeMapping TypeName="PROM.T_PRODUCE_MAIN_EXHAUST_FAN">
+              <MappingFragment StoreEntitySet="T_PRODUCE_MAIN_EXHAUST_FAN">
+                <ScalarProperty Name="P4AI_401621F" ColumnName="P4AI_401621F" />
+                <ScalarProperty Name="P4AI_401611F" ColumnName="P4AI_401611F" />
+                <ScalarProperty Name="P4AI_400971F" ColumnName="P4AI_400971F" />
+                <ScalarProperty Name="P4AI_400961F" ColumnName="P4AI_400961F" />
+                <ScalarProperty Name="P4AI_400951F" ColumnName="P4AI_400951F" />
+                <ScalarProperty Name="P4AI_400941F" ColumnName="P4AI_400941F" />
+                <ScalarProperty Name="P4AI_400931F" ColumnName="P4AI_400931F" />
+                <ScalarProperty Name="P4AI_400921F" ColumnName="P4AI_400921F" />
+                <ScalarProperty Name="P4AI_400911F" ColumnName="P4AI_400911F" />
+                <ScalarProperty Name="P4AI_400901F" ColumnName="P4AI_400901F" />
+                <ScalarProperty Name="P4AI_400891F" ColumnName="P4AI_400891F" />
+                <ScalarProperty Name="P4AI_400881F" ColumnName="P4AI_400881F" />
+                <ScalarProperty Name="P4AI_400871F" ColumnName="P4AI_400871F" />
+                <ScalarProperty Name="P4AI_400861F" ColumnName="P4AI_400861F" />
+                <ScalarProperty Name="P4AI_400851F" ColumnName="P4AI_400851F" />
+                <ScalarProperty Name="P4AI_400841F" ColumnName="P4AI_400841F" />
+                <ScalarProperty Name="P4AI_400831F" ColumnName="P4AI_400831F" />
+                <ScalarProperty Name="P4AI_400821F" ColumnName="P4AI_400821F" />
+                <ScalarProperty Name="P4AI_400811F" ColumnName="P4AI_400811F" />
+                <ScalarProperty Name="P4AI_400801F" ColumnName="P4AI_400801F" />
+                <ScalarProperty Name="P4AI_400791F" ColumnName="P4AI_400791F" />
+                <ScalarProperty Name="P4AI_400781F" ColumnName="P4AI_400781F" />
+                <ScalarProperty Name="P4AI_400771F" ColumnName="P4AI_400771F" />
+                <ScalarProperty Name="P4AI_400761F" ColumnName="P4AI_400761F" />
+                <ScalarProperty Name="P4AI_400751F" ColumnName="P4AI_400751F" />
+                <ScalarProperty Name="P4AI_400741F" ColumnName="P4AI_400741F" />
+                <ScalarProperty Name="P4AI_400731F" ColumnName="P4AI_400731F" />
+                <ScalarProperty Name="P4AI_400721F" ColumnName="P4AI_400721F" />
+                <ScalarProperty Name="P4AI_400711F" ColumnName="P4AI_400711F" />
+                <ScalarProperty Name="P4AI_400701F" ColumnName="P4AI_400701F" />
+                <ScalarProperty Name="P4AI_400691F" ColumnName="P4AI_400691F" />
+                <ScalarProperty Name="P4AI_400681F" ColumnName="P4AI_400681F" />
+                <ScalarProperty Name="P4AI_400671F" ColumnName="P4AI_400671F" />
+                <ScalarProperty Name="P4AI_400661F" ColumnName="P4AI_400661F" />
+                <ScalarProperty Name="P4AI_400651F" ColumnName="P4AI_400651F" />
+                <ScalarProperty Name="P4AI_400641F" ColumnName="P4AI_400641F" />
+                <ScalarProperty Name="P4AI_400631F" ColumnName="P4AI_400631F" />
+                <ScalarProperty Name="P4AI_400621F" ColumnName="P4AI_400621F" />
+                <ScalarProperty Name="P4AI_400611F" ColumnName="P4AI_400611F" />
+                <ScalarProperty Name="P4AI_400601F" ColumnName="P4AI_400601F" />
+                <ScalarProperty Name="P4AI_400591F" ColumnName="P4AI_400591F" />
+                <ScalarProperty Name="P4AI_400581F" ColumnName="P4AI_400581F" />
+                <ScalarProperty Name="P4AI_400571F" ColumnName="P4AI_400571F" />
+                <ScalarProperty Name="P4AI_400561F" ColumnName="P4AI_400561F" />
+                <ScalarProperty Name="P4AI_400551F" ColumnName="P4AI_400551F" />
+                <ScalarProperty Name="P4AI_400541F" ColumnName="P4AI_400541F" />
+                <ScalarProperty Name="P4AI_400531F" ColumnName="P4AI_400531F" />
+                <ScalarProperty Name="P4AI_400521F" ColumnName="P4AI_400521F" />
+                <ScalarProperty Name="P4AI_400511F" ColumnName="P4AI_400511F" />
+                <ScalarProperty Name="P4AI_400501F" ColumnName="P4AI_400501F" />
+                <ScalarProperty Name="P4AI_400491F" ColumnName="P4AI_400491F" />
+                <ScalarProperty Name="P4AI_400481F" ColumnName="P4AI_400481F" />
+                <ScalarProperty Name="P4AI_400471F" ColumnName="P4AI_400471F" />
+                <ScalarProperty Name="P4AI_400461F" ColumnName="P4AI_400461F" />
+                <ScalarProperty Name="P4AI_400451F" ColumnName="P4AI_400451F" />
+                <ScalarProperty Name="P4AI_400441F" ColumnName="P4AI_400441F" />
+                <ScalarProperty Name="P4AI_400431F" ColumnName="P4AI_400431F" />
+                <ScalarProperty Name="P4AI_400421F" ColumnName="P4AI_400421F" />
+                <ScalarProperty Name="P4AI_400411F" ColumnName="P4AI_400411F" />
+                <ScalarProperty Name="P4AI_400401F" ColumnName="P4AI_400401F" />
+                <ScalarProperty Name="P4AI_400391F" ColumnName="P4AI_400391F" />
+                <ScalarProperty Name="P4AI_400381F" ColumnName="P4AI_400381F" />
+                <ScalarProperty Name="P4AI_400371F" ColumnName="P4AI_400371F" />
+                <ScalarProperty Name="P4AI_400361F" ColumnName="P4AI_400361F" />
+                <ScalarProperty Name="P4AI_400351F" ColumnName="P4AI_400351F" />
+                <ScalarProperty Name="P4AI_400341F" ColumnName="P4AI_400341F" />
+                <ScalarProperty Name="P4AI_400331F" ColumnName="P4AI_400331F" />
+                <ScalarProperty Name="P4AI_400321F" ColumnName="P4AI_400321F" />
+                <ScalarProperty Name="P4AI_400311F" ColumnName="P4AI_400311F" />
+                <ScalarProperty Name="P4AI_400301F" ColumnName="P4AI_400301F" />
+                <ScalarProperty Name="P4AI_400291F" ColumnName="P4AI_400291F" />
+                <ScalarProperty Name="P4AI_400281F" ColumnName="P4AI_400281F" />
+                <ScalarProperty Name="P4AI_400271F" ColumnName="P4AI_400271F" />
+                <ScalarProperty Name="P4AI_400261F" ColumnName="P4AI_400261F" />
+                <ScalarProperty Name="P4AI_400251F" ColumnName="P4AI_400251F" />
+                <ScalarProperty Name="P4AI_400241F" ColumnName="P4AI_400241F" />
+                <ScalarProperty Name="P4AI_400231F" ColumnName="P4AI_400231F" />
+                <ScalarProperty Name="P4AI_400221F" ColumnName="P4AI_400221F" />
+                <ScalarProperty Name="P4AI_400211F" ColumnName="P4AI_400211F" />
+                <ScalarProperty Name="P4AI_400201F" ColumnName="P4AI_400201F" />
+                <ScalarProperty Name="P4AI_400191F" ColumnName="P4AI_400191F" />
+                <ScalarProperty Name="P4AI_400181F" ColumnName="P4AI_400181F" />
+                <ScalarProperty Name="P4AI_400171F" ColumnName="P4AI_400171F" />
+                <ScalarProperty Name="P4AI_400161F" ColumnName="P4AI_400161F" />
+                <ScalarProperty Name="P4AI_400151F" ColumnName="P4AI_400151F" />
+                <ScalarProperty Name="P4AI_400141F" ColumnName="P4AI_400141F" />
+                <ScalarProperty Name="P4AI_400131F" ColumnName="P4AI_400131F" />
+                <ScalarProperty Name="P4AI_400121F" ColumnName="P4AI_400121F" />
+                <ScalarProperty Name="P4AI_400111F" ColumnName="P4AI_400111F" />
+                <ScalarProperty Name="P4AI_400101F" ColumnName="P4AI_400101F" />
+                <ScalarProperty Name="P4AI_400091F" ColumnName="P4AI_400091F" />
+                <ScalarProperty Name="P4AI_400081F" ColumnName="P4AI_400081F" />
+                <ScalarProperty Name="P4AI_400071F" ColumnName="P4AI_400071F" />
+                <ScalarProperty Name="P4AI_400061F" ColumnName="P4AI_400061F" />
+                <ScalarProperty Name="P4AI_400051F" ColumnName="P4AI_400051F" />
+                <ScalarProperty Name="P4AI_400041F" ColumnName="P4AI_400041F" />
+                <ScalarProperty Name="P4AI_400031F" ColumnName="P4AI_400031F" />
+                <ScalarProperty Name="P4AI_400021F" ColumnName="P4AI_400021F" />
+                <ScalarProperty Name="P4AI_400011F" ColumnName="P4AI_400011F" />
+                <ScalarProperty Name="RECORD_DATE" ColumnName="RECORD_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_PRODUCE_OPERATIONAL_TEMP_LOG">
+            <EntityTypeMapping TypeName="PROM.T_PRODUCE_OPERATIONAL_TEMP_LOG">
+              <MappingFragment StoreEntitySet="T_PRODUCE_OPERATIONAL_TEMP_LOG">
+                <ScalarProperty Name="P3AI_402961F" ColumnName="P3AI_402961F" />
+                <ScalarProperty Name="P3AI_402951F" ColumnName="P3AI_402951F" />
+                <ScalarProperty Name="P3AI_402941F" ColumnName="P3AI_402941F" />
+                <ScalarProperty Name="P3AI_402931F" ColumnName="P3AI_402931F" />
+                <ScalarProperty Name="P3AI_402921F" ColumnName="P3AI_402921F" />
+                <ScalarProperty Name="P3AI_401791F" ColumnName="P3AI_401791F" />
+                <ScalarProperty Name="P3AI_401291F" ColumnName="P3AI_401291F" />
+                <ScalarProperty Name="P3AI_400531F" ColumnName="P3AI_400531F" />
+                <ScalarProperty Name="P3AI_400521F" ColumnName="P3AI_400521F" />
+                <ScalarProperty Name="PLCNYAI_406050F" ColumnName="PLCNYAI_406050F" />
+                <ScalarProperty Name="PLCNYAI_406040F" ColumnName="PLCNYAI_406040F" />
+                <ScalarProperty Name="PLCNYAI_406030F" ColumnName="PLCNYAI_406030F" />
+                <ScalarProperty Name="PLCNYAI_406020F" ColumnName="PLCNYAI_406020F" />
+                <ScalarProperty Name="PLCNYAI_406010F" ColumnName="PLCNYAI_406010F" />
+                <ScalarProperty Name="PLCNYAI_406000F" ColumnName="PLCNYAI_406000F" />
+                <ScalarProperty Name="P3AI_400061F" ColumnName="P3AI_400061F" />
+                <ScalarProperty Name="P3AI_400051F" ColumnName="P3AI_400051F" />
+                <ScalarProperty Name="P3AI_400021F" ColumnName="P3AI_400021F" />
+                <ScalarProperty Name="P3AI_400011F" ColumnName="P3AI_400011F" />
+                <ScalarProperty Name="RECORD_DATE" ColumnName="RECORD_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_PRODUCE_TUOLIU_AZ">
+            <EntityTypeMapping TypeName="PROM.T_PRODUCE_TUOLIU_AZ">
+              <MappingFragment StoreEntitySet="T_PRODUCE_TUOLIU_AZ">
+                <ScalarProperty Name="CW_YQ_XTYC" ColumnName="CW_YQ_XTYC" />
+                <ScalarProperty Name="CW_YQ_XFTCKYQYL" ColumnName="CW_YQ_XFTCKYQYL" />
+                <ScalarProperty Name="CW_YQ_LFF_KD1" ColumnName="CW_YQ_LFF_KD1" />
+                <ScalarProperty Name="CW_YQ_QQTJF_KD2" ColumnName="CW_YQ_QQTJF_KD2" />
+                <ScalarProperty Name="CW_YQ_QQTJF_KD1" ColumnName="CW_YQ_QQTJF_KD1" />
+                <ScalarProperty Name="CW_YQ_ZYFJCKYL" ColumnName="CW_YQ_ZYFJCKYL" />
+                <ScalarProperty Name="CW_YQ_HRCKYL" ColumnName="CW_YQ_HRCKYL" />
+                <ScalarProperty Name="CW_YQ_HRJKYL2" ColumnName="CW_YQ_HRJKYL2" />
+                <ScalarProperty Name="CW_YQ_HRJKYL1" ColumnName="CW_YQ_HRJKYL1" />
+                <ScalarProperty Name="CW_YQ_QQYL2" ColumnName="CW_YQ_QQYL2" />
+                <ScalarProperty Name="CW_YQ_QQYL1" ColumnName="CW_YQ_QQYL1" />
+                <ScalarProperty Name="AZ_ZQLL" ColumnName="AZ_ZQLL" />
+                <ScalarProperty Name="AZ_ZQYL" ColumnName="AZ_ZQYL" />
+                <ScalarProperty Name="AZ_ZQWD" ColumnName="AZ_ZQWD" />
+                <ScalarProperty Name="AZ_AKHHQCKWD" ColumnName="AZ_AKHHQCKWD" />
+                <ScalarProperty Name="AZ_AKHHQCKYL" ColumnName="AZ_AKHHQCKYL" />
+                <ScalarProperty Name="AZ_XSFCKLL" ColumnName="AZ_XSFCKLL" />
+                <ScalarProperty Name="AZ_ASZFQYW" ColumnName="AZ_ASZFQYW" />
+                <ScalarProperty Name="AZ_ASZFQCKWD" ColumnName="AZ_ASZFQCKWD" />
+                <ScalarProperty Name="AZ_ASZFQCKYL" ColumnName="AZ_ASZFQCKYL" />
+                <ScalarProperty Name="AZ_ASBCKGDLL" ColumnName="AZ_ASBCKGDLL" />
+                <ScalarProperty Name="AZ_ASBCKGDYL" ColumnName="AZ_ASBCKGDYL" />
+                <ScalarProperty Name="RECORD_DATE" ColumnName="RECORD_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_PRODUCE_TUOLIU_CEMS">
+            <EntityTypeMapping TypeName="PROM.T_PRODUCE_TUOLIU_CEMS">
+              <MappingFragment StoreEntitySet="T_PRODUCE_TUOLIU_CEMS">
+                <ScalarProperty Name="CMS_DUST3" ColumnName="CMS_DUST3" />
+                <ScalarProperty Name="CMS_DUST2" ColumnName="CMS_DUST2" />
+                <ScalarProperty Name="CMS_DUST1" ColumnName="CMS_DUST1" />
+                <ScalarProperty Name="DUST_C" ColumnName="DUST_C" />
+                <ScalarProperty Name="SO2_C" ColumnName="SO2_C" />
+                <ScalarProperty Name="NOX_C" ColumnName="NOX_C" />
+                <ScalarProperty Name="QHR_VALUE" ColumnName="QHR_VALUE" />
+                <ScalarProperty Name="DUST_CY" ColumnName="DUST_CY" />
+                <ScalarProperty Name="SO2_CY" ColumnName="SO2_CY" />
+                <ScalarProperty Name="NOX_CY" ColumnName="NOX_CY" />
+                <ScalarProperty Name="CK_YL" ColumnName="CK_YL" />
+                <ScalarProperty Name="RK_YL" ColumnName="RK_YL" />
+                <ScalarProperty Name="CK_YQWD" ColumnName="CK_YQWD" />
+                <ScalarProperty Name="RK_YQWD" ColumnName="RK_YQWD" />
+                <ScalarProperty Name="CK_LL" ColumnName="CK_LL" />
+                <ScalarProperty Name="RK_LL" ColumnName="RK_LL" />
+                <ScalarProperty Name="CK_SD" ColumnName="CK_SD" />
+                <ScalarProperty Name="RK_SD" ColumnName="RK_SD" />
+                <ScalarProperty Name="CK_YQHL" ColumnName="CK_YQHL" />
+                <ScalarProperty Name="RK_YQHL" ColumnName="RK_YQHL" />
+                <ScalarProperty Name="CK_FC" ColumnName="CK_FC" />
+                <ScalarProperty Name="RK_FC" ColumnName="RK_FC" />
+                <ScalarProperty Name="CK_SO2" ColumnName="CK_SO2" />
+                <ScalarProperty Name="RK_SO2" ColumnName="RK_SO2" />
+                <ScalarProperty Name="CK_DYHW_NOX" ColumnName="CK_DYHW_NOX" />
+                <ScalarProperty Name="RK_DYHW_NOX" ColumnName="RK_DYHW_NOX" />
+                <ScalarProperty Name="RECORD_DATE" ColumnName="RECORD_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_PRODUCE_TUOLIU_NYJZ">
+            <EntityTypeMapping TypeName="PROM.T_PRODUCE_TUOLIU_NYJZ">
+              <MappingFragment StoreEntitySet="T_PRODUCE_TUOLIU_NYJZ">
+                <ScalarProperty Name="NYJZ_GLMQLJLL" ColumnName="NYJZ_GLMQLJLL" />
+                <ScalarProperty Name="NYJZ_GLMQSSLL" ColumnName="NYJZ_GLMQSSLL" />
+                <ScalarProperty Name="NYJZ_TRQLJLL" ColumnName="NYJZ_TRQLJLL" />
+                <ScalarProperty Name="NYJZ_TRQSSLL" ColumnName="NYJZ_TRQSSLL" />
+                <ScalarProperty Name="NYJZ_XHSLJLL" ColumnName="NYJZ_XHSLJLL" />
+                <ScalarProperty Name="NYJZ_XHSSSLL" ColumnName="NYJZ_XHSSSLL" />
+                <ScalarProperty Name="NYJZ_YSKQSSLL" ColumnName="NYJZ_YSKQSSLL" />
+                <ScalarProperty Name="NYJZ_DQZGSSLL" ColumnName="NYJZ_DQZGSSLL" />
+                <ScalarProperty Name="NYJZ_FQCKLJLL" ColumnName="NYJZ_FQCKLJLL" />
+                <ScalarProperty Name="NYJZ_FQCKSSLL" ColumnName="NYJZ_FQCKSSLL" />
+                <ScalarProperty Name="NYJZ_ZQSSLL" ColumnName="NYJZ_ZQSSLL" />
+                <ScalarProperty Name="NYJZ_RHSLJLL" ColumnName="NYJZ_RHSLJLL" />
+                <ScalarProperty Name="NYJZ_RHSSSLL" ColumnName="NYJZ_RHSSSLL" />
+                <ScalarProperty Name="NYJZ_ASLJLL" ColumnName="NYJZ_ASLJLL" />
+                <ScalarProperty Name="NYJZ_ASSSLL" ColumnName="NYJZ_ASSSLL" />
+                <ScalarProperty Name="RECORD_DATE" ColumnName="RECORD_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_PRODUCE_TUOLIU_ZYFJ">
+            <EntityTypeMapping TypeName="PROM.T_PRODUCE_TUOLIU_ZYFJ">
+              <MappingFragment StoreEntitySet="T_PRODUCE_TUOLIU_ZYFJ">
+                <ScalarProperty Name="CW_XTWD_ZYFJCKWD2_B" ColumnName="CW_XTWD_ZYFJCKWD2_B" />
+                <ScalarProperty Name="CW_XTWD_ZYFJCKWD1_B" ColumnName="CW_XTWD_ZYFJCKWD1_B" />
+                <ScalarProperty Name="CW_XTWD_HRQCKYQWD_B" ColumnName="CW_XTWD_HRQCKYQWD_B" />
+                <ScalarProperty Name="CW_XTWD_HRQJKYQWD_B" ColumnName="CW_XTWD_HRQJKYQWD_B" />
+                <ScalarProperty Name="CW_XTWD_ZYFJCKWD2_A" ColumnName="CW_XTWD_ZYFJCKWD2_A" />
+                <ScalarProperty Name="CW_XTWD_ZYFJCKWD1_A" ColumnName="CW_XTWD_ZYFJCKWD1_A" />
+                <ScalarProperty Name="CW_XTWD_HRQCKYQWD_A" ColumnName="CW_XTWD_HRQCKYQWD_A" />
+                <ScalarProperty Name="CW_XTWD_HRQJKYQWD_A" ColumnName="CW_XTWD_HRQJKYQWD_A" />
+                <ScalarProperty Name="CW_ZYFJ_TJF_SKD" ColumnName="CW_ZYFJ_TJF_SKD" />
+                <ScalarProperty Name="CW_ZYFJ_TJF_KD" ColumnName="CW_ZYFJ_TJF_KD" />
+                <ScalarProperty Name="CW_ZYFJ_DJDL" ColumnName="CW_ZYFJ_DJDL" />
+                <ScalarProperty Name="CW_ZYFJ_DJZD" ColumnName="CW_ZYFJ_DJZD" />
+                <ScalarProperty Name="CW_ZYFJ_FJZD" ColumnName="CW_ZYFJ_FJZD" />
+                <ScalarProperty Name="CW_ZYFJ_WD" ColumnName="CW_ZYFJ_WD" />
+                <ScalarProperty Name="CW_ZYFJ_DJZC1_WD" ColumnName="CW_ZYFJ_DJZC1_WD" />
+                <ScalarProperty Name="CW_ZYFJ_DJDZ3_WD" ColumnName="CW_ZYFJ_DJDZ3_WD" />
+                <ScalarProperty Name="RECORD_DATE" ColumnName="RECORD_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_ENERGY_CONSUME">
+            <EntityTypeMapping TypeName="PROM.T_ENERGY_CONSUME">
+              <MappingFragment StoreEntitySet="T_ENERGY_CONSUME">
+                <ScalarProperty Name="PLCNYAI_408466F" ColumnName="PLCNYAI_408466F" />
+                <ScalarProperty Name="PLCNYAI_408336F" ColumnName="PLCNYAI_408336F" />
+                <ScalarProperty Name="PLCNYAI_408436F" ColumnName="PLCNYAI_408436F" />
+                <ScalarProperty Name="PLCNYAI_408306F" ColumnName="PLCNYAI_408306F" />
+                <ScalarProperty Name="P3AI_405791F" ColumnName="P3AI_405791F" />
+                <ScalarProperty Name="P3AI_405781F" ColumnName="P3AI_405781F" />
+                <ScalarProperty Name="P2AI_408721F" ColumnName="P2AI_408721F" />
+                <ScalarProperty Name="P1AI_408411F" ColumnName="P1AI_408411F" />
+                <ScalarProperty Name="PLCNYAI_408346F" ColumnName="PLCNYAI_408346F" />
+                <ScalarProperty Name="PLCNYAI_408206F" ColumnName="PLCNYAI_408206F" />
+                <ScalarProperty Name="PLCNYAI_406056F" ColumnName="PLCNYAI_406056F" />
+                <ScalarProperty Name="PLCNYAI_406046F" ColumnName="PLCNYAI_406046F" />
+                <ScalarProperty Name="PLCNYAI_406036F" ColumnName="PLCNYAI_406036F" />
+                <ScalarProperty Name="PLCNYAI_406026F" ColumnName="PLCNYAI_406026F" />
+                <ScalarProperty Name="PLCNYAI_406016F" ColumnName="PLCNYAI_406016F" />
+                <ScalarProperty Name="PLCNYAI_406006F" ColumnName="PLCNYAI_406006F" />
+                <ScalarProperty Name="P3AI_405671F" ColumnName="P3AI_405671F" />
+                <ScalarProperty Name="P3AI_405661F" ColumnName="P3AI_405661F" />
+                <ScalarProperty Name="P3AI_405651F" ColumnName="P3AI_405651F" />
+                <ScalarProperty Name="RECORD_DATE" ColumnName="RECORD_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_PRODUCE_SINTER_SCRB_CENTER">
+            <EntityTypeMapping TypeName="PROM.T_PRODUCE_SINTER_SCRB_CENTER">
+              <MappingFragment StoreEntitySet="T_PRODUCE_SINTER_SCRB_CENTER">
+                <ScalarProperty Name="R_CENTER" ColumnName="R_CENTER" />
+                <ScalarProperty Name="FEO_CENTER" ColumnName="FEO_CENTER" />
+                <ScalarProperty Name="RECORD_DATE" ColumnName="RECORD_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_PRODUCE_OPERATIONAL_LOG">
+            <EntityTypeMapping TypeName="PROM.T_PRODUCE_OPERATIONAL_LOG">
+              <MappingFragment StoreEntitySet="T_PRODUCE_OPERATIONAL_LOG">
+                <ScalarProperty Name="P3AI_400971F" ColumnName="P3AI_400971F" />
+                <ScalarProperty Name="P3AI_400961F" ColumnName="P3AI_400961F" />
+                <ScalarProperty Name="P3AI_401061F" ColumnName="P3AI_401061F" />
+                <ScalarProperty Name="P3AI_401051F" ColumnName="P3AI_401051F" />
+                <ScalarProperty Name="P3AI_401041F" ColumnName="P3AI_401041F" />
+                <ScalarProperty Name="P3AI_401031F" ColumnName="P3AI_401031F" />
+                <ScalarProperty Name="P3AI_401021F" ColumnName="P3AI_401021F" />
+                <ScalarProperty Name="P3AI_401011F" ColumnName="P3AI_401011F" />
+                <ScalarProperty Name="P3AI_405317F" ColumnName="P3AI_405317F" />
+                <ScalarProperty Name="P3AI_401961F" ColumnName="P3AI_401961F" />
+                <ScalarProperty Name="P3AI_401951F" ColumnName="P3AI_401951F" />
+                <ScalarProperty Name="P3AI_401351F" ColumnName="P3AI_401351F" />
+                <ScalarProperty Name="P3AI_401341F" ColumnName="P3AI_401341F" />
+                <ScalarProperty Name="P3AI_401331F" ColumnName="P3AI_401331F" />
+                <ScalarProperty Name="PLCNYAI_406054F" ColumnName="PLCNYAI_406054F" />
+                <ScalarProperty Name="PLCNYAI_406044F" ColumnName="PLCNYAI_406044F" />
+                <ScalarProperty Name="PLCNYAI_406034F" ColumnName="PLCNYAI_406034F" />
+                <ScalarProperty Name="PLCNYAI_406024F" ColumnName="PLCNYAI_406024F" />
+                <ScalarProperty Name="PLCNYAI_406014F" ColumnName="PLCNYAI_406014F" />
+                <ScalarProperty Name="PLCNYAI_406004F" ColumnName="PLCNYAI_406004F" />
+                <ScalarProperty Name="PLCNYAI_406052F" ColumnName="PLCNYAI_406052F" />
+                <ScalarProperty Name="PLCNYAI_406042F" ColumnName="PLCNYAI_406042F" />
+                <ScalarProperty Name="PLCNYAI_406032F" ColumnName="PLCNYAI_406032F" />
+                <ScalarProperty Name="PLCNYAI_406022F" ColumnName="PLCNYAI_406022F" />
+                <ScalarProperty Name="PLCNYAI_406012F" ColumnName="PLCNYAI_406012F" />
+                <ScalarProperty Name="PLCNYAI_406002F" ColumnName="PLCNYAI_406002F" />
+                <ScalarProperty Name="P3AI_402341F" ColumnName="P3AI_402341F" />
+                <ScalarProperty Name="P3AI_402331F" ColumnName="P3AI_402331F" />
+                <ScalarProperty Name="P3AI_401771F" ColumnName="P3AI_401771F" />
+                <ScalarProperty Name="P3AI_401761F" ColumnName="P3AI_401761F" />
+                <ScalarProperty Name="P3AI_401361F" ColumnName="P3AI_401361F" />
+                <ScalarProperty Name="P3AI_401301F" ColumnName="P3AI_401301F" />
+                <ScalarProperty Name="P3AI_401171F" ColumnName="P3AI_401171F" />
+                <ScalarProperty Name="P3AI_401161F" ColumnName="P3AI_401161F" />
+                <ScalarProperty Name="P3AI_401151F" ColumnName="P3AI_401151F" />
+                <ScalarProperty Name="P3AI_401141F" ColumnName="P3AI_401141F" />
+                <ScalarProperty Name="P3AI_401131F" ColumnName="P3AI_401131F" />
+                <ScalarProperty Name="P3AI_401121F" ColumnName="P3AI_401121F" />
+                <ScalarProperty Name="P3AI_401111F" ColumnName="P3AI_401111F" />
+                <ScalarProperty Name="P3AI_401101F" ColumnName="P3AI_401101F" />
+                <ScalarProperty Name="P3AI_401091F" ColumnName="P3AI_401091F" />
+                <ScalarProperty Name="P3AI_401081F" ColumnName="P3AI_401081F" />
+                <ScalarProperty Name="P3AI_401071F" ColumnName="P3AI_401071F" />
+                <ScalarProperty Name="RECORD_DATE" ColumnName="RECORD_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_MATERIAL_TEAM_YIELDGGL">
+            <EntityTypeMapping TypeName="PROM.T_MATERIAL_TEAM_YIELDGGL">
+              <MappingFragment StoreEntitySet="T_MATERIAL_TEAM_YIELDGGL">
+                <ScalarProperty Name="FLAG" ColumnName="FLAG" />
+                <ScalarProperty Name="TEAM" ColumnName="TEAM" />
+                <ScalarProperty Name="SHIFT" ColumnName="SHIFT" />
+                <ScalarProperty Name="RECORD_NAME" ColumnName="RECORD_NAME" />
+                <ScalarProperty Name="YIELD_SUM" ColumnName="YIELD_SUM" />
+                <ScalarProperty Name="TEAM_END_TIME" ColumnName="TEAM_END_TIME" />
+                <ScalarProperty Name="TEAM_BEGIN_TIME" ColumnName="TEAM_BEGIN_TIME" />
+                <ScalarProperty Name="WP_NAME" ColumnName="WP_NAME" />
+                <ScalarProperty Name="WP_NO" ColumnName="WP_NO" />
+                <ScalarProperty Name="RECORD_DATE" ColumnName="RECORD_DATE" />
+                <ScalarProperty Name="RECORD_ID" ColumnName="RECORD_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_PRODUCE_MAIN_EXHAUST_DH">
+            <EntityTypeMapping TypeName="PROM.T_PRODUCE_MAIN_EXHAUST_DH">
+              <MappingFragment StoreEntitySet="T_PRODUCE_MAIN_EXHAUST_DH">
+                <ScalarProperty Name="FAN_SUM" ColumnName="FAN_SUM" />
+                <ScalarProperty Name="SHIFT" ColumnName="SHIFT" />
+                <ScalarProperty Name="TEAM" ColumnName="TEAM" />
+                <ScalarProperty Name="ZHUCHOULL_DH" ColumnName="ZHUCHOULL_DH" />
+                <ScalarProperty Name="YIELD_SUM" ColumnName="YIELD_SUM" />
+                <ScalarProperty Name="P4AI_400271F" ColumnName="P4AI_400271F" />
+                <ScalarProperty Name="P4AI_400261F" ColumnName="P4AI_400261F" />
+                <ScalarProperty Name="RECORD_DATE" ColumnName="RECORD_DATE" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_PRODUCE_GAOLULC">
+            <EntityTypeMapping TypeName="PROM.T_PRODUCE_GAOLULC">
+              <MappingFragment StoreEntitySet="T_PRODUCE_GAOLULC">
+                <ScalarProperty Name="T7_LC_SJ10" ColumnName="T7_LC_SJ10" />
+                <ScalarProperty Name="T7_LC_SJ9" ColumnName="T7_LC_SJ9" />
+                <ScalarProperty Name="T7_LC_SJ8" ColumnName="T7_LC_SJ8" />
+                <ScalarProperty Name="T7_LC_SJ7" ColumnName="T7_LC_SJ7" />
+                <ScalarProperty Name="T7_LC_SJ6" ColumnName="T7_LC_SJ6" />
+                <ScalarProperty Name="T7_LC_SJ5" ColumnName="T7_LC_SJ5" />
+                <ScalarProperty Name="T7_LC_SJ4" ColumnName="T7_LC_SJ4" />
+                <ScalarProperty Name="T7_LC_SJ3" ColumnName="T7_LC_SJ3" />
+                <ScalarProperty Name="T7_LC_SJ2" ColumnName="T7_LC_SJ2" />
+                <ScalarProperty Name="T7_LC_SJ1" ColumnName="T7_LC_SJ1" />
+                <ScalarProperty Name="T7_AVG" ColumnName="T7_AVG" />
+                <ScalarProperty Name="T6_AVG" ColumnName="T6_AVG" />
+                <ScalarProperty Name="GL2_AVG" ColumnName="GL2_AVG" />
+                <ScalarProperty Name="GL1_AVG" ColumnName="GL1_AVG" />
+                <ScalarProperty Name="T6_LC_SJ5" ColumnName="T6_LC_SJ5" />
+                <ScalarProperty Name="T6_LC_SJ4" ColumnName="T6_LC_SJ4" />
+                <ScalarProperty Name="T6_LC_SJ3" ColumnName="T6_LC_SJ3" />
+                <ScalarProperty Name="T6_LC_SJ2" ColumnName="T6_LC_SJ2" />
+                <ScalarProperty Name="T6_LC_SJ1" ColumnName="T6_LC_SJ1" />
+                <ScalarProperty Name="GL2_LC_SJ10" ColumnName="GL2_LC_SJ10" />
+                <ScalarProperty Name="GL2_LC_SJ9" ColumnName="GL2_LC_SJ9" />
+                <ScalarProperty Name="GL2_LC_SJ8" ColumnName="GL2_LC_SJ8" />
+                <ScalarProperty Name="GL2_LC_SJ7" ColumnName="GL2_LC_SJ7" />
+                <ScalarProperty Name="GL2_LC_SJ6" ColumnName="GL2_LC_SJ6" />
+                <ScalarProperty Name="GL2_LC_SJ5" ColumnName="GL2_LC_SJ5" />
+                <ScalarProperty Name="GL2_LC_SJ4" ColumnName="GL2_LC_SJ4" />
+                <ScalarProperty Name="GL2_LC_SJ3" ColumnName="GL2_LC_SJ3" />
+                <ScalarProperty Name="GL2_LC_SJ2" ColumnName="GL2_LC_SJ2" />
+                <ScalarProperty Name="GL2_LC_SJ1" ColumnName="GL2_LC_SJ1" />
+                <ScalarProperty Name="GL1_LC_SJ10" ColumnName="GL1_LC_SJ10" />
+                <ScalarProperty Name="GL1_LC_SJ9" ColumnName="GL1_LC_SJ9" />
+                <ScalarProperty Name="GL1_LC_SJ8" ColumnName="GL1_LC_SJ8" />
+                <ScalarProperty Name="GL1_LC_SJ7" ColumnName="GL1_LC_SJ7" />
+                <ScalarProperty Name="GL1_LC_SJ6" ColumnName="GL1_LC_SJ6" />
+                <ScalarProperty Name="GL1_LC_SJ5" ColumnName="GL1_LC_SJ5" />
+                <ScalarProperty Name="GL1_LC_SJ4" ColumnName="GL1_LC_SJ4" />
+                <ScalarProperty Name="GL1_LC_SJ3" ColumnName="GL1_LC_SJ3" />
+                <ScalarProperty Name="GL1_LC_SJ2" ColumnName="GL1_LC_SJ2" />
+                <ScalarProperty Name="GL1_LC_SJ1" ColumnName="GL1_LC_SJ1" />
+                <ScalarProperty Name="RECORD_DATE" ColumnName="RECORD_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="F_QUALITY_QUARY" FunctionName="PROM.Store.F_QUALITY_QUARY" />
+          <EntitySetMapping Name="T_PRODUCE_YANDAOXUNHUAN">
+            <EntityTypeMapping TypeName="PROM.T_PRODUCE_YANDAOXUNHUAN">
+              <MappingFragment StoreEntitySet="T_PRODUCE_YANDAOXUNHUAN">
+                <ScalarProperty Name="PLCYDXHAI_400523F" ColumnName="PLCYDXHAI_400523F" />
+                <ScalarProperty Name="PLCYDXHAI_400521F" ColumnName="PLCYDXHAI_400521F" />
+                <ScalarProperty Name="PLCYDXHAI_400519F" ColumnName="PLCYDXHAI_400519F" />
+                <ScalarProperty Name="PLCYDXHAI_400517F" ColumnName="PLCYDXHAI_400517F" />
+                <ScalarProperty Name="PLCYDXHAI_400515F" ColumnName="PLCYDXHAI_400515F" />
+                <ScalarProperty Name="PLCYDXHAI_400513F" ColumnName="PLCYDXHAI_400513F" />
+                <ScalarProperty Name="PLCYDXHAI_400507F" ColumnName="PLCYDXHAI_400507F" />
+                <ScalarProperty Name="PLCYDXHAI_400505F" ColumnName="PLCYDXHAI_400505F" />
+                <ScalarProperty Name="PLCYDXHAI_400503F" ColumnName="PLCYDXHAI_400503F" />
+                <ScalarProperty Name="PLCYDXHAI_400501F" ColumnName="PLCYDXHAI_400501F" />
+                <ScalarProperty Name="PLCYDXHAI_400499F" ColumnName="PLCYDXHAI_400499F" />
+                <ScalarProperty Name="PLCYDXHAI_400497F" ColumnName="PLCYDXHAI_400497F" />
+                <ScalarProperty Name="PLCYDXHAI_400443F" ColumnName="PLCYDXHAI_400443F" />
+                <ScalarProperty Name="PLCYDXHAI_400441F" ColumnName="PLCYDXHAI_400441F" />
+                <ScalarProperty Name="PLCYDXHAI_400439F" ColumnName="PLCYDXHAI_400439F" />
+                <ScalarProperty Name="PLCYDXHAI_400437F" ColumnName="PLCYDXHAI_400437F" />
+                <ScalarProperty Name="PLCYDXHAI_400435F" ColumnName="PLCYDXHAI_400435F" />
+                <ScalarProperty Name="PLCYDXHAI_400433F" ColumnName="PLCYDXHAI_400433F" />
+                <ScalarProperty Name="PLCYDXHAI_400429F" ColumnName="PLCYDXHAI_400429F" />
+                <ScalarProperty Name="PLCYDXHAI_400427F" ColumnName="PLCYDXHAI_400427F" />
+                <ScalarProperty Name="PLCYDXHAI_400425F" ColumnName="PLCYDXHAI_400425F" />
+                <ScalarProperty Name="PLCYDXHAI_400423F" ColumnName="PLCYDXHAI_400423F" />
+                <ScalarProperty Name="PLCYDXHAI_400421F" ColumnName="PLCYDXHAI_400421F" />
+                <ScalarProperty Name="PLCYDXHAI_400419F" ColumnName="PLCYDXHAI_400419F" />
+                <ScalarProperty Name="PLCYDXHAI_400417F" ColumnName="PLCYDXHAI_400417F" />
+                <ScalarProperty Name="PLCYDXHAI_400603F" ColumnName="PLCYDXHAI_400603F" />
+                <ScalarProperty Name="PLCYDXHAI_400601F" ColumnName="PLCYDXHAI_400601F" />
+                <ScalarProperty Name="PLCYDXHAI_400599F" ColumnName="PLCYDXHAI_400599F" />
+                <ScalarProperty Name="PLCYDXHAI_400597F" ColumnName="PLCYDXHAI_400597F" />
+                <ScalarProperty Name="PLCYDXHAI_400595F" ColumnName="PLCYDXHAI_400595F" />
+                <ScalarProperty Name="PLCYDXHAI_400593F" ColumnName="PLCYDXHAI_400593F" />
+                <ScalarProperty Name="PLCYDXHAI_400591F" ColumnName="PLCYDXHAI_400591F" />
+                <ScalarProperty Name="PLCYDXHAI_400589F" ColumnName="PLCYDXHAI_400589F" />
+                <ScalarProperty Name="PLCYDXHAI_400587F" ColumnName="PLCYDXHAI_400587F" />
+                <ScalarProperty Name="PLCYDXHAI_400585F" ColumnName="PLCYDXHAI_400585F" />
+                <ScalarProperty Name="PLCYDXHAI_400583F" ColumnName="PLCYDXHAI_400583F" />
+                <ScalarProperty Name="PLCYDXHAI_400581F" ColumnName="PLCYDXHAI_400581F" />
+                <ScalarProperty Name="PLCYDXHAI_400579F" ColumnName="PLCYDXHAI_400579F" />
+                <ScalarProperty Name="PLCYDXHAI_400559F" ColumnName="PLCYDXHAI_400559F" />
+                <ScalarProperty Name="PLCYDXHAI_400539F" ColumnName="PLCYDXHAI_400539F" />
+                <ScalarProperty Name="PLCYDXHAI_400617F" ColumnName="PLCYDXHAI_400617F" />
+                <ScalarProperty Name="PLCYDXHAI_400557F" ColumnName="PLCYDXHAI_400557F" />
+                <ScalarProperty Name="PLCYDXHAI_400615F" ColumnName="PLCYDXHAI_400615F" />
+                <ScalarProperty Name="PLCYDXHAI_400565F" ColumnName="PLCYDXHAI_400565F" />
+                <ScalarProperty Name="PLCYDXHAI_400527F" ColumnName="PLCYDXHAI_400527F" />
+                <ScalarProperty Name="PLCYDXHAI_400525F" ColumnName="PLCYDXHAI_400525F" />
+                <ScalarProperty Name="PLCYDXHAI_400537F" ColumnName="PLCYDXHAI_400537F" />
+                <ScalarProperty Name="PLCYDXHAI_400535F" ColumnName="PLCYDXHAI_400535F" />
+                <ScalarProperty Name="PLCYDXHAI_400605F" ColumnName="PLCYDXHAI_400605F" />
+                <ScalarProperty Name="PLCYDXHAI_400613F" ColumnName="PLCYDXHAI_400613F" />
+                <ScalarProperty Name="PLCYDXHAI_400533F" ColumnName="PLCYDXHAI_400533F" />
+                <ScalarProperty Name="PLCYDXHAI_400611F" ColumnName="PLCYDXHAI_400611F" />
+                <ScalarProperty Name="PLCYDXHAI_400555F" ColumnName="PLCYDXHAI_400555F" />
+                <ScalarProperty Name="PLCYDXHAI_400563F" ColumnName="PLCYDXHAI_400563F" />
+                <ScalarProperty Name="PLCYDXHAI_400511F" ColumnName="PLCYDXHAI_400511F" />
+                <ScalarProperty Name="PLCYDXHAI_400509F" ColumnName="PLCYDXHAI_400509F" />
+                <ScalarProperty Name="PLCYDXHAI_400531F" ColumnName="PLCYDXHAI_400531F" />
+                <ScalarProperty Name="PLCYDXHAI_400529F" ColumnName="PLCYDXHAI_400529F" />
+                <ScalarProperty Name="PLCYDXHAI_400609F" ColumnName="PLCYDXHAI_400609F" />
+                <ScalarProperty Name="PLCYDXHAI_400861F" ColumnName="PLCYDXHAI_400861F" />
+                <ScalarProperty Name="PLCYDXHAI_400551F" ColumnName="PLCYDXHAI_400551F" />
+                <ScalarProperty Name="PLCYDXHAI_400549F" ColumnName="PLCYDXHAI_400549F" />
+                <ScalarProperty Name="PLCYDXHAI_400547F" ColumnName="PLCYDXHAI_400547F" />
+                <ScalarProperty Name="PLCYDXHAI_400545F" ColumnName="PLCYDXHAI_400545F" />
+                <ScalarProperty Name="PLCYDXHAI_400543F" ColumnName="PLCYDXHAI_400543F" />
+                <ScalarProperty Name="PLCYDXHAI_400541F" ColumnName="PLCYDXHAI_400541F" />
+                <ScalarProperty Name="PLCYDXHAI_400629F" ColumnName="PLCYDXHAI_400629F" />
+                <ScalarProperty Name="PLCYDXHAI_400627F" ColumnName="PLCYDXHAI_400627F" />
+                <ScalarProperty Name="PLCYDXHAI_400625F" ColumnName="PLCYDXHAI_400625F" />
+                <ScalarProperty Name="PLCYDXHAI_400623F" ColumnName="PLCYDXHAI_400623F" />
+                <ScalarProperty Name="PLCYDXHAI_400621F" ColumnName="PLCYDXHAI_400621F" />
+                <ScalarProperty Name="PLCYDXHAI_400619F" ColumnName="PLCYDXHAI_400619F" />
+                <ScalarProperty Name="PLCYDXHAI_400577F" ColumnName="PLCYDXHAI_400577F" />
+                <ScalarProperty Name="PLCYDXHAI_400575F" ColumnName="PLCYDXHAI_400575F" />
+                <ScalarProperty Name="PLCYDXHAI_400573F" ColumnName="PLCYDXHAI_400573F" />
+                <ScalarProperty Name="PLCYDXHAI_400571F" ColumnName="PLCYDXHAI_400571F" />
+                <ScalarProperty Name="PLCYDXHAI_400569F" ColumnName="PLCYDXHAI_400569F" />
+                <ScalarProperty Name="PLCYDXHAI_400567F" ColumnName="PLCYDXHAI_400567F" />
+                <ScalarProperty Name="RECORD_DATE" ColumnName="RECORD_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_PRODUCE_SINTER_SCRB">
+            <EntityTypeMapping TypeName="PROM.T_PRODUCE_SINTER_SCRB">
+              <MappingFragment StoreEntitySet="T_PRODUCE_SINTER_SCRB">
+                <ScalarProperty Name="FEO_YJP_SUM" ColumnName="FEO_YJP_SUM" />
+                <ScalarProperty Name="FEO_YJP_DAY" ColumnName="FEO_YJP_DAY" />
+                <ScalarProperty Name="SHIFT" ColumnName="SHIFT" />
+                <ScalarProperty Name="YZPL_SUM" ColumnName="YZPL_SUM" />
+                <ScalarProperty Name="YZPL_DAY" ColumnName="YZPL_DAY" />
+                <ScalarProperty Name="YJPL_SUM" ColumnName="YJPL_SUM" />
+                <ScalarProperty Name="YJPL_DAY" ColumnName="YJPL_DAY" />
+                <ScalarProperty Name="R_WDL_SUM" ColumnName="R_WDL_SUM" />
+                <ScalarProperty Name="R_WDL_DAY" ColumnName="R_WDL_DAY" />
+                <ScalarProperty Name="FEO_WDL_SUM" ColumnName="FEO_WDL_SUM" />
+                <ScalarProperty Name="FEO_WDL_DAY" ColumnName="FEO_WDL_DAY" />
+                <ScalarProperty Name="RLTS_SUM" ColumnName="RLTS_SUM" />
+                <ScalarProperty Name="RLTS_DAY" ColumnName="RLTS_DAY" />
+                <ScalarProperty Name="CKL_SUM" ColumnName="CKL_SUM" />
+                <ScalarProperty Name="CKL_DAY" ColumnName="CKL_DAY" />
+                <ScalarProperty Name="FKL_SUM" ColumnName="FKL_SUM" />
+                <ScalarProperty Name="FKL_DAY" ColumnName="FKL_DAY" />
+                <ScalarProperty Name="ZQCL_SUM" ColumnName="ZQCL_SUM" />
+                <ScalarProperty Name="ZQCL_DAY" ColumnName="ZQCL_DAY" />
+                <ScalarProperty Name="TSCL_SUM" ColumnName="TSCL_SUM" />
+                <ScalarProperty Name="TSCL_DAY" ColumnName="TSCL_DAY" />
+                <ScalarProperty Name="XS_SUM" ColumnName="XS_SUM" />
+                <ScalarProperty Name="XS_DAY" ColumnName="XS_DAY" />
+                <ScalarProperty Name="CL_SUM" ColumnName="CL_SUM" />
+                <ScalarProperty Name="CL_DAY" ColumnName="CL_DAY" />
+                <ScalarProperty Name="TEAM" ColumnName="TEAM" />
+                <ScalarProperty Name="RECORD_DATE" ColumnName="RECORD_DATE" />
+                <ScalarProperty Name="RECORD_ID" ColumnName="RECORD_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_PRODUCE_SINTER_SCRB1">
+            <EntityTypeMapping TypeName="PROM.T_PRODUCE_SINTER_SCRB1">
+              <MappingFragment StoreEntitySet="T_PRODUCE_SINTER_SCRB1">
+                <ScalarProperty Name="YYDWD_AVG" ColumnName="YYDWD_AVG" />
+                <ScalarProperty Name="ZYDWD_AVG" ColumnName="ZYDWD_AVG" />
+                <ScalarProperty Name="SHIFT" ColumnName="SHIFT" />
+                <ScalarProperty Name="YQYL_2_AVG" ColumnName="YQYL_2_AVG" />
+                <ScalarProperty Name="YQYL_1_AVG" ColumnName="YQYL_1_AVG" />
+                <ScalarProperty Name="DH_CO" ColumnName="DH_CO" />
+                <ScalarProperty Name="HL_FC" ColumnName="HL_FC" />
+                <ScalarProperty Name="HL_NO" ColumnName="HL_NO" />
+                <ScalarProperty Name="HL_SO2" ColumnName="HL_SO2" />
+                <ScalarProperty Name="DH" ColumnName="DH" />
+                <ScalarProperty Name="TRQXH" ColumnName="TRQXH" />
+                <ScalarProperty Name="GLMQXH" ColumnName="GLMQXH" />
+                <ScalarProperty Name="GTRH" ColumnName="GTRH" />
+                <ScalarProperty Name="RL_H2O" ColumnName="RL_H2O" />
+                <ScalarProperty Name="RL_3M" ColumnName="RL_3M" />
+                <ScalarProperty Name="ERLD" ColumnName="ERLD" />
+                <ScalarProperty Name="EHLW" ColumnName="EHLW" />
+                <ScalarProperty Name="EHSF" ColumnName="EHSF" />
+                <ScalarProperty Name="YHSF" ColumnName="YHSF" />
+                <ScalarProperty Name="KQYL" ColumnName="KQYL" />
+                <ScalarProperty Name="MQYL" ColumnName="MQYL" />
+                <ScalarProperty Name="LTFY" ColumnName="LTFY" />
+                <ScalarProperty Name="DHWD" ColumnName="DHWD" />
+                <ScalarProperty Name="KQWD" ColumnName="KQWD" />
+                <ScalarProperty Name="FQWD" ColumnName="FQWD" />
+                <ScalarProperty Name="DYDFY" ColumnName="DYDFY" />
+                <ScalarProperty Name="JS" ColumnName="JS" />
+                <ScalarProperty Name="LCHD" ColumnName="LCHD" />
+                <ScalarProperty Name="TEAM" ColumnName="TEAM" />
+                <ScalarProperty Name="RECORD_DATE" ColumnName="RECORD_DATE" />
+                <ScalarProperty Name="RECORD_ID" ColumnName="RECORD_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_PRODUCE_SINTER_SCRB2">
+            <EntityTypeMapping TypeName="PROM.T_PRODUCE_SINTER_SCRB2">
+              <MappingFragment StoreEntitySet="T_PRODUCE_SINTER_SCRB2">
+                <ScalarProperty Name="SHIFT" ColumnName="SHIFT" />
+                <ScalarProperty Name="ZYL_SUM" ColumnName="ZYL_SUM" />
+                <ScalarProperty Name="ZYL_DAY" ColumnName="ZYL_DAY" />
+                <ScalarProperty Name="ZYSJ_SUM" ColumnName="ZYSJ_SUM" />
+                <ScalarProperty Name="ZYSJ_DAY" ColumnName="ZYSJ_DAY" />
+                <ScalarProperty Name="QTWY" ColumnName="QTWY" />
+                <ScalarProperty Name="DONGLI" ColumnName="DONGLI" />
+                <ScalarProperty Name="GAOLU" ColumnName="GAOLU" />
+                <ScalarProperty Name="YLC" ColumnName="YLC" />
+                <ScalarProperty Name="CAOZUO" ColumnName="CAOZUO" />
+                <ScalarProperty Name="DIANQI" ColumnName="DIANQI" />
+                <ScalarProperty Name="JIXIE" ColumnName="JIXIE" />
+                <ScalarProperty Name="JIANXIU" ColumnName="JIANXIU" />
+                <ScalarProperty Name="KMZS0Z5" ColumnName="KMZS0Z5" />
+                <ScalarProperty Name="TI6Z3" ColumnName="TI6Z3" />
+                <ScalarProperty Name="R" ColumnName="R" />
+                <ScalarProperty Name="AL2O3" ColumnName="AL2O3" />
+                <ScalarProperty Name="MGO" ColumnName="MGO" />
+                <ScalarProperty Name="CAO" ColumnName="CAO" />
+                <ScalarProperty Name="SIO2" ColumnName="SIO2" />
+                <ScalarProperty Name="FEO" ColumnName="FEO" />
+                <ScalarProperty Name="TFE" ColumnName="TFE" />
+                <ScalarProperty Name="PISHU" ColumnName="PISHU" />
+                <ScalarProperty Name="TEAM" ColumnName="TEAM" />
+                <ScalarProperty Name="RECORD_DATE" ColumnName="RECORD_DATE" />
+                <ScalarProperty Name="RECORD_ID" ColumnName="RECORD_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_MATERIAL_RADIO_REMARK">
+            <EntityTypeMapping TypeName="PROM.T_MATERIAL_RADIO_REMARK">
+              <MappingFragment StoreEntitySet="T_MATERIAL_RADIO_REMARK">
+                <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+                <ScalarProperty Name="PERCENT9" ColumnName="PERCENT9" />
+                <ScalarProperty Name="MATERIAL9" ColumnName="MATERIAL9" />
+                <ScalarProperty Name="PERCENT8" ColumnName="PERCENT8" />
+                <ScalarProperty Name="MATERIAL8" ColumnName="MATERIAL8" />
+                <ScalarProperty Name="PERCENT7" ColumnName="PERCENT7" />
+                <ScalarProperty Name="MATERIAL7" ColumnName="MATERIAL7" />
+                <ScalarProperty Name="PERCENT6" ColumnName="PERCENT6" />
+                <ScalarProperty Name="MATERIAL6" ColumnName="MATERIAL6" />
+                <ScalarProperty Name="PERCENT5" ColumnName="PERCENT5" />
+                <ScalarProperty Name="MATERIAL5" ColumnName="MATERIAL5" />
+                <ScalarProperty Name="PERCENT4" ColumnName="PERCENT4" />
+                <ScalarProperty Name="MATERIAL4" ColumnName="MATERIAL4" />
+                <ScalarProperty Name="PERCENT3" ColumnName="PERCENT3" />
+                <ScalarProperty Name="MATERIAL3" ColumnName="MATERIAL3" />
+                <ScalarProperty Name="PERCENT2" ColumnName="PERCENT2" />
+                <ScalarProperty Name="MATERIAL2" ColumnName="MATERIAL2" />
+                <ScalarProperty Name="PERCENT1" ColumnName="PERCENT1" />
+                <ScalarProperty Name="MATERIAL1" ColumnName="MATERIAL1" />
+                <ScalarProperty Name="RECORD_PERSON" ColumnName="RECORD_PERSON" />
+                <ScalarProperty Name="PBD_NO" ColumnName="PBD_NO" />
+                <ScalarProperty Name="RECORD_DATE" ColumnName="RECORD_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

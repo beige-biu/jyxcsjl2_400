@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8eab69e16abe4e61953f3a7cf0dc7118" Name="Diagram1" ZoomLevel="48">
+        <EntityTypeShape EntityType="MATM.T_MATERIAL_SUPPLY" Width="2.625" PointX="0.625" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MATM.T_MATERIAL_HOPPER_SUM" Width="2.25" PointX="4.375" PointY="4.75" />
+        <EntityTypeShape EntityType="MATM.T_MATERIAL_METERING_MAP" Width="2.75" PointX="0.75" PointY="5.125" />
+        <EntityTypeShape EntityType="MATM.T_PRODUCE_SINTERING_RADIO" Width="3.25" PointX="9.375" PointY="0.75" />
+        <EntityTypeShape EntityType="MATM.T_SINTER_MATERIAL_RATIO" Width="2.875" PointX="4.375" PointY="0.75" />
+        <EntityTypeShape EntityType="MATM.T_MATERIAL_TEAM_CONSUMPTION" Width="3.625" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="MATM.T_MATERIAL_TEAM_YIELD" Width="2.25" PointX="7.75" PointY="9.75" />
+        <EntityTypeShape EntityType="MATM.T_PRODUCE_SINTER_RUNSTOP" Width="2.625" PointX="11.375" PointY="7.75" />
+        <EntityTypeShape EntityType="MATM.T_ENERGY_TEAM_CONSUMPTION" Width="2.75" PointX="13" PointY="0.625" />
+        <EntityTypeShape EntityType="MATM.T_COST_TITLE_CONFIG" Width="3" PointX="11.375" PointY="12.75" />
+        <EntityTypeShape EntityType="MATM.T_INSERT_QUAL_SJK" Width="3.125" PointX="0.75" PointY="13.75" />
+        <EntityTypeShape EntityType="MATM.T_INSERT_DEVICE_FAULT" Width="3" PointX="4.375" PointY="13.75" />
+        <EntityTypeShape EntityType="MATM.T_BASE_CODE" Width="1.5" PointX="7.375" PointY="6.75" />
+        <EntityTypeShape EntityType="MATM.T_MATERIAL_TEAM_YIELD_FAL" Width="1.5" PointX="8.375" PointY="14.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

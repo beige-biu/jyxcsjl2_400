@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9f255056916e45f7b776c9bc5ada33d8" Name="Diagram1" ZoomLevel="82">
+        <EntityTypeShape EntityType="PROM.T_PRODUCE_FEEDING_INSTRUCTIONS" Width="3.5" PointX="6.625" PointY="0.5" />
+        <EntityTypeShape EntityType="PROM.T_QUALITY_MIX_PHY_INSET" Width="2.75" PointX="5" PointY="7.25" />
+        <EntityTypeShape EntityType="PROM.T_INSERT_CHANGE_SHIFT" Width="2.875" PointX="6.625" PointY="3.875" />
+        <EntityTypeShape EntityType="PROM.T_INSERT_DEVICE_FAULT" Width="2.625" PointX="0.875" PointY="13.875" />
+        <EntityTypeShape EntityType="PROM.T_PRODUCE_BELLOWS_PRESSURE" Width="2.875" PointX="0.5" PointY="0.5" />
+        <EntityTypeShape EntityType="PROM.T_PRODUCE_BELLOWS_TEMPERATURE" Width="2.625" PointX="3.5" PointY="0.5" />
+        <EntityTypeShape EntityType="PROM.T_PRODUCE_MIX_DEVICE" Width="2.625" PointX="10.125" PointY="7.125" />
+        <EntityTypeShape EntityType="PROM.T_PRODUCE_SINTER_RUNSTOP" Width="1.5" PointX="18.375" PointY="0.75" />
+        <EntityTypeShape EntityType="PROM.T_BASE_MATERIAL" Width="2.75" PointX="10.875" PointY="0.625" />
+        <EntityTypeShape EntityType="PROM.T_PRODUCE_HOPPER_POSITION" Width="3.125" PointX="8.625" PointY="17.75" />
+        <EntityTypeShape EntityType="PROM.T_PRODUCE_MAIN_EXHAUST_FAN" Width="2.875" PointX="13.875" PointY="0.625" />
+        <EntityTypeShape EntityType="PROM.T_PRODUCE_OPERATIONAL_TEMP_LOG" Width="2.625" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="PROM.T_PRODUCE_TUOLIU_AZ" Width="2.375" PointX="1.375" PointY="17.75" />
+        <EntityTypeShape EntityType="PROM.T_PRODUCE_TUOLIU_CEMS" Width="2.375" PointX="17.75" PointY="7.75" />
+        <EntityTypeShape EntityType="PROM.T_PRODUCE_TUOLIU_NYJZ" Width="2.5" PointX="12" PointY="17.5" />
+        <EntityTypeShape EntityType="PROM.T_PRODUCE_TUOLIU_ZYFJ" Width="2.25" PointX="17.75" PointY="14.75" />
+        <EntityTypeShape EntityType="PROM.T_ENERGY_CONSUME" Width="2.625" PointX="17.375" PointY="19.75" />
+        <EntityTypeShape EntityType="PROM.T_PRODUCE_SINTER_SCRB_CENTER" Width="3.625" PointX="7.375" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PROM.T_PRODUCE_OPERATIONAL_LOG" Width="3.125" PointX="21.375" PointY="7.75" />
+        <EntityTypeShape EntityType="PROM.T_MATERIAL_TEAM_YIELDGGL" Width="2.5" PointX="21.375" PointY="17.75" />
+        <EntityTypeShape EntityType="PROM.T_PRODUCE_MAIN_EXHAUST_DH" Width="2.75" PointX="21.375" PointY="21.75" />
+        <EntityTypeShape EntityType="PROM.T_PRODUCE_GAOLULC" Width="2.125" PointX="6.375" PointY="17" />
+        <EntityTypeShape EntityType="PROM.T_PRODUCE_YANDAOXUNHUAN" Width="3.375" PointX="12.375" PointY="22.75" />
+        <EntityTypeShape EntityType="PROM.T_PRODUCE_SINTER_SCRB" Width="2.625" PointX="1.5" PointY="24.125" />
+        <EntityTypeShape EntityType="PROM.T_PRODUCE_SINTER_SCRB1" Width="2.625" PointX="8.625" PointY="24.375" />
+        <EntityTypeShape EntityType="PROM.T_PRODUCE_SINTER_SCRB2" Width="2.625" PointX="23.625" PointY="0.625" />
+        <EntityTypeShape EntityType="PROM.T_MATERIAL_RADIO_REMARK" Width="2.625" PointX="17.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

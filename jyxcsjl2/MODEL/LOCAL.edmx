@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Model1.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="T_QUALITY_MIX_PHY_INSET">
+          <Key>
+            <PropertyRef Name="RECORD_DATE" />
+          </Key>
+          <Property Name="WP_NO" Type="varchar2" MaxLength="30" />
+          <Property Name="SHIFT" Type="varchar2" MaxLength="10" />
+          <Property Name="FEED_NAME" Type="varchar2" MaxLength="50" />
+          <Property Name="FEED_TEM" Type="number" Precision="10" Scale="1" />
+          <Property Name="WATER" Type="number" Precision="10" Scale="1" />
+          <Property Name="GRAIN_COMP_3" Type="number" Precision="10" Scale="2" />
+          <Property Name="GRAIN_COMP_31" Type="number" Precision="10" Scale="2" />
+          <Property Name="GRAIN_COMP_1" Type="number" Precision="10" Scale="2" />
+          <Property Name="GRAIN_COMP_63" Type="number" Precision="10" Scale="2" />
+          <Property Name="GRAIN_3" Type="number" Precision="10" Scale="2" />
+          <Property Name="RECORD_PERSON" Type="varchar2" MaxLength="20" />
+          <Property Name="RECORD_DATE" Type="date" Nullable="false" />
+          <Property Name="GRAIN_5" Type="number" Precision="10" Scale="2" />
+          <Property Name="GRAIN_05" Type="number" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityContainer Name="Model1StoreContainer">
+          <EntitySet Name="T_QUALITY_MIX_PHY_INSET" EntityType="Self.T_QUALITY_MIX_PHY_INSET" Schema="ORALTL2_ST" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="T_QUALITY_MIX_PHY_INSET">
+          <Key>
+            <PropertyRef Name="RECORD_DATE" />
+          </Key>
+          <Property Name="WP_NO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="SHIFT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="FEED_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FEED_TEM" Type="Decimal" Precision="10" Scale="1" />
+          <Property Name="WATER" Type="Decimal" Precision="10" Scale="1" />
+          <Property Name="GRAIN_COMP_3" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="GRAIN_COMP_31" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="GRAIN_COMP_1" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="GRAIN_COMP_63" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="GRAIN_3" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="RECORD_PERSON" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="RECORD_DATE" Type="DateTime" Nullable="false" />
+          <Property Name="GRAIN_5" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="GRAIN_05" Type="Decimal" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityContainer Name="LOCAL" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="T_QUALITY_MIX_PHY_INSET" EntityType="Self.T_QUALITY_MIX_PHY_INSET" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="LOCAL">
+          <EntitySetMapping Name="T_QUALITY_MIX_PHY_INSET">
+            <EntityTypeMapping TypeName="Model1.T_QUALITY_MIX_PHY_INSET">
+              <MappingFragment StoreEntitySet="T_QUALITY_MIX_PHY_INSET">
+                <ScalarProperty Name="WP_NO" ColumnName="WP_NO" />
+                <ScalarProperty Name="SHIFT" ColumnName="SHIFT" />
+                <ScalarProperty Name="FEED_NAME" ColumnName="FEED_NAME" />
+                <ScalarProperty Name="FEED_TEM" ColumnName="FEED_TEM" />
+                <ScalarProperty Name="WATER" ColumnName="WATER" />
+                <ScalarProperty Name="GRAIN_COMP_3" ColumnName="GRAIN_COMP_3" />
+                <ScalarProperty Name="GRAIN_COMP_31" ColumnName="GRAIN_COMP_31" />
+                <ScalarProperty Name="GRAIN_COMP_1" ColumnName="GRAIN_COMP_1" />
+                <ScalarProperty Name="GRAIN_COMP_63" ColumnName="GRAIN_COMP_63" />
+                <ScalarProperty Name="GRAIN_3" ColumnName="GRAIN_3" />
+                <ScalarProperty Name="RECORD_PERSON" ColumnName="RECORD_PERSON" />
+                <ScalarProperty Name="RECORD_DATE" ColumnName="RECORD_DATE" />
+                <ScalarProperty Name="GRAIN_5" ColumnName="GRAIN_5" />
+                <ScalarProperty Name="GRAIN_05" ColumnName="GRAIN_05" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

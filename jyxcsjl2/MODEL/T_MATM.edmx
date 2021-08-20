@@ -1,0 +1,903 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MATM.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="T_BASE_CODE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="CODE" Type="varchar2" MaxLength="20" />
+          <Property Name="CODE_DES" Type="varchar2" MaxLength="50" />
+          <Property Name="CODE_GROUP" Type="varchar2" MaxLength="50" />
+          <Property Name="CODE_GROUP_DES" Type="varchar2" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="T_COST_TITLE_CONFIG">
+          <Key>
+            <PropertyRef Name="MAT_CODE" />
+          </Key>
+          <Property Name="RECORD_ID" Type="number" Precision="38" Scale="0" />
+          <Property Name="MAT_TYPE" Type="varchar2" MaxLength="2" />
+          <Property Name="COST_CENTER" Type="varchar2" MaxLength="7" />
+          <Property Name="COST_CENTER_DESCR" Type="varchar2" MaxLength="20" />
+          <Property Name="MAT_CODE" Type="varchar2" MaxLength="16" Nullable="false" />
+          <Property Name="MAT_CODE_DESC" Type="varchar2" MaxLength="50" />
+          <Property Name="COST_TITLE" Type="varchar2" MaxLength="10" />
+          <Property Name="COST_TITLE_DESC" Type="varchar2" MaxLength="50" />
+          <Property Name="UNIT" Type="varchar2" MaxLength="10" />
+          <Property Name="PRICE" Type="number" Precision="18" Scale="3" />
+          <Property Name="C_H2O" Type="number" Precision="18" Scale="3" />
+        </EntityType>
+        <EntityType Name="T_ENERGY_TEAM_CONSUMPTION">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="RECORD_DATE" Type="date" />
+          <Property Name="SHIFTS" Type="varchar2" MaxLength="2" />
+          <Property Name="TAEM" Type="varchar2" MaxLength="4" />
+          <Property Name="WORK_BEGIN_TIME" Type="date" />
+          <Property Name="WORK_END_TIME" Type="date" />
+          <Property Name="MATERIAL_CODE" Type="varchar2" MaxLength="16" />
+          <Property Name="MATERIAL_NAME" Type="varchar2" MaxLength="500" />
+          <Property Name="CONSUMPTION_SUM" Type="float" Precision="126" Scale="0" />
+          <Property Name="SPECIFIC_CONSUMPTION" Type="float" Precision="126" Scale="0" />
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ID_PLCNAME" Type="varchar2" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="T_INSERT_DEVICE_FAULT">
+          <Key>
+            <PropertyRef Name="RECORD_DATE" />
+          </Key>
+          <Property Name="FAULT_STARTTIME" Type="date" />
+          <Property Name="FAULT_NAME" Type="varchar2" MaxLength="50" />
+          <Property Name="FAULT_MADEMAN" Type="varchar2" MaxLength="10" />
+          <Property Name="ACCEPTANCE_MAN" Type="varchar2" MaxLength="20" />
+          <Property Name="ACCEPTANCE_TIME" Type="date" />
+          <Property Name="FAULT_ALLTIME" Type="number" Precision="8" Scale="0" />
+          <Property Name="FAULT_ENDTIME" Type="date" />
+          <Property Name="RECORDER" Type="varchar2" MaxLength="10" />
+          <Property Name="REMARK" Type="varchar2" MaxLength="200" />
+          <Property Name="WP_NO" Type="varchar2" MaxLength="20" />
+          <Property Name="RECORD_DATE" Type="date" Nullable="false" />
+          <Property Name="FLAG" Type="varchar2" MaxLength="2" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“ORALTL2_ST.T_INSERT_QUAL_SJK”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="T_INSERT_QUAL_SJK">
+          <Key>
+            <PropertyRef Name="MAT_SAMPLE_NO" />
+          </Key>
+          <Property Name="MAT_SAMPLE_NO" Type="varchar2" MaxLength="20" Nullable="false" />
+          <Property Name="TFE" Type="number" Precision="12" Scale="5" />
+          <Property Name="SIO2" Type="number" Precision="12" Scale="5" />
+          <Property Name="AL2O3" Type="number" Precision="12" Scale="5" />
+          <Property Name="CAO" Type="number" Precision="12" Scale="5" />
+          <Property Name="MGO" Type="number" Precision="12" Scale="5" />
+          <Property Name="P" Type="number" Precision="12" Scale="5" />
+          <Property Name="S" Type="number" Precision="12" Scale="5" />
+          <Property Name="K2O" Type="number" Precision="12" Scale="5" />
+          <Property Name="NA2O" Type="number" Precision="12" Scale="5" />
+          <Property Name="MNO" Type="number" Precision="12" Scale="5" />
+          <Property Name="TIO2" Type="number" Precision="12" Scale="5" />
+          <Property Name="R2" Type="number" Precision="12" Scale="5" />
+          <Property Name="FEO" Type="number" Precision="12" Scale="5" />
+          <Property Name="RECORD_DATE" Type="varchar2" MaxLength="20" />
+          <Property Name="TI6Z3" Type="number" Precision="12" Scale="5" />
+          <Property Name="KMZS0Z5" Type="number" Precision="12" Scale="5" />
+          <Property Name="TEAM" Type="varchar2" MaxLength="4" />
+        </EntityType>
+        <EntityType Name="T_MATERIAL_HOPPER_SUM">
+          <Key>
+            <PropertyRef Name="RECORD_DATE" />
+          </Key>
+          <Property Name="RECORD_DATE" Type="date" Nullable="false" />
+          <Property Name="P1AI_401501F" Type="number" Precision="20" Scale="3" />
+          <Property Name="P1AI_401503F" Type="number" Precision="20" Scale="3" />
+          <Property Name="P1AI_401505F" Type="number" Precision="20" Scale="3" />
+          <Property Name="P1AI_401507F" Type="number" Precision="20" Scale="3" />
+          <Property Name="P1AI_401509F" Type="number" Precision="20" Scale="3" />
+          <Property Name="P1AI_401511F" Type="number" Precision="20" Scale="3" />
+          <Property Name="P1AI_401513F" Type="number" Precision="20" Scale="3" />
+          <Property Name="P1AI_401515F" Type="number" Precision="20" Scale="3" />
+          <Property Name="P1AI_401517F" Type="number" Precision="20" Scale="3" />
+          <Property Name="P1AI_401519F" Type="number" Precision="20" Scale="3" />
+          <Property Name="P1AI_401521F" Type="number" Precision="20" Scale="3" />
+          <Property Name="P1AI_401523F" Type="number" Precision="20" Scale="3" />
+          <Property Name="P1AI_401525F" Type="number" Precision="20" Scale="3" />
+          <Property Name="P1AI_401527F" Type="number" Precision="20" Scale="3" />
+          <Property Name="P1AI_401529F" Type="number" Precision="20" Scale="3" />
+          <Property Name="P1AI_401531F" Type="number" Precision="20" Scale="3" />
+          <Property Name="P1AI_401533F" Type="number" Precision="20" Scale="3" />
+          <Property Name="P1AI_401535F" Type="number" Precision="20" Scale="3" />
+          <Property Name="P1AI_401537F" Type="number" Precision="20" Scale="3" />
+          <Property Name="P1AI_401539F" Type="number" Precision="20" Scale="3" />
+          <Property Name="P1AI_401541F" Type="number" Precision="20" Scale="3" />
+          <Property Name="P1AI_401543F" Type="number" Precision="20" Scale="3" />
+          <Property Name="P2AI_408701F" Type="number" Precision="20" Scale="3" />
+        </EntityType>
+        <EntityType Name="T_MATERIAL_METERING_MAP">
+          <Key>
+            <PropertyRef Name="MAP_ID" />
+          </Key>
+          <Property Name="MAP_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="DEVICE_NO" Type="varchar2" MaxLength="500" />
+          <Property Name="DEVICE_NAME" Type="varchar2" MaxLength="500" />
+          <Property Name="DEVICE_DESCR" Type="varchar2" MaxLength="500" />
+          <Property Name="MAP_MAT_CODE" Type="varchar2" MaxLength="500" />
+          <Property Name="MAP_MAT_NAME" Type="varchar2" MaxLength="500" />
+          <Property Name="MAP_BEGIN_TIME" Type="date" />
+          <Property Name="MAP_END_TIME" Type="date" />
+          <Property Name="CREATE_DATE" Type="date" />
+          <Property Name="CREATER" Type="varchar2" MaxLength="500" />
+          <Property Name="MAP_STAT" Type="varchar2" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="T_MATERIAL_SUPPLY">
+          <Key>
+            <PropertyRef Name="WORK_TIME" />
+            <PropertyRef Name="MAT_BATCH_NO" />
+          </Key>
+          <Property Name="WORK_TIME" Type="varchar2" MaxLength="14" Nullable="false" />
+          <Property Name="MAT_BATCH_NO" Type="varchar2" MaxLength="40" Nullable="false" />
+          <Property Name="MAT_PROD_CODE" Type="varchar2" MaxLength="30" />
+          <Property Name="MAT_PROD_CNAME" Type="varchar2" MaxLength="100" />
+          <Property Name="RUB_TAPE_START_TIME" Type="varchar2" MaxLength="14" />
+          <Property Name="RUB_TAPE_END_TIME" Type="varchar2" MaxLength="14" />
+          <Property Name="CARRY_WGT" Type="number" Precision="11" Scale="3" />
+          <Property Name="SRC_PILE_NO" Type="varchar2" MaxLength="15" />
+          <Property Name="DST_PILE_NO" Type="varchar2" MaxLength="15" />
+          <Property Name="BACKLOG_CODE" Type="varchar2" MaxLength="6" />
+          <Property Name="SCALE_NO" Type="varchar2" MaxLength="10" />
+          <Property Name="NOTICE_NO" Type="varchar2" MaxLength="20" />
+          <Property Name="WEIGH_BY" Type="varchar2" MaxLength="12" />
+          <Property Name="MAT_TRANS_TYPE" Type="varchar2" MaxLength="1" />
+          <Property Name="CONFIRM_MAN" Type="varchar2" MaxLength="9" />
+          <Property Name="CONFIRM_TIME" Type="date" />
+          <Property Name="REMARK" Type="varchar2" MaxLength="100" />
+          <Property Name="BIN_COLLECTION" Type="varchar2" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="T_MATERIAL_TEAM_CONSUMPTION">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="RECORD_DATE" Type="date" />
+          <Property Name="SHIFTS" Type="varchar2" MaxLength="2" />
+          <Property Name="TAEM" Type="varchar2" MaxLength="4" />
+          <Property Name="WORK_BEGIN_TIME" Type="date" />
+          <Property Name="WORK_END_TIME" Type="date" />
+          <Property Name="MATERIAL_CODE" Type="varchar2" MaxLength="16" />
+          <Property Name="MATERIAL_NAME" Type="varchar2" MaxLength="500" />
+          <Property Name="CONSUMPTION_SUM" Type="float" Precision="126" Scale="0" />
+          <Property Name="SPECIFIC_CONSUMPTION" Type="float" Precision="126" Scale="0" />
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_MATERIAL_TEAM_YIELD">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="TEAM_BEGIN_TIME" Type="date" />
+          <Property Name="TEAM_END_TIME" Type="date" />
+          <Property Name="SHIFT" Type="varchar2" MaxLength="10" />
+          <Property Name="TEAM" Type="varchar2" MaxLength="10" />
+          <Property Name="YIELD_BEGIN" Type="float" Precision="126" Scale="0" />
+          <Property Name="YIELD_END" Type="float" Precision="126" Scale="0" />
+          <Property Name="YIELD_SUM" Type="float" Precision="126" Scale="0" />
+          <Property Name="RUN_TIME_MIN" Type="number" Precision="38" Scale="0" />
+          <Property Name="OPERATION_RATE" Type="float" Precision="126" Scale="0" />
+          <Property Name="TIME_YIELD" Type="float" Precision="126" Scale="0" />
+          <Property Name="OPERATING_FACTOR" Type="float" Precision="126" Scale="0" />
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_MATERIAL_TEAM_YIELD_FAL">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="TEAM_BEGIN_TIME" Type="date" />
+          <Property Name="TEAM_END_TIME" Type="date" />
+          <Property Name="SHIFT" Type="varchar2" MaxLength="10" />
+          <Property Name="TEAM" Type="varchar2" MaxLength="10" />
+          <Property Name="YIELD_BEGIN" Type="float" Precision="126" Scale="0" />
+          <Property Name="YIELD_END" Type="float" Precision="126" Scale="0" />
+          <Property Name="YIELD_SUM" Type="float" Precision="126" Scale="0" />
+          <Property Name="RUN_TIME_MIN" Type="number" Precision="38" Scale="0" />
+          <Property Name="OPERATION_RATE" Type="float" Precision="126" Scale="0" />
+          <Property Name="TIME_YIELD" Type="float" Precision="126" Scale="0" />
+          <Property Name="OPERATING_FACTOR" Type="float" Precision="126" Scale="0" />
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_PRODUCE_SINTER_RUNSTOP">
+          <Key>
+            <PropertyRef Name="RECORD_DATE" />
+          </Key>
+          <Property Name="RECORD_DATE" Type="date" Nullable="false" />
+          <Property Name="BEGIN_STOP_TIME" Type="date" />
+          <Property Name="END_STOP_TIME" Type="date" />
+          <Property Name="TEAM" Type="varchar2" MaxLength="10" />
+          <Property Name="SHIFT" Type="varchar2" MaxLength="10" />
+          <Property Name="STOP_TIME" Type="float" Precision="126" Scale="0" />
+          <Property Name="STOP_REASON" Type="varchar2" MaxLength="500" />
+          <Property Name="MODIFY_PERSON" Type="varchar2" MaxLength="10" />
+          <Property Name="MODIFY_DATE" Type="date" />
+          <Property Name="JUDGE_REASON" Type="varchar2" MaxLength="500" />
+          <Property Name="JUDGE_PERSON" Type="varchar2" MaxLength="10" />
+          <Property Name="JUDGE_DATE" Type="date" />
+        </EntityType>
+        <EntityType Name="T_PRODUCE_SINTERING_RADIO">
+          <Key>
+            <PropertyRef Name="HOPPER_ID" />
+          </Key>
+          <Property Name="RECORD_DATE" Type="date" />
+          <Property Name="P1AO_401801F" Type="number" Precision="18" Scale="2" />
+          <Property Name="P1AO_401803F" Type="number" Precision="18" Scale="2" />
+          <Property Name="P1AO_401805F" Type="number" Precision="18" Scale="2" />
+          <Property Name="P1AO_401807F" Type="number" Precision="18" Scale="2" />
+          <Property Name="P1AO_401809F" Type="number" Precision="18" Scale="2" />
+          <Property Name="P1AO_401811F" Type="number" Precision="18" Scale="2" />
+          <Property Name="P1AO_401813F" Type="number" Precision="18" Scale="2" />
+          <Property Name="P1AO_401815F" Type="number" Precision="18" Scale="2" />
+          <Property Name="P1AO_401817F" Type="number" Precision="18" Scale="2" />
+          <Property Name="P1AO_401819F" Type="number" Precision="18" Scale="2" />
+          <Property Name="P1AO_401821F" Type="number" Precision="18" Scale="2" />
+          <Property Name="P1AO_401823F" Type="number" Precision="18" Scale="2" />
+          <Property Name="P1AO_401825F" Type="number" Precision="18" Scale="2" />
+          <Property Name="P1AO_401827F" Type="number" Precision="18" Scale="2" />
+          <Property Name="P1AO_401829F" Type="number" Precision="18" Scale="2" />
+          <Property Name="P1AO_401831F" Type="number" Precision="18" Scale="2" />
+          <Property Name="P1AO_401833F" Type="number" Precision="18" Scale="2" />
+          <Property Name="P1AO_401835F" Type="number" Precision="18" Scale="2" />
+          <Property Name="P1AO_401837F" Type="number" Precision="18" Scale="2" />
+          <Property Name="P1AO_401839F" Type="number" Precision="18" Scale="2" />
+          <Property Name="HOPPER_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="INSERT_DATE" Type="date" />
+        </EntityType>
+        <EntityType Name="T_SINTER_MATERIAL_RATIO">
+          <Key>
+            <PropertyRef Name="PBD_NO" />
+            <PropertyRef Name="MATERIAL_CODE" />
+          </Key>
+          <Property Name="PBD_NO" Type="varchar2" MaxLength="20" Nullable="false" />
+          <Property Name="MATERIAL_NAME" Type="varchar2" MaxLength="50" />
+          <Property Name="MATERIAL_CODE" Type="varchar2" MaxLength="16" Nullable="false" />
+          <Property Name="MATERIAL_PERCENTAGE" Type="number" Precision="38" Scale="0" />
+          <Property Name="BEGIN_STORE_DATE" Type="date" />
+          <Property Name="RECORD_DATE" Type="date" />
+          <Property Name="RECORD_PERSON" Type="varchar2" MaxLength="10" />
+        </EntityType>
+        <Function Name="F_QUAITY_ANALYSE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ORALTL2_ST">
+          <Parameter Name="MATERIAL_NAME" Type="varchar2" Mode="In" />
+          <Parameter Name="BEGIN_TIME" Type="varchar2" Mode="In" />
+          <Parameter Name="END_TIME" Type="varchar2" Mode="In" />
+          <Parameter Name="SAMPLE_NO" Type="varchar2" Mode="In" />
+        </Function>
+        <Function Name="F_QUALITY_QUARY" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ORALTL2_ST">
+          <Parameter Name="MATERIAL_NAME" Type="varchar2" Mode="In" />
+          <Parameter Name="BEGIN_TIME" Type="varchar2" Mode="In" />
+          <Parameter Name="END_TIME" Type="varchar2" Mode="In" />
+          <Parameter Name="SAMPLE_NO" Type="varchar2" Mode="In" />
+          <Parameter Name="LU_NO" Type="varchar2" Mode="In" />
+        </Function>
+        <EntityContainer Name="MATMStoreContainer">
+          <EntitySet Name="T_BASE_CODE" EntityType="Self.T_BASE_CODE" Schema="ORALTL2_ST" store:Type="Tables" />
+          <EntitySet Name="T_COST_TITLE_CONFIG" EntityType="Self.T_COST_TITLE_CONFIG" Schema="ORALTL2_ST" store:Type="Tables" />
+          <EntitySet Name="T_ENERGY_TEAM_CONSUMPTION" EntityType="Self.T_ENERGY_TEAM_CONSUMPTION" Schema="ORALTL2_ST" store:Type="Tables" />
+          <EntitySet Name="T_INSERT_DEVICE_FAULT" EntityType="Self.T_INSERT_DEVICE_FAULT" Schema="ORALTL2_ST" store:Type="Tables" />
+          <EntitySet Name="T_MATERIAL_HOPPER_SUM" EntityType="Self.T_MATERIAL_HOPPER_SUM" Schema="ORALTL2_ST" store:Type="Tables" />
+          <EntitySet Name="T_MATERIAL_METERING_MAP" EntityType="Self.T_MATERIAL_METERING_MAP" Schema="ORALTL2_ST" store:Type="Tables" />
+          <EntitySet Name="T_MATERIAL_SUPPLY" EntityType="Self.T_MATERIAL_SUPPLY" Schema="ORALTL2_ST" store:Type="Tables" />
+          <EntitySet Name="T_MATERIAL_TEAM_CONSUMPTION" EntityType="Self.T_MATERIAL_TEAM_CONSUMPTION" Schema="ORALTL2_ST" store:Type="Tables" />
+          <EntitySet Name="T_MATERIAL_TEAM_YIELD" EntityType="Self.T_MATERIAL_TEAM_YIELD" Schema="ORALTL2_ST" store:Type="Tables" />
+          <EntitySet Name="T_MATERIAL_TEAM_YIELD_FAL" EntityType="Self.T_MATERIAL_TEAM_YIELD_FAL" Schema="ORALTL2_ST" store:Type="Tables" />
+          <EntitySet Name="T_PRODUCE_SINTER_RUNSTOP" EntityType="Self.T_PRODUCE_SINTER_RUNSTOP" Schema="ORALTL2_ST" store:Type="Tables" />
+          <EntitySet Name="T_PRODUCE_SINTERING_RADIO" EntityType="Self.T_PRODUCE_SINTERING_RADIO" Schema="ORALTL2_ST" store:Type="Tables" />
+          <EntitySet Name="T_SINTER_MATERIAL_RATIO" EntityType="Self.T_SINTER_MATERIAL_RATIO" Schema="ORALTL2_ST" store:Type="Tables" />
+          <EntitySet Name="T_INSERT_QUAL_SJK" EntityType="Self.T_INSERT_QUAL_SJK" store:Type="Tables" store:Schema="ORALTL2_ST">
+            <DefiningQuery>SELECT 
+"T_INSERT_QUAL_SJK"."MAT_SAMPLE_NO" AS "MAT_SAMPLE_NO", 
+"T_INSERT_QUAL_SJK"."TFE" AS "TFE", 
+"T_INSERT_QUAL_SJK"."SIO2" AS "SIO2", 
+"T_INSERT_QUAL_SJK"."AL2O3" AS "AL2O3", 
+"T_INSERT_QUAL_SJK"."CAO" AS "CAO", 
+"T_INSERT_QUAL_SJK"."MGO" AS "MGO", 
+"T_INSERT_QUAL_SJK"."P" AS "P", 
+"T_INSERT_QUAL_SJK"."S" AS "S", 
+"T_INSERT_QUAL_SJK"."K2O" AS "K2O", 
+"T_INSERT_QUAL_SJK"."NA2O" AS "NA2O", 
+"T_INSERT_QUAL_SJK"."MNO" AS "MNO", 
+"T_INSERT_QUAL_SJK"."TIO2" AS "TIO2", 
+"T_INSERT_QUAL_SJK"."R2" AS "R2", 
+"T_INSERT_QUAL_SJK"."FEO" AS "FEO", 
+"T_INSERT_QUAL_SJK"."RECORD_DATE" AS "RECORD_DATE", 
+"T_INSERT_QUAL_SJK"."TI6Z3" AS "TI6Z3", 
+"T_INSERT_QUAL_SJK"."KMZS0Z5" AS "KMZS0Z5", 
+"T_INSERT_QUAL_SJK"."TEAM" AS "TEAM"
+FROM "ORALTL2_ST"."T_INSERT_QUAL_SJK" "T_INSERT_QUAL_SJK"</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MATM" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="T_MATERIAL_SUPPLY">
+          <Key>
+            <PropertyRef Name="WORK_TIME" />
+            <PropertyRef Name="MAT_BATCH_NO" />
+          </Key>
+          <Property Name="WORK_TIME" Type="String" MaxLength="14" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MAT_BATCH_NO" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MAT_PROD_CODE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="MAT_PROD_CNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="RUB_TAPE_START_TIME" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Name="RUB_TAPE_END_TIME" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Name="CARRY_WGT" Type="Decimal" Precision="11" Scale="3" />
+          <Property Name="SRC_PILE_NO" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="DST_PILE_NO" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="BACKLOG_CODE" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="SCALE_NO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="NOTICE_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="WEIGH_BY" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="MAT_TRANS_TYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="CONFIRM_MAN" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="CONFIRM_TIME" Type="DateTime" />
+          <Property Name="REMARK" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="BIN_COLLECTION" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="T_MATM" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="T_MATERIAL_SUPPLY" EntityType="Self.T_MATERIAL_SUPPLY" />
+          <EntitySet Name="T_MATERIAL_HOPPER_SUM" EntityType="MATM.T_MATERIAL_HOPPER_SUM" />
+          <EntitySet Name="T_MATERIAL_METERING_MAP" EntityType="MATM.T_MATERIAL_METERING_MAP" />
+          <EntitySet Name="T_PRODUCE_SINTERING_RADIO" EntityType="MATM.T_PRODUCE_SINTERING_RADIO" />
+          <EntitySet Name="T_SINTER_MATERIAL_RATIO" EntityType="MATM.T_SINTER_MATERIAL_RATIO" />
+          <EntitySet Name="T_MATERIAL_TEAM_CONSUMPTION" EntityType="MATM.T_MATERIAL_TEAM_CONSUMPTION" />
+          <EntitySet Name="T_MATERIAL_TEAM_YIELD" EntityType="MATM.T_MATERIAL_TEAM_YIELD" />
+          <EntitySet Name="T_PRODUCE_SINTER_RUNSTOP" EntityType="MATM.T_PRODUCE_SINTER_RUNSTOP" />
+          <EntitySet Name="T_ENERGY_TEAM_CONSUMPTION" EntityType="MATM.T_ENERGY_TEAM_CONSUMPTION" />
+          <EntitySet Name="T_COST_TITLE_CONFIG" EntityType="MATM.T_COST_TITLE_CONFIG" />
+          <EntitySet Name="T_INSERT_QUAL_SJK" EntityType="MATM.T_INSERT_QUAL_SJK" />
+          <EntitySet Name="T_INSERT_DEVICE_FAULT" EntityType="MATM.T_INSERT_DEVICE_FAULT" />
+          <EntitySet Name="T_BASE_CODE" EntityType="MATM.T_BASE_CODE" />
+          <FunctionImport Name="F_QUALITY_QUARY">
+            <Parameter Name="MATERIAL_NAME" Mode="In" Type="String" />
+            <Parameter Name="BEGIN_TIME" Mode="In" Type="String" />
+            <Parameter Name="END_TIME" Mode="In" Type="String" />
+            <Parameter Name="SAMPLE_NO" Mode="In" Type="String" />
+            <Parameter Name="LU_NO" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="T_MATERIAL_TEAM_YIELD_FAL" EntityType="MATM.T_MATERIAL_TEAM_YIELD_FAL" />
+        </EntityContainer>
+        <EntityType Name="T_MATERIAL_HOPPER_SUM">
+          <Key>
+            <PropertyRef Name="RECORD_DATE" />
+          </Key>
+          <Property Name="RECORD_DATE" Type="DateTime" Nullable="false" />
+          <Property Name="P1AI_401501F" Type="Decimal" Precision="20" Scale="3" />
+          <Property Name="P1AI_401503F" Type="Decimal" Precision="20" Scale="3" />
+          <Property Name="P1AI_401505F" Type="Decimal" Precision="20" Scale="3" />
+          <Property Name="P1AI_401507F" Type="Decimal" Precision="20" Scale="3" />
+          <Property Name="P1AI_401509F" Type="Decimal" Precision="20" Scale="3" />
+          <Property Name="P1AI_401511F" Type="Decimal" Precision="20" Scale="3" />
+          <Property Name="P1AI_401513F" Type="Decimal" Precision="20" Scale="3" />
+          <Property Name="P1AI_401515F" Type="Decimal" Precision="20" Scale="3" />
+          <Property Name="P1AI_401517F" Type="Decimal" Precision="20" Scale="3" />
+          <Property Name="P1AI_401519F" Type="Decimal" Precision="20" Scale="3" />
+          <Property Name="P1AI_401521F" Type="Decimal" Precision="20" Scale="3" />
+          <Property Name="P1AI_401523F" Type="Decimal" Precision="20" Scale="3" />
+          <Property Name="P1AI_401525F" Type="Decimal" Precision="20" Scale="3" />
+          <Property Name="P1AI_401527F" Type="Decimal" Precision="20" Scale="3" />
+          <Property Name="P1AI_401529F" Type="Decimal" Precision="20" Scale="3" />
+          <Property Name="P1AI_401531F" Type="Decimal" Precision="20" Scale="3" />
+          <Property Name="P1AI_401533F" Type="Decimal" Precision="20" Scale="3" />
+          <Property Name="P1AI_401535F" Type="Decimal" Precision="20" Scale="3" />
+          <Property Name="P1AI_401537F" Type="Decimal" Precision="20" Scale="3" />
+          <Property Name="P1AI_401539F" Type="Decimal" Precision="20" Scale="3" />
+          <Property Name="P1AI_401541F" Type="Decimal" Precision="20" Scale="3" />
+          <Property Name="P1AI_401543F" Type="Decimal" Precision="20" Scale="3" />
+          <Property Name="P2AI_408701F" Type="Decimal" Precision="20" Scale="3" />
+        </EntityType>
+        <EntityType Name="T_MATERIAL_METERING_MAP">
+          <Key>
+            <PropertyRef Name="MAP_ID" />
+          </Key>
+          <Property Name="MAP_ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="DEVICE_NO" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="DEVICE_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="DEVICE_DESCR" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="MAP_MAT_CODE" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="MAP_MAT_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="MAP_BEGIN_TIME" Type="DateTime" />
+          <Property Name="MAP_END_TIME" Type="DateTime" />
+          <Property Name="CREATE_DATE" Type="DateTime" />
+          <Property Name="CREATER" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="MAP_STAT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="T_PRODUCE_SINTERING_RADIO">
+          <Key>
+            <PropertyRef Name="HOPPER_ID" />
+          </Key>
+          <Property Name="RECORD_DATE" Type="DateTime" />
+          <Property Name="P1AO_401801F" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="P1AO_401803F" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="P1AO_401805F" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="P1AO_401807F" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="P1AO_401809F" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="P1AO_401811F" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="P1AO_401813F" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="P1AO_401815F" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="P1AO_401817F" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="P1AO_401819F" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="P1AO_401821F" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="P1AO_401823F" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="P1AO_401825F" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="P1AO_401827F" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="P1AO_401829F" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="P1AO_401831F" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="P1AO_401833F" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="P1AO_401835F" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="P1AO_401837F" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="P1AO_401839F" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="HOPPER_ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="INSERT_DATE" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="T_SINTER_MATERIAL_RATIO">
+          <Key>
+            <PropertyRef Name="PBD_NO" />
+            <PropertyRef Name="MATERIAL_CODE" />
+          </Key>
+          <Property Name="PBD_NO" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MATERIAL_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MATERIAL_CODE" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="MATERIAL_PERCENTAGE" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="BEGIN_STORE_DATE" Type="DateTime" />
+          <Property Name="RECORD_DATE" Type="DateTime" />
+          <Property Name="RECORD_PERSON" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="T_MATERIAL_TEAM_CONSUMPTION">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="RECORD_DATE" Type="DateTime" />
+          <Property Name="SHIFTS" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="TAEM" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="WORK_BEGIN_TIME" Type="DateTime" />
+          <Property Name="WORK_END_TIME" Type="DateTime" />
+          <Property Name="MATERIAL_CODE" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="MATERIAL_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="CONSUMPTION_SUM" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="SPECIFIC_CONSUMPTION" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="T_MATERIAL_TEAM_YIELD">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="TEAM_BEGIN_TIME" Type="DateTime" />
+          <Property Name="TEAM_END_TIME" Type="DateTime" />
+          <Property Name="SHIFT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="TEAM" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="YIELD_BEGIN" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="YIELD_END" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="YIELD_SUM" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="RUN_TIME_MIN" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="OPERATION_RATE" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="TIME_YIELD" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="OPERATING_FACTOR" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="T_PRODUCE_SINTER_RUNSTOP">
+          <Key>
+            <PropertyRef Name="RECORD_DATE" />
+          </Key>
+          <Property Name="RECORD_DATE" Type="DateTime" Nullable="false" />
+          <Property Name="BEGIN_STOP_TIME" Type="DateTime" />
+          <Property Name="END_STOP_TIME" Type="DateTime" />
+          <Property Name="TEAM" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="SHIFT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="STOP_TIME" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="STOP_REASON" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="MODIFY_PERSON" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="MODIFY_DATE" Type="DateTime" />
+          <Property Name="JUDGE_REASON" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="JUDGE_PERSON" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="JUDGE_DATE" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="T_ENERGY_TEAM_CONSUMPTION">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="RECORD_DATE" Type="DateTime" />
+          <Property Name="SHIFTS" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="TAEM" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="WORK_BEGIN_TIME" Type="DateTime" />
+          <Property Name="WORK_END_TIME" Type="DateTime" />
+          <Property Name="MATERIAL_CODE" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="MATERIAL_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="CONSUMPTION_SUM" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="SPECIFIC_CONSUMPTION" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="ID_PLCNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="T_COST_TITLE_CONFIG">
+          <Key>
+            <PropertyRef Name="MAT_CODE" />
+          </Key>
+          <Property Name="RECORD_ID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="MAT_TYPE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="COST_CENTER" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+          <Property Name="COST_CENTER_DESCR" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MAT_CODE" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="MAT_CODE_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="COST_TITLE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="COST_TITLE_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UNIT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="PRICE" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="C_H2O" Type="Decimal" Precision="18" Scale="3" />
+        </EntityType>
+        <EntityType Name="T_INSERT_QUAL_SJK">
+          <Key>
+            <PropertyRef Name="MAT_SAMPLE_NO" />
+          </Key>
+          <Property Name="MAT_SAMPLE_NO" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="TFE" Type="Decimal" Precision="12" Scale="5" />
+          <Property Name="SIO2" Type="Decimal" Precision="12" Scale="5" />
+          <Property Name="AL2O3" Type="Decimal" Precision="12" Scale="5" />
+          <Property Name="CAO" Type="Decimal" Precision="12" Scale="5" />
+          <Property Name="MGO" Type="Decimal" Precision="12" Scale="5" />
+          <Property Name="P" Type="Decimal" Precision="12" Scale="5" />
+          <Property Name="S" Type="Decimal" Precision="12" Scale="5" />
+          <Property Name="K2O" Type="Decimal" Precision="12" Scale="5" />
+          <Property Name="NA2O" Type="Decimal" Precision="12" Scale="5" />
+          <Property Name="MNO" Type="Decimal" Precision="12" Scale="5" />
+          <Property Name="TIO2" Type="Decimal" Precision="12" Scale="5" />
+          <Property Name="R2" Type="Decimal" Precision="12" Scale="5" />
+          <Property Name="FEO" Type="Decimal" Precision="12" Scale="5" />
+          <Property Name="RECORD_DATE" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Name="TI6Z3" Type="Decimal" Precision="12" Scale="5" />
+          <Property Name="KMZS0Z5" Type="Decimal" Precision="12" Scale="5" />
+          <Property Name="TEAM" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="T_INSERT_DEVICE_FAULT">
+          <Key>
+            <PropertyRef Name="RECORD_DATE" />
+          </Key>
+          <Property Name="FAULT_STARTTIME" Type="DateTime" />
+          <Property Name="FAULT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FAULT_MADEMAN" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ACCEPTANCE_MAN" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ACCEPTANCE_TIME" Type="DateTime" />
+          <Property Name="FAULT_ALLTIME" Type="Int32" />
+          <Property Name="FAULT_ENDTIME" Type="DateTime" />
+          <Property Name="RECORDER" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="REMARK" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="WP_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="RECORD_DATE" Type="DateTime" Nullable="false" />
+          <Property Name="FLAG" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="T_BASE_CODE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CODE_DES" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CODE_GROUP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CODE_GROUP_DES" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="T_MATERIAL_TEAM_YIELD_FAL">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="TEAM_BEGIN_TIME" Type="DateTime" />
+          <Property Name="TEAM_END_TIME" Type="DateTime" />
+          <Property Name="SHIFT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="TEAM" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="YIELD_BEGIN" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="YIELD_END" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="YIELD_SUM" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="RUN_TIME_MIN" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="OPERATION_RATE" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="TIME_YIELD" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="OPERATING_FACTOR" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MATMStoreContainer" CdmEntityContainer="T_MATM">
+          <EntitySetMapping Name="T_MATERIAL_SUPPLY">
+            <EntityTypeMapping TypeName="MATM.T_MATERIAL_SUPPLY">
+              <MappingFragment StoreEntitySet="T_MATERIAL_SUPPLY">
+                <ScalarProperty Name="BIN_COLLECTION" ColumnName="BIN_COLLECTION" />
+                <ScalarProperty Name="WORK_TIME" ColumnName="WORK_TIME" />
+                <ScalarProperty Name="MAT_BATCH_NO" ColumnName="MAT_BATCH_NO" />
+                <ScalarProperty Name="MAT_PROD_CODE" ColumnName="MAT_PROD_CODE" />
+                <ScalarProperty Name="MAT_PROD_CNAME" ColumnName="MAT_PROD_CNAME" />
+                <ScalarProperty Name="RUB_TAPE_START_TIME" ColumnName="RUB_TAPE_START_TIME" />
+                <ScalarProperty Name="RUB_TAPE_END_TIME" ColumnName="RUB_TAPE_END_TIME" />
+                <ScalarProperty Name="CARRY_WGT" ColumnName="CARRY_WGT" />
+                <ScalarProperty Name="SRC_PILE_NO" ColumnName="SRC_PILE_NO" />
+                <ScalarProperty Name="DST_PILE_NO" ColumnName="DST_PILE_NO" />
+                <ScalarProperty Name="BACKLOG_CODE" ColumnName="BACKLOG_CODE" />
+                <ScalarProperty Name="SCALE_NO" ColumnName="SCALE_NO" />
+                <ScalarProperty Name="NOTICE_NO" ColumnName="NOTICE_NO" />
+                <ScalarProperty Name="WEIGH_BY" ColumnName="WEIGH_BY" />
+                <ScalarProperty Name="MAT_TRANS_TYPE" ColumnName="MAT_TRANS_TYPE" />
+                <ScalarProperty Name="CONFIRM_MAN" ColumnName="CONFIRM_MAN" />
+                <ScalarProperty Name="CONFIRM_TIME" ColumnName="CONFIRM_TIME" />
+                <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_MATERIAL_HOPPER_SUM">
+            <EntityTypeMapping TypeName="MATM.T_MATERIAL_HOPPER_SUM">
+              <MappingFragment StoreEntitySet="T_MATERIAL_HOPPER_SUM">
+                <ScalarProperty Name="P2AI_408701F" ColumnName="P2AI_408701F" />
+                <ScalarProperty Name="P1AI_401543F" ColumnName="P1AI_401543F" />
+                <ScalarProperty Name="P1AI_401541F" ColumnName="P1AI_401541F" />
+                <ScalarProperty Name="P1AI_401539F" ColumnName="P1AI_401539F" />
+                <ScalarProperty Name="P1AI_401537F" ColumnName="P1AI_401537F" />
+                <ScalarProperty Name="P1AI_401535F" ColumnName="P1AI_401535F" />
+                <ScalarProperty Name="P1AI_401533F" ColumnName="P1AI_401533F" />
+                <ScalarProperty Name="P1AI_401531F" ColumnName="P1AI_401531F" />
+                <ScalarProperty Name="P1AI_401529F" ColumnName="P1AI_401529F" />
+                <ScalarProperty Name="P1AI_401527F" ColumnName="P1AI_401527F" />
+                <ScalarProperty Name="P1AI_401525F" ColumnName="P1AI_401525F" />
+                <ScalarProperty Name="P1AI_401523F" ColumnName="P1AI_401523F" />
+                <ScalarProperty Name="P1AI_401521F" ColumnName="P1AI_401521F" />
+                <ScalarProperty Name="P1AI_401519F" ColumnName="P1AI_401519F" />
+                <ScalarProperty Name="P1AI_401517F" ColumnName="P1AI_401517F" />
+                <ScalarProperty Name="P1AI_401515F" ColumnName="P1AI_401515F" />
+                <ScalarProperty Name="P1AI_401513F" ColumnName="P1AI_401513F" />
+                <ScalarProperty Name="P1AI_401511F" ColumnName="P1AI_401511F" />
+                <ScalarProperty Name="P1AI_401509F" ColumnName="P1AI_401509F" />
+                <ScalarProperty Name="P1AI_401507F" ColumnName="P1AI_401507F" />
+                <ScalarProperty Name="P1AI_401505F" ColumnName="P1AI_401505F" />
+                <ScalarProperty Name="P1AI_401503F" ColumnName="P1AI_401503F" />
+                <ScalarProperty Name="P1AI_401501F" ColumnName="P1AI_401501F" />
+                <ScalarProperty Name="RECORD_DATE" ColumnName="RECORD_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_MATERIAL_METERING_MAP">
+            <EntityTypeMapping TypeName="MATM.T_MATERIAL_METERING_MAP">
+              <MappingFragment StoreEntitySet="T_MATERIAL_METERING_MAP">
+                <ScalarProperty Name="MAP_STAT" ColumnName="MAP_STAT" />
+                <ScalarProperty Name="CREATER" ColumnName="CREATER" />
+                <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+                <ScalarProperty Name="MAP_END_TIME" ColumnName="MAP_END_TIME" />
+                <ScalarProperty Name="MAP_BEGIN_TIME" ColumnName="MAP_BEGIN_TIME" />
+                <ScalarProperty Name="MAP_MAT_NAME" ColumnName="MAP_MAT_NAME" />
+                <ScalarProperty Name="MAP_MAT_CODE" ColumnName="MAP_MAT_CODE" />
+                <ScalarProperty Name="DEVICE_DESCR" ColumnName="DEVICE_DESCR" />
+                <ScalarProperty Name="DEVICE_NAME" ColumnName="DEVICE_NAME" />
+                <ScalarProperty Name="DEVICE_NO" ColumnName="DEVICE_NO" />
+                <ScalarProperty Name="MAP_ID" ColumnName="MAP_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_PRODUCE_SINTERING_RADIO">
+            <EntityTypeMapping TypeName="MATM.T_PRODUCE_SINTERING_RADIO">
+              <MappingFragment StoreEntitySet="T_PRODUCE_SINTERING_RADIO">
+                <ScalarProperty Name="INSERT_DATE" ColumnName="INSERT_DATE" />
+                <ScalarProperty Name="HOPPER_ID" ColumnName="HOPPER_ID" />
+                <ScalarProperty Name="P1AO_401839F" ColumnName="P1AO_401839F" />
+                <ScalarProperty Name="P1AO_401837F" ColumnName="P1AO_401837F" />
+                <ScalarProperty Name="P1AO_401835F" ColumnName="P1AO_401835F" />
+                <ScalarProperty Name="P1AO_401833F" ColumnName="P1AO_401833F" />
+                <ScalarProperty Name="P1AO_401831F" ColumnName="P1AO_401831F" />
+                <ScalarProperty Name="P1AO_401829F" ColumnName="P1AO_401829F" />
+                <ScalarProperty Name="P1AO_401827F" ColumnName="P1AO_401827F" />
+                <ScalarProperty Name="P1AO_401825F" ColumnName="P1AO_401825F" />
+                <ScalarProperty Name="P1AO_401823F" ColumnName="P1AO_401823F" />
+                <ScalarProperty Name="P1AO_401821F" ColumnName="P1AO_401821F" />
+                <ScalarProperty Name="P1AO_401819F" ColumnName="P1AO_401819F" />
+                <ScalarProperty Name="P1AO_401817F" ColumnName="P1AO_401817F" />
+                <ScalarProperty Name="P1AO_401815F" ColumnName="P1AO_401815F" />
+                <ScalarProperty Name="P1AO_401813F" ColumnName="P1AO_401813F" />
+                <ScalarProperty Name="P1AO_401811F" ColumnName="P1AO_401811F" />
+                <ScalarProperty Name="P1AO_401809F" ColumnName="P1AO_401809F" />
+                <ScalarProperty Name="P1AO_401807F" ColumnName="P1AO_401807F" />
+                <ScalarProperty Name="P1AO_401805F" ColumnName="P1AO_401805F" />
+                <ScalarProperty Name="P1AO_401803F" ColumnName="P1AO_401803F" />
+                <ScalarProperty Name="P1AO_401801F" ColumnName="P1AO_401801F" />
+                <ScalarProperty Name="RECORD_DATE" ColumnName="RECORD_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_SINTER_MATERIAL_RATIO">
+            <EntityTypeMapping TypeName="MATM.T_SINTER_MATERIAL_RATIO">
+              <MappingFragment StoreEntitySet="T_SINTER_MATERIAL_RATIO">
+                <ScalarProperty Name="RECORD_PERSON" ColumnName="RECORD_PERSON" />
+                <ScalarProperty Name="RECORD_DATE" ColumnName="RECORD_DATE" />
+                <ScalarProperty Name="BEGIN_STORE_DATE" ColumnName="BEGIN_STORE_DATE" />
+                <ScalarProperty Name="MATERIAL_PERCENTAGE" ColumnName="MATERIAL_PERCENTAGE" />
+                <ScalarProperty Name="MATERIAL_CODE" ColumnName="MATERIAL_CODE" />
+                <ScalarProperty Name="MATERIAL_NAME" ColumnName="MATERIAL_NAME" />
+                <ScalarProperty Name="PBD_NO" ColumnName="PBD_NO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_MATERIAL_TEAM_CONSUMPTION">
+            <EntityTypeMapping TypeName="MATM.T_MATERIAL_TEAM_CONSUMPTION">
+              <MappingFragment StoreEntitySet="T_MATERIAL_TEAM_CONSUMPTION">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SPECIFIC_CONSUMPTION" ColumnName="SPECIFIC_CONSUMPTION" />
+                <ScalarProperty Name="CONSUMPTION_SUM" ColumnName="CONSUMPTION_SUM" />
+                <ScalarProperty Name="MATERIAL_NAME" ColumnName="MATERIAL_NAME" />
+                <ScalarProperty Name="MATERIAL_CODE" ColumnName="MATERIAL_CODE" />
+                <ScalarProperty Name="WORK_END_TIME" ColumnName="WORK_END_TIME" />
+                <ScalarProperty Name="WORK_BEGIN_TIME" ColumnName="WORK_BEGIN_TIME" />
+                <ScalarProperty Name="TAEM" ColumnName="TAEM" />
+                <ScalarProperty Name="SHIFTS" ColumnName="SHIFTS" />
+                <ScalarProperty Name="RECORD_DATE" ColumnName="RECORD_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_MATERIAL_TEAM_YIELD">
+            <EntityTypeMapping TypeName="MATM.T_MATERIAL_TEAM_YIELD">
+              <MappingFragment StoreEntitySet="T_MATERIAL_TEAM_YIELD">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="OPERATING_FACTOR" ColumnName="OPERATING_FACTOR" />
+                <ScalarProperty Name="TIME_YIELD" ColumnName="TIME_YIELD" />
+                <ScalarProperty Name="OPERATION_RATE" ColumnName="OPERATION_RATE" />
+                <ScalarProperty Name="RUN_TIME_MIN" ColumnName="RUN_TIME_MIN" />
+                <ScalarProperty Name="YIELD_SUM" ColumnName="YIELD_SUM" />
+                <ScalarProperty Name="YIELD_END" ColumnName="YIELD_END" />
+                <ScalarProperty Name="YIELD_BEGIN" ColumnName="YIELD_BEGIN" />
+                <ScalarProperty Name="TEAM" ColumnName="TEAM" />
+                <ScalarProperty Name="SHIFT" ColumnName="SHIFT" />
+                <ScalarProperty Name="TEAM_END_TIME" ColumnName="TEAM_END_TIME" />
+                <ScalarProperty Name="TEAM_BEGIN_TIME" ColumnName="TEAM_BEGIN_TIME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_PRODUCE_SINTER_RUNSTOP">
+            <EntityTypeMapping TypeName="MATM.T_PRODUCE_SINTER_RUNSTOP">
+              <MappingFragment StoreEntitySet="T_PRODUCE_SINTER_RUNSTOP">
+                <ScalarProperty Name="JUDGE_DATE" ColumnName="JUDGE_DATE" />
+                <ScalarProperty Name="JUDGE_PERSON" ColumnName="JUDGE_PERSON" />
+                <ScalarProperty Name="JUDGE_REASON" ColumnName="JUDGE_REASON" />
+                <ScalarProperty Name="MODIFY_DATE" ColumnName="MODIFY_DATE" />
+                <ScalarProperty Name="MODIFY_PERSON" ColumnName="MODIFY_PERSON" />
+                <ScalarProperty Name="STOP_REASON" ColumnName="STOP_REASON" />
+                <ScalarProperty Name="STOP_TIME" ColumnName="STOP_TIME" />
+                <ScalarProperty Name="SHIFT" ColumnName="SHIFT" />
+                <ScalarProperty Name="TEAM" ColumnName="TEAM" />
+                <ScalarProperty Name="END_STOP_TIME" ColumnName="END_STOP_TIME" />
+                <ScalarProperty Name="BEGIN_STOP_TIME" ColumnName="BEGIN_STOP_TIME" />
+                <ScalarProperty Name="RECORD_DATE" ColumnName="RECORD_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_ENERGY_TEAM_CONSUMPTION">
+            <EntityTypeMapping TypeName="MATM.T_ENERGY_TEAM_CONSUMPTION">
+              <MappingFragment StoreEntitySet="T_ENERGY_TEAM_CONSUMPTION">
+                <ScalarProperty Name="ID_PLCNAME" ColumnName="ID_PLCNAME" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SPECIFIC_CONSUMPTION" ColumnName="SPECIFIC_CONSUMPTION" />
+                <ScalarProperty Name="CONSUMPTION_SUM" ColumnName="CONSUMPTION_SUM" />
+                <ScalarProperty Name="MATERIAL_NAME" ColumnName="MATERIAL_NAME" />
+                <ScalarProperty Name="MATERIAL_CODE" ColumnName="MATERIAL_CODE" />
+                <ScalarProperty Name="WORK_END_TIME" ColumnName="WORK_END_TIME" />
+                <ScalarProperty Name="WORK_BEGIN_TIME" ColumnName="WORK_BEGIN_TIME" />
+                <ScalarProperty Name="TAEM" ColumnName="TAEM" />
+                <ScalarProperty Name="SHIFTS" ColumnName="SHIFTS" />
+                <ScalarProperty Name="RECORD_DATE" ColumnName="RECORD_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_COST_TITLE_CONFIG">
+            <EntityTypeMapping TypeName="MATM.T_COST_TITLE_CONFIG">
+              <MappingFragment StoreEntitySet="T_COST_TITLE_CONFIG">
+                <ScalarProperty Name="C_H2O" ColumnName="C_H2O" />
+                <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+                <ScalarProperty Name="UNIT" ColumnName="UNIT" />
+                <ScalarProperty Name="COST_TITLE_DESC" ColumnName="COST_TITLE_DESC" />
+                <ScalarProperty Name="COST_TITLE" ColumnName="COST_TITLE" />
+                <ScalarProperty Name="MAT_CODE_DESC" ColumnName="MAT_CODE_DESC" />
+                <ScalarProperty Name="MAT_CODE" ColumnName="MAT_CODE" />
+                <ScalarProperty Name="COST_CENTER_DESCR" ColumnName="COST_CENTER_DESCR" />
+                <ScalarProperty Name="COST_CENTER" ColumnName="COST_CENTER" />
+                <ScalarProperty Name="MAT_TYPE" ColumnName="MAT_TYPE" />
+                <ScalarProperty Name="RECORD_ID" ColumnName="RECORD_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_INSERT_QUAL_SJK">
+            <EntityTypeMapping TypeName="MATM.T_INSERT_QUAL_SJK">
+              <MappingFragment StoreEntitySet="T_INSERT_QUAL_SJK">
+                <ScalarProperty Name="TEAM" ColumnName="TEAM" />
+                <ScalarProperty Name="KMZS0Z5" ColumnName="KMZS0Z5" />
+                <ScalarProperty Name="TI6Z3" ColumnName="TI6Z3" />
+                <ScalarProperty Name="RECORD_DATE" ColumnName="RECORD_DATE" />
+                <ScalarProperty Name="FEO" ColumnName="FEO" />
+                <ScalarProperty Name="R2" ColumnName="R2" />
+                <ScalarProperty Name="TIO2" ColumnName="TIO2" />
+                <ScalarProperty Name="MNO" ColumnName="MNO" />
+                <ScalarProperty Name="NA2O" ColumnName="NA2O" />
+                <ScalarProperty Name="K2O" ColumnName="K2O" />
+                <ScalarProperty Name="S" ColumnName="S" />
+                <ScalarProperty Name="P" ColumnName="P" />
+                <ScalarProperty Name="MGO" ColumnName="MGO" />
+                <ScalarProperty Name="CAO" ColumnName="CAO" />
+                <ScalarProperty Name="AL2O3" ColumnName="AL2O3" />
+                <ScalarProperty Name="SIO2" ColumnName="SIO2" />
+                <ScalarProperty Name="TFE" ColumnName="TFE" />
+                <ScalarProperty Name="MAT_SAMPLE_NO" ColumnName="MAT_SAMPLE_NO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_INSERT_DEVICE_FAULT">
+            <EntityTypeMapping TypeName="MATM.T_INSERT_DEVICE_FAULT">
+              <MappingFragment StoreEntitySet="T_INSERT_DEVICE_FAULT">
+                <ScalarProperty Name="FLAG" ColumnName="FLAG" />
+                <ScalarProperty Name="RECORD_DATE" ColumnName="RECORD_DATE" />
+                <ScalarProperty Name="WP_NO" ColumnName="WP_NO" />
+                <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+                <ScalarProperty Name="RECORDER" ColumnName="RECORDER" />
+                <ScalarProperty Name="FAULT_ENDTIME" ColumnName="FAULT_ENDTIME" />
+                <ScalarProperty Name="FAULT_ALLTIME" ColumnName="FAULT_ALLTIME" />
+                <ScalarProperty Name="ACCEPTANCE_TIME" ColumnName="ACCEPTANCE_TIME" />
+                <ScalarProperty Name="ACCEPTANCE_MAN" ColumnName="ACCEPTANCE_MAN" />
+                <ScalarProperty Name="FAULT_MADEMAN" ColumnName="FAULT_MADEMAN" />
+                <ScalarProperty Name="FAULT_NAME" ColumnName="FAULT_NAME" />
+                <ScalarProperty Name="FAULT_STARTTIME" ColumnName="FAULT_STARTTIME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_BASE_CODE">
+            <EntityTypeMapping TypeName="MATM.T_BASE_CODE">
+              <MappingFragment StoreEntitySet="T_BASE_CODE">
+                <ScalarProperty Name="CODE_GROUP_DES" ColumnName="CODE_GROUP_DES" />
+                <ScalarProperty Name="CODE_GROUP" ColumnName="CODE_GROUP" />
+                <ScalarProperty Name="CODE_DES" ColumnName="CODE_DES" />
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="F_QUALITY_QUARY" FunctionName="MATM.Store.F_QUALITY_QUARY" />
+          <EntitySetMapping Name="T_MATERIAL_TEAM_YIELD_FAL">
+            <EntityTypeMapping TypeName="MATM.T_MATERIAL_TEAM_YIELD_FAL">
+              <MappingFragment StoreEntitySet="T_MATERIAL_TEAM_YIELD_FAL">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="OPERATING_FACTOR" ColumnName="OPERATING_FACTOR" />
+                <ScalarProperty Name="TIME_YIELD" ColumnName="TIME_YIELD" />
+                <ScalarProperty Name="OPERATION_RATE" ColumnName="OPERATION_RATE" />
+                <ScalarProperty Name="RUN_TIME_MIN" ColumnName="RUN_TIME_MIN" />
+                <ScalarProperty Name="YIELD_SUM" ColumnName="YIELD_SUM" />
+                <ScalarProperty Name="YIELD_END" ColumnName="YIELD_END" />
+                <ScalarProperty Name="YIELD_BEGIN" ColumnName="YIELD_BEGIN" />
+                <ScalarProperty Name="TEAM" ColumnName="TEAM" />
+                <ScalarProperty Name="SHIFT" ColumnName="SHIFT" />
+                <ScalarProperty Name="TEAM_END_TIME" ColumnName="TEAM_END_TIME" />
+                <ScalarProperty Name="TEAM_BEGIN_TIME" ColumnName="TEAM_BEGIN_TIME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

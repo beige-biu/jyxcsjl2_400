@@ -1,0 +1,647 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7F403DA5-A86D-4D34-8C27-2C237D336AA5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>jyxcsjl2</RootNamespace>
+    <AssemblyName>jyxcsjl2</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\安装发布\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>\\JYXCSRV\安装发布\</InstallUrl>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <BootstrapperComponentsLocation>Relative</BootstrapperComponentsLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>58E434EF8CA06618A07CB46DF3D65FDD5A7DCE23</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>jyxcsjl2_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Images.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraLayout.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraNavBar.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.18.3, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.18.6.0\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess.EntityFramework, Version=6.122.18.3, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.EntityFramework.18.3.0\lib\net45\Oracle.ManagedDataAccess.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationClient" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="cls_public_main.cs" />
+    <Compile Include="CONTROL\date_select.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CONTROL\date_select.Designer.cs">
+      <DependentUpon>date_select.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CONTROL\home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CONTROL\home.Designer.cs">
+      <DependentUpon>home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CONTROL\home_main.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CONTROL\home_main.Designer.cs">
+      <DependentUpon>home_main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MODEL\T_BASE_MATERIAL.cs">
+      <DependentUpon>T_PROM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MODEL\T_ENERGY_TEAM_CONSUMPTION.cs">
+      <DependentUpon>T_MATM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MODEL\T_INSERT_CHANGE_SHIFT.cs">
+      <DependentUpon>T_PROM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MODEL\T_INSERT_DEVICE_FAULT.cs">
+      <DependentUpon>T_PROM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MODEL\T_INSERT_QUAL_SJK.cs">
+      <DependentUpon>T_MATM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MODEL\T_MATERIAL_HOPPER_SUM.cs">
+      <DependentUpon>T_MATM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MODEL\T_MATERIAL_METERING_MAP.cs">
+      <DependentUpon>T_MATM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MODEL\T_MATERIAL_SUPPLY.cs">
+      <DependentUpon>T_MATM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MODEL\T_MATERIAL_TEAM_CONSUMPTION.cs">
+      <DependentUpon>T_MATM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MODEL\T_MATERIAL_TEAM_YIELD.cs">
+      <DependentUpon>T_MATM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MODEL\T_MATM.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>T_MATM.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MODEL\T_MATM.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>T_MATM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MODEL\T_MATM.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>T_MATM.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="MODEL\T_PRODUCE_BELLOWS_PRESSURE.cs">
+      <DependentUpon>T_PROM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MODEL\T_PRODUCE_BELLOWS_TEMPERATURE.cs">
+      <DependentUpon>T_PROM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MODEL\T_PRODUCE_DEVICE_RUNLOG.cs">
+      <DependentUpon>T_PROM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MODEL\T_PRODUCE_FEEDING_INSTRUCTIONS.cs">
+      <DependentUpon>T_PROM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MODEL\T_PRODUCE_HOPPER_POSITION.cs">
+      <DependentUpon>T_PROM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MODEL\T_PRODUCE_HOPPER_RATIO.cs">
+      <DependentUpon>T_PROM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MODEL\T_PRODUCE_MAIN_EXHAUST_FAN.cs">
+      <DependentUpon>T_PROM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MODEL\T_PRODUCE_MIX_DEVICE.cs">
+      <DependentUpon>T_PROM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MODEL\T_PRODUCE_OPERATIONAL_LOG.cs">
+      <DependentUpon>T_PROM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MODEL\T_PRODUCE_OPERATIONAL_TEMP_LOG.cs">
+      <DependentUpon>T_PROM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MODEL\T_PRODUCE_SINTERING_RADIO.cs">
+      <DependentUpon>T_MATM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MODEL\T_PRODUCE_SINTER_RUNSTOP.cs">
+      <DependentUpon>T_MATM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MODEL\T_PROM.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>T_PROM.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MODEL\T_PROM.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>T_PROM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MODEL\T_PROM.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>T_PROM.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="MODEL\T_QUALITY_MIX_PHY_INSET.cs">
+      <DependentUpon>T_PROM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MODEL\T_SINTER_MATERIAL_RATIO.cs">
+      <DependentUpon>T_MATM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MODEL\T_SYS_EMPLOYEE.cs">
+      <DependentUpon>T_USER.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MODEL\T_SYS_FUNCTION.cs">
+      <DependentUpon>T_USER.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MODEL\T_SYS_ROLE.cs">
+      <DependentUpon>T_USER.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MODEL\T_SYS_USER.cs">
+      <DependentUpon>T_USER.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MODEL\T_USER.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>T_USER.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MODEL\T_USER.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>T_USER.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MODEL\T_USER.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>T_USER.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="MTR\energy_team_consumption.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MTR\energy_team_consumption.Designer.cs">
+      <DependentUpon>energy_team_consumption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MTR\hopper_position.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MTR\hopper_position.Designer.cs">
+      <DependentUpon>hopper_position.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MTR\hopper_ratio.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MTR\hopper_ratio.Designer.cs">
+      <DependentUpon>hopper_ratio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MTR\feeding_instructions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MTR\feeding_instructions.Designer.cs">
+      <DependentUpon>feeding_instructions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MTR\hopper_sum.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MTR\hopper_sum.Designer.cs">
+      <DependentUpon>hopper_sum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MTR\insert_feeding_instrutions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MTR\insert_feeding_instrutions.Designer.cs">
+      <DependentUpon>insert_feeding_instrutions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MTR\insert_material_ratio.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MTR\insert_material_ratio.Designer.cs">
+      <DependentUpon>insert_material_ratio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MTR\material_metering_map.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MTR\material_metering_map.Designer.cs">
+      <DependentUpon>material_metering_map.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MTR\material_ratio_click.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MTR\material_ratio_click.Designer.cs">
+      <DependentUpon>material_ratio_click.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MTR\material_sum.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MTR\material_sum.Designer.cs">
+      <DependentUpon>material_sum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MTR\material_supply.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MTR\material_supply.Designer.cs">
+      <DependentUpon>material_supply.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MTR\team_yield.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MTR\team_yield.Designer.cs">
+      <DependentUpon>team_yield.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUCE_M\change_shift.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRODUCE_M\change_shift.Designer.cs">
+      <DependentUpon>change_shift.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUCE_M\device_start_stop.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRODUCE_M\device_start_stop.Designer.cs">
+      <DependentUpon>device_start_stop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUCE_M\main_exhaust_fan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRODUCE_M\main_exhaust_fan.Designer.cs">
+      <DependentUpon>main_exhaust_fan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUCE_M\bellows_operation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRODUCE_M\bellows_operation.Designer.cs">
+      <DependentUpon>bellows_operation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUCE_M\mix_device.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRODUCE_M\mix_device.Designer.cs">
+      <DependentUpon>mix_device.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUCE_M\operational_olg.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRODUCE_M\operational_olg.Designer.cs">
+      <DependentUpon>operational_olg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUCE_M\operational_temp_log.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRODUCE_M\operational_temp_log.Designer.cs">
+      <DependentUpon>operational_temp_log.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QUAITY\mix_phy_insert.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QUAITY\mix_phy_insert.Designer.cs">
+      <DependentUpon>mix_phy_insert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QUAITY\quaity_analyse.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QUAITY\quaity_analyse.Designer.cs">
+      <DependentUpon>quaity_analyse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="USER\user_mag.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="USER\user_mag.Designer.cs">
+      <DependentUpon>user_mag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="user_mg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="user_mg.Designer.cs">
+      <DependentUpon>user_mg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="w_about.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="w_about.Designer.cs">
+      <DependentUpon>w_about.cs</DependentUpon>
+    </Compile>
+    <Compile Include="w_main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="w_main.Designer.cs">
+      <DependentUpon>w_main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="soft_upload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="soft_upload.designer.cs">
+      <DependentUpon>soft_upload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="w_login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="w_login.Designer.cs">
+      <DependentUpon>w_login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CONTROL\date_select.resx">
+      <DependentUpon>date_select.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONTROL\home.resx">
+      <DependentUpon>home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONTROL\home_main.resx">
+      <DependentUpon>home_main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MTR\energy_team_consumption.resx">
+      <DependentUpon>energy_team_consumption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MTR\hopper_position.resx">
+      <DependentUpon>hopper_position.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MTR\hopper_ratio.resx">
+      <DependentUpon>hopper_ratio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MTR\feeding_instructions.resx">
+      <DependentUpon>feeding_instructions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MTR\hopper_sum.resx">
+      <DependentUpon>hopper_sum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MTR\insert_feeding_instrutions.resx">
+      <DependentUpon>insert_feeding_instrutions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MTR\insert_material_ratio.resx">
+      <DependentUpon>insert_material_ratio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MTR\material_metering_map.resx">
+      <DependentUpon>material_metering_map.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MTR\material_ratio_click.resx">
+      <DependentUpon>material_ratio_click.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MTR\material_sum.resx">
+      <DependentUpon>material_sum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MTR\material_supply.resx">
+      <DependentUpon>material_supply.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MTR\team_yield.resx">
+      <DependentUpon>team_yield.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRODUCE_M\change_shift.resx">
+      <DependentUpon>change_shift.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRODUCE_M\device_start_stop.resx">
+      <DependentUpon>device_start_stop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRODUCE_M\main_exhaust_fan.resx">
+      <DependentUpon>main_exhaust_fan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRODUCE_M\bellows_operation.resx">
+      <DependentUpon>bellows_operation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRODUCE_M\mix_device.resx">
+      <DependentUpon>mix_device.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRODUCE_M\operational_olg.resx">
+      <DependentUpon>operational_olg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRODUCE_M\operational_temp_log.resx">
+      <DependentUpon>operational_temp_log.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="QUAITY\mix_phy_insert.resx">
+      <DependentUpon>mix_phy_insert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QUAITY\quaity_analyse.resx">
+      <DependentUpon>quaity_analyse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USER\user_mag.resx">
+      <DependentUpon>user_mag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="user_mg.resx">
+      <DependentUpon>user_mg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="w_about.resx">
+      <DependentUpon>w_about.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="w_main.resx">
+      <DependentUpon>w_main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="soft_upload.resx">
+      <DependentUpon>soft_upload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="w_login.resx">
+      <DependentUpon>w_login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="MODEL\T_USER.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>T_USER.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="MODEL\T_PROM.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>T_PROM.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="MODEL\T_MATM.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>T_MATM.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="App.config" />
+    <None Include="MODEL\T_MATM.edmx.diagram">
+      <DependentUpon>T_MATM.edmx</DependentUpon>
+    </None>
+    <None Include="MODEL\T_PROM.edmx.diagram">
+      <DependentUpon>T_PROM.edmx</DependentUpon>
+    </None>
+    <None Include="MODEL\T_USER.edmx.diagram">
+      <DependentUpon>T_USER.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\用户.png" />
+    <None Include="Resources\ffpic1306125173178.png" />
+    <None Include="Resources\400060474.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MODEL\T_MATM.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>T_MATM.edmx</DependentUpon>
+      <LastGenOutput>T_MATM.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="MODEL\T_MATM.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>T_MATM.edmx</DependentUpon>
+      <LastGenOutput>T_MATM.cs</LastGenOutput>
+    </Content>
+    <Content Include="MODEL\T_PROM.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>T_PROM.edmx</DependentUpon>
+      <LastGenOutput>T_PROM.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="MODEL\T_PROM.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>T_PROM.edmx</DependentUpon>
+      <LastGenOutput>T_PROM.cs</LastGenOutput>
+    </Content>
+    <Content Include="MODEL\T_USER.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>T_USER.edmx</DependentUpon>
+      <LastGenOutput>T_USER.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="MODEL\T_USER.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>T_USER.edmx</DependentUpon>
+      <LastGenOutput>T_USER.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="MSComCtl2">
+      <Guid>{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="MSComctlLib">
+      <Guid>{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
